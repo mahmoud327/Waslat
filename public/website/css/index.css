@@ -1,0 +1,213 @@
+/* Import Font Awesome */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+/* Preconnect to Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@500&display=swap');
+
+:root {
+    --white: #fff;
+    --light: #f2f2f3;
+    --main: #3A564F;
+    --sec: ##7E918C;
+}
+
+.bg-main {
+    background: #3A564F;
+}
+
+
+
+body {
+    color: var(--main);
+    font-family: 'Tajawal', sans-serif;
+    overflow-x: hidden;
+    position: static;
+    min-height: auto,
+
+}
+
+
+#sell:hover .search_dialoag {
+    display: flex;
+
+}
+
+
+
+
+footer {
+    width: 100%;
+    background-color: rgb(232, 232, 232);
+    height: fit-content;
+}
+
+.footer {
+    width: 100%;
+    height: fit-content;
+    direction: rtl;
+    display: flex;
+    /* justify-content: space-around; */
+    margin-top: 100px;
+    padding: 50px;
+
+}
+
+footer .simg {
+    /* padding: 10px; */
+    margin-top: 10px;
+}
+
+footer p {
+    color: black;
+}
+
+footer ul {
+    color: black;
+    margin-right: 180px;
+    padding: 30px;
+    list-style: none;
+
+}
+
+footer li {
+    margin-top: 10px;
+    opacity: 0.7;
+    font-size: 18px;
+
+}
+
+footer h1 {
+    color: var(--main);
+    font-size: 25px;
+    font-weight: 700px;
+    padding: 0 50px 10px 20px;
+    position: relative;
+}
+
+footer h1::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    background-color: #874fee;
+    height: 3px;
+}
+
+.last i {
+    margin-right: 50px;
+    color: rgb(122, 132, 141);
+    font-size: 40px;
+}
+
+@media(max-width: 1150px) {
+    .footer {
+        flex-direction: column;
+    }
+
+    footer ul {
+        margin-right: 0px;
+    }
+
+    .last {
+        flex-direction: column;
+    }
+
+    .end {
+        margin-top: 50px;
+        font-size: 30px;
+        flex-direction: column;
+    }
+
+    .icon {
+        width: 40%;
+    }
+
+    .icon i {
+        margin-top: 20px;
+
+
+    }
+
+    .last i {
+        font-size: 20px;
+    }
+
+    .last p {
+        font-size: 20px;
+    }
+}
+
+.last p {
+    margin-left: 50px;
+    padding: 10px;
+
+}
+
+/* scroll animiton */
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* CSS class to keep the element visible when it's scrolled out of view */
+.keep-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+
+.mask1 {
+    -webkit-mask-image: url(/asset/homeBanner_lg_desktop_mask.fe51b715.png);
+    mask-image: url(/asset/homeBanner_lg_desktop_mask.fe51b715.png);
+    -webkit-mask-size: 70%;
+    mask-size: 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+}
+
+
+@media (max-width: 700px) {
+    .mask1 {
+        mask: none;
+        -webkit-mask: none;
+    }
+
+
+}
+
+
+/* loader */
+
+
+.lds-dual-ring {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+}
+
+.lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid var(--main);
+    border-color: var(--main) transparent var(--main) transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,179 @@
+
+
+:root{
+  --white:#fff;
+  --light:#f2f2f3;
+  --main:#6f10a2;
+  --sec:#10a26f;
+}
+.bg-main{
+ background: #6f10a2; 
+}
+body{
+  background-color: var(--light);
+}
+
+
+
+body{
+  color: var(--main);
+  font-family: 'Tajawal', sans-serif;
+}
+.container{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 130px;
+
+}
+#login{
+  width: 650px;
+  height: fit-content;
+  text-align: center;
+  background-color: var(--white);
+  padding: 50px;
+  border-radius: 10px;
+  margin-left: 200px;
+}
+#login h1{
+  font-size: 30px;
+  color: black;
+  font-weight: 600;
+  padding: 20px 20px 0 20px;
+  
+}
+.input{
+display: flex;
+background-color: var(--white);
+border: 2px solid var(--light);
+padding: 5px 10px;
+border-radius: 10px;
+width: 72%;
+margin: auto;
+height: 45px;
+}
+.input input{
+width: 90%;
+border: none;
+outline: none;
+flex: 1;
+background-color: transparent;
+padding: 10px;
+}
+#btn{
+background-color: var(--main);
+color: var(--white);
+padding: 10px;
+border-radius: 10px;
+width: 72%;
+margin: 20px;
+
+}
+#menu{
+width: 290px;
+border-left:1px solid rgb(208, 204, 204) ;
+height: 80vh;
+background-color: var(--light);
+direction: rtl;
+color: black;
+font-size: 20px;
+
+}
+#menu li{
+margin-top: 50px;
+height: 50px;
+padding: 10px;
+}
+#menu #p{
+background-color: rgb(222, 207, 233);
+padding: 10px;
+/* position: relative; */
+z-index: -0;
+}
+/* #menu #p::after{
+content: "";
+position: absolute;
+right: 0;
+bottom: 0;
+background-color: #6f10a2;
+width: 3px;
+height: 100%;
+} */
+#menu li:hover{
+background-color: rgb(222, 207, 233);
+
+
+}
+.sec{
+margin-top: 150px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+display: none;
+
+}
+.card{
+width: 300px;
+background-color: var(--white);
+height: fit-content;
+border-radius: 20px;
+text-align: center;
+padding: 50px;
+margin-top: 50px;
+transition: 1s;
+max-width: 100%;
+
+}
+.card:hover{
+/* scale: 1.1; */
+box-shadow: 6px 7px 20px 1px rgba(0,0,0,1);
+}
+.cardtitle{
+font-size: 25px;
+padding: 30px;
+}
+.cardicon{
+font-size: 150px;
+color: black;
+}
+
+@media(max-width:1050px){
+.sec{
+display: block;
+
+}
+#menu{
+display: none;
+}
+.container{
+align-items: center;
+}
+#login{
+margin-left: 0;
+width: 100%;
+margin: auto;
+}
+.card{
+width: 50%;
+margin: 20px;
+cursor: pointer;
+margin: auto;
+margin-top: 50px;
+}
+  
+}
+
+@media(max-width:770px){
+  .card{
+    width:400px;
+    
+  }
+  .cardtitle{
+    font-size: 20px;
+  }
+  .cardicon{
+    font-size: 50px;
+  }
+}
+
+
