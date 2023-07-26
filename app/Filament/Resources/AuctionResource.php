@@ -16,6 +16,8 @@ use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
+
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class AuctionResource extends Resource
@@ -106,7 +108,10 @@ class AuctionResource extends Resource
                             'enforcement'=> trans('lang.auctions.enforcement'),
                             'zaman' =>  trans('lang.auctions.zaman'),
                         ])
+                        ->label(trans('lang.auctions.seller type'))
+
                         ->required(),
+
 
 
 
@@ -134,6 +139,14 @@ class AuctionResource extends Resource
                         ->label(trans('lang.auctions.description'))
 
                         ->required(),
+
+
+
+                        SpatieMediaLibraryFileUpload::make('images')
+                        ->label(trans('lang.images'))
+
+                        ->collection('auctions')
+                        ->multiple()
 
 
                 ])

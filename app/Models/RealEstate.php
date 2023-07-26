@@ -11,15 +11,15 @@ use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\Translatable\HasTranslations;
 
-class Auction extends Model implements HasMedia
+class RealEstate extends Model implements HasMedia
 {
-    use InteractsWithMedia;
-
     use HasFactory;
 
+    use InteractsWithMedia;
+    
     protected $guarded = ['id'];
     use HasTranslations;
-    public $translatable = ['name', 'description'];
+    public $translatable = ['description'];
 
 
     public function city(): BelongsTo

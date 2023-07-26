@@ -9,13 +9,16 @@ return [
     'phone code'=>'كود الموبايل',
     'code'=>'الكود',
     'users'=>'المستخدمين',
+    'phone'=>'رقم الموبايل',
+    'whatsup'=>'واتس اب',
     'email'=>'الايميل',
     'password'=>'الباسورد',
     'created_at'=>'تاريخ الانشاء',
-    'feature list'=>'قائمة الميزات',
+    'feature list'=>'قائمة المميزات',
     'image'=>'الصورة',
-
-
+    'images'=>'الصور',
+    'genral'=>'عام',
+    'price'=>'السعر',
     'roles'=>'الصلاحيات',
     'permissions'=>'البرمشن',
     'choose any roles'=>'اختار اى صلاحية',
@@ -25,7 +28,7 @@ return [
         'area'=>'المساحة',
         'start_price'=>'بداية المزاد',
         'zaman'=>'زمن',
-        'seller_type'=>'نوع البائع',
+        'seller type'=>'نوع البائع',
         'enforcement'=>'انفاذ',
 
          'phone'  => 'رقم الواتس',
@@ -37,5 +40,27 @@ return [
          'user'  => 'المتسخدم',
          'description'  => 'الوصف',
          'after price'  => 'سعر بعد العمولة',
+    ],
+    'real estates'=>[
+        'real estates'  => 'العقارات ',
+        'min price'=>'بداية سعر المزاد',
+        'max price'=>'نهاية سعر  المزاد ',
+        'status'=>'الحالة',
+        'buying'=>'شراء',
+        'hire'=>'الاستئجار',
+        'purpose'=>'غرض بهذف',
+        'searching real estate'=>'باحث عن عقارى',
+        'investor'=>'مستثمر',
+        'broker'=>'تمويل عقارى',
+        'pending'=>'انتظار',
+        'approved'=>'قبول',
+        'rejected'=>'رفض ',
+        'description'=>'وصف ',
+
+        'type clinet'=>'نوع العميل',
+        'how want purchase'=>'كيف تريد الشراء؟',
+        'cash'=>'نقدى',
+        'finance'=>'تمويل',
+
     ]
 ];

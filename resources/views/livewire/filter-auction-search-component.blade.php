@@ -57,7 +57,8 @@
                 <button class=" absolute top-2 right-2 text-white bg-yellow-400 text-black p-2 rounded ">
                     {{ $auction->getStartDate() }} <i class="fa-solid fa-clock"></i></button>
 
-                <img src="{{ asset('storage/' . $auction->image) }}" alt="" class="w-full h-60">
+                    <img src="{{ asset('storage/' . $auction->image) }}" alt="" class="w-full h-60">
+
                 <div class="flex flex-col items-end text-black bg-white border p-5">
 
                     <h1 class="flex items-center flex-row-reverse gap-2 text-xl"> {{ $auction->area }} <span
