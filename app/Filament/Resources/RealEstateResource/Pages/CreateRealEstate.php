@@ -9,9 +9,7 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateRealEstate extends CreateRecord
 {
     protected static string $resource = RealEstateResource::class;
-
     use CreateRecord\Concerns\Translatable;
-
     protected function getActions(): array
     {
         return [
@@ -19,7 +17,11 @@ class CreateRealEstate extends CreateRecord
             // ...
         ];
     }
-
+    protected function mutateFormDataBeforeCreate(array $data): array
+    {
+        $data['user_id'] = auth()->id();
+        return $data;
+    }
     protected function getRedirectUrl(): string
     {
         return $this->getResource()::getUrl('index');

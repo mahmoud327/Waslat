@@ -16,7 +16,7 @@ class RealEstate extends Model implements HasMedia
     use HasFactory;
 
     use InteractsWithMedia;
-    
+
     protected $guarded = ['id'];
     use HasTranslations;
     public $translatable = ['description'];
@@ -42,5 +42,12 @@ class RealEstate extends Model implements HasMedia
         } else {
             return 'منتهى';
         }
+    }
+
+    public function realEstateFeatureLists()
+    {
+        return $this->hasMany(
+            RealEstateFeature::class,
+        );
     }
 }

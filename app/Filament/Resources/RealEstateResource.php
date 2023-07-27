@@ -142,34 +142,34 @@ class RealEstateResource extends Resource
                                     // ...
                                 ]),
 
-                            // Tabs\Tab::make('features')
-                            //     ->label(trans('lang.features'))
-                            //     ->schema([
-                            //         Repeater::make('features')
-                            //             ->relationship()
-                            //             ->label(trans('lang.features'))
-                            //             ->schema([
-                            //                 Select::make('feature_id')
-                            //                     ->label(trans('lang.features'))
-                            //                     ->options(function () {
-                            //                         return Feature::pluck('name', 'id')->toArray();
-                            //                     })->required()
-                            //                     ->reactive()
-                            //                     ->afterStateUpdated(fn (callable $set) => $set('feature_list_id', null)),
-                            //                 Select::make('feature_list_id')
-                            //                     ->label(trans('lang.features values'))
+                            Tabs\Tab::make('realEstateFeatureLists')
+                                ->label(trans('lang.features'))
+                                ->schema([
+                                    Repeater::make('realEstateFeatureLists')
+                                        ->relationship()
+                                        ->label(trans('lang.features'))
+                                        ->schema([
+                                            Select::make('feature_id')
+                                                ->label(trans('lang.features'))
+                                                ->options(function () {
+                                                    return Feature::pluck('name', 'id')->toArray();
+                                                })->required()
+                                                ->reactive()
+                                                ->afterStateUpdated(fn (callable $set) => $set('feature_list_id', null)),
+                                            Select::make('feature_list_id')
+                                                ->label(trans('lang.feature list'))
 
-                            //                     ->options(function (callable $get) {
-                            //                         $attribite = Feature::find($get('feature_id'));
-                            //                         if (!$attribite) {
-                            //                             return FeatureList::pluck('name', 'id')->toArray();
-                            //                         } else {
-                            //                             return $attribite->LISTINGS->pluck('name', 'id')->toArray();
-                            //                         }
-                            //                     })->required(),
+                                                ->options(function (callable $get) {
+                                                    $attribite = Feature::find($get('feature_id'));
+                                                    if (!$attribite) {
+                                                        return FeatureList::pluck('name', 'id')->toArray();
+                                                    } else {
+                                                        return $attribite->LISTINGS->pluck('name', 'id')->toArray();
+                                                    }
+                                                })->required(),
 
-                            //             ])->columns(2),
-                            //     ]),
+                                        ])->columns(2),
+                                ]),
 
                             Tabs\Tab::make('Medias')
                                 ->label(trans('lang.images'))

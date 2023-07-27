@@ -22,6 +22,8 @@ class FeatureListResource extends Resource
     {
         return ['en', 'ar'];
     }
+    protected static bool $shouldRegisterNavigation = false;
+
 
     protected static ?string $model = FeatureList::class;
 

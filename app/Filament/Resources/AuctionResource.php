@@ -109,11 +109,7 @@ class AuctionResource extends Resource
                             'zaman' =>  trans('lang.auctions.zaman'),
                         ])
                         ->label(trans('lang.auctions.seller type'))
-
                         ->required(),
-
-
-
 
                     Select::make('city_id')
                         ->relationship('city', 'name')
