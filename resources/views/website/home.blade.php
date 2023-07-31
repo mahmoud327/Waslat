@@ -134,7 +134,7 @@
                                 @foreach ($banner->getMedia('banners') as $image)
                                     <div>
 
-                                        <img class="rounded-md w-[100vw] h-[80vh]" src="{{ asset($image->getUrl()) }}"
+                                        <img class="rounded-md w-[100vw] h-[80vh]" src="{{ asset(optional($image)->getUrl()) }}"
                                             alt="Image 2">
                                     </div>
                                 @endforeach
