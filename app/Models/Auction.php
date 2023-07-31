@@ -43,4 +43,14 @@ class Auction extends Model implements HasMedia
             return 'منتهى';
         }
     }
+
+
+    // public function getImagesAttribute()
+    // {
+
+    //         return MediaCenterResource::collection( $this->getMedia('images'));
+
+    // }
+
+
 }

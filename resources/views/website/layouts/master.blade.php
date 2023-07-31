@@ -15,7 +15,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('website/css/index.css') }}" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="{{ asset('website/js/index.js') }}"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+
     @livewireStyles
 
 </head>
@@ -29,7 +31,15 @@
     @yield('content')
     @include('website.layouts.footer')
     @include('website.layouts.footer-scripts')
+
+    <script src="{{ asset('website/js/index.js') }}"></script>
+    <script src="{{ asset('website/js/jquery.js') }}"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+
+
     @stack('js')
+  
     @livewireScripts
 
 

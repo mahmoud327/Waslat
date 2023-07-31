@@ -1,4 +1,6 @@
 <div>
+
+
     <div
         class="border border-gray-300 w-full justify-around items-center p-5 text-black mt-[82px] bg-white drop-shadow-lg flex flex-wrap-reverse  gap-y-2  z-[99]">
 
@@ -48,83 +50,87 @@
     </div>
 
 
-    <div class="flex flex-wrap justify-center lg:justify-end md:w-4/5 mt-5  m-auto gap-5  ">
+    <div class="grid grid-cols-12 justify-center lg:justify-end md:w-4/5 mt-5  m-auto gap-5  ">
         @foreach ($auctions as $auction)
-            <div
-                class="relative overflow-hidden rounded-t-md border bg-green-400  drop-shadow-md   rounded-b-lg z-[-1]">
-                <button class="absolute top-2 left-2 text-white focus:text-red-400 text-xl"><i
-                        class="fa-solid fa-heart"></i></button>
-                <button class=" absolute top-2 right-2 text-white bg-yellow-400 text-black p-2 rounded ">
-                    {{ $auction->getStartDate() }} <i class="fa-solid fa-clock"></i></button>
+            <a href="{{ route('auctions.show', $auction->id) }}" class="col-span-4">
+                <div
+                    class="relative overflow-hidden rounded-t-md border bg-green-400  drop-shadow-md   rounded-b-lg z-[-1] ">
+
+                    <button class="absolute top-2 left-2 text-white focus:text-red-400 text-xl"><i
+                            class="fa-solid fa-heart"></i></button>
+                    <button class=" absolute top-2 right-2 text-white bg-yellow-400 text-black p-2 rounded ">
+                        {{ $auction->getStartDate() }} <i class="fa-solid fa-clock"></i></button>
 
                     <img src="{{ asset('storage/' . $auction->image) }}" alt="" class="w-full h-60">
 
-                <div class="flex flex-col items-end text-black bg-white border p-5">
+                    <div class="flex flex-col items-end text-black bg-white border p-5">
 
-                    <h1 class="flex items-center flex-row-reverse gap-2 text-xl"> {{ $auction->area }} <span
-                            class="text-sm text-gray-600"></span></h1>
-                    <h1 class="font-semibold text-xl">{{ $auction->name }}</h1>
-                    <p class="text-gray-600">{{ optional($auction->city)->name }}</p>
+                        <h1 class="flex items-center flex-row-reverse gap-2 text-xl"> {{ $auction->area }} <span
+                                class="text-sm text-gray-600"></span></h1>
+                        <h1 class="font-semibold text-xl">{{ $auction->name }}</h1>
+                        <p class="text-gray-600">{{ optional($auction->city)->name }}</p>
 
-                    <div class="flex items-end  mt-2 gap-5">
-                        <div class="flex items-center gap-1">
-                            <h1 class="font-semibold text-xl">3</h1>
-                            <img class="h-8" src="/asset/icons/bed.svg" alt="">
+                        <div class="flex items-end  mt-2 gap-5">
+                            <div class="flex items-center gap-1">
+                                <h1 class="font-semibold text-xl">3</h1>
+                                <img class="h-8" src="" alt="">
+                            </div>
+
+                            <div class="flex items-center gap-1">
+                                <h1 class="font-semibold text-xl">4</h1>
+                                <img class="h-8" src="" alt="">
+                            </div>
+
+                            <div class="flex items-center gap-1">
+                                <h1 class="font-semibold text-xl flex items-center flex-row-reverse gap-1">223<span
+                                        class="text-sm text-gray-500">م</span></h1>
+                                <img class="h-8" src="" alt="">
+                            </div>
+
+                            <div class="flex items-center gap-1">
+                                <h1 class="font-semibold text-xl flex items-center flex-row-reverse gap-1">10 <span
+                                        class="text-sm text-gray-500">سنة</span></h1>
+                                <img class="h-8" src="" alt="">
+                            </div>
                         </div>
 
-                        <div class="flex items-center gap-1">
-                            <h1 class="font-semibold text-xl">4</h1>
-                            <img class="h-8" src="/asset/icons/bathtub.svg" alt="">
+                        <div class="flex items-center justify-between w-full flex-row-reverse mt-5 gap-5 text-right">
+                            <div>
+                                <p class="text-lg">بداية المزاد</p>
+                                <h1 class="font-semibold text-xl flex items-center flex-row-reverse gap-1">
+                                    {{ $auction->start_price }} <span class="text-sm text-gray-500">ر.س</span></h1>
+                            </div>
+
+                            <div>
+                                <p class="text-lg"> يبدأ المزاد خلال</p>
+                                <h1 class="font-semibold text-xl ">{{ $auction->start_date }} </h1>
+                            </div>
+
+
                         </div>
 
-                        <div class="flex items-center gap-1">
-                            <h1 class="font-semibold text-xl flex items-center flex-row-reverse gap-1">223<span
-                                    class="text-sm text-gray-500">م</span></h1>
-                            <img class="h-8" src="/asset/icons/meter.svg" alt="">
-                        </div>
-
-                        <div class="flex items-center gap-1">
-                            <h1 class="font-semibold text-xl flex items-center flex-row-reverse gap-1">10 <span
-                                    class="text-sm text-gray-500">سنة</span></h1>
-                            <img class="h-8" src="/asset/icons/date.svg" alt="">
+                        <div
+                            class="flex items-center justify-between flex-row-reverse w-full p-3 rounded bg-[#3A564F] bg-opacity-10 mt-6">
+                            <h1>25 شخص يتابعون المزاد</h1>
+                            <div class="border border-[#3A564F]  p-2 rounded bg-white text-[#3A564F] cursor-pointer">
+                                متابعة
+                                <i class="fa-solid fa-bell"></i>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="flex items-center justify-between w-full flex-row-reverse mt-5 gap-5 text-right">
-                        <div>
-                            <p class="text-lg">بداية المزاد</p>
-                            <h1 class="font-semibold text-xl flex items-center flex-row-reverse gap-1">
-                                {{ $auction->start_price }} <span class="text-sm text-gray-500">ر.س</span></h1>
-                        </div>
 
-                        <div>
-                            <p class="text-lg"> يبدأ المزاد خلال</p>
-                            <h1 class="font-semibold text-xl ">{{ $auction->start_date }} </h1>
-                        </div>
-
+                    <div class="bg-[#3A564F] w-full h-8  rounded-b-lg">
 
                     </div>
 
-                    <div
-                        class="flex items-center justify-between flex-row-reverse w-full p-3 rounded bg-[#3A564F] bg-opacity-10 mt-6">
-                        <h1>25 شخص يتابعون المزاد</h1>
-                        <div class="border border-[#3A564F]  p-2 rounded bg-white text-[#3A564F] cursor-pointer">متابعة
-                            <i class="fa-solid fa-bell"></i>
-                        </div>
-                    </div>
+
+
+
+
+
                 </div>
-
-
-                <div class="bg-[#3A564F] w-full h-8  rounded-b-lg">
-
-                </div>
-
-
-
-
-
-
-            </div>
+            </a>
         @endforeach
 
     </div>
@@ -142,7 +148,7 @@
             <i class="fa-solid fa-xmark-circle text-2xl absolute top-2 left-2 cursor-pointer"
                 onclick="togglePopUp('contact_us_popUp')"></i>
 
-            <img src="/asset/contact1.svg" alt="" class="w-60">
+            <img src="" alt="" class="w-60">
 
             <div class="flex flex-col text-right items-end p-5">
                 <h1 class="text-black text-2xl  -translate-y-5">تواصل معنا</h1>
@@ -173,17 +179,17 @@
             <div class="flex items-center gap-3 mt-5">
                 <h1 class="text-xl">سجّل في المزاد</h1>
                 <div class="p-2 bg-[#3A564F] bg-opacity-10 rounded-full"><img
-                        src="https://auction.wasalt.com/images/w1.svg" alt=""></div>
+                        src="" alt=""></div>
             </div>
             <div class="flex items-center gap-3 mt-5">
                 <h1 class="text-xl"> أنشأ محفظة إلكترونية وأضف عربون</h1>
                 <div class="p-2 bg-[#3A564F] bg-opacity-10 rounded-full"><img
-                        src="https://auction.wasalt.com/images/w2.svg" alt=""></div>
+                        src="" alt=""></div>
             </div>
             <div class="flex items-center gap-3 mt-5">
                 <h1 class="text-xl"> زايد لتكسب أصول قيّمة </h1>
                 <div class="p-2 bg-[#3A564F] bg-opacity-10 rounded-full"><img
-                        src="https://auction.wasalt.com/images/w3.svg" alt=""></div>
+                        src="" alt=""></div>
             </div>
 
         </div>
@@ -680,8 +686,10 @@
             <h1 class="text-3xl ">نوع البائع</h1>
 
             <div class="flex items-center justify-between gap-3 px-2 mt-10 w-full">
-                <button wire:click="$set('tab', 'zaman')" class="relative group focus:border-[#3A564F] mx-2 border p-3 rounded-2xl w-full">زمن</button>
-                <button wire:click="$set('tab','enforcement')" class="relative group focus:border-[#3A564F] mx-2 border p-3 rounded-2xl w-full">إنفاذ</button>
+                <button wire:click="$set('tab', 'zaman')"
+                    class="relative group focus:border-[#3A564F] mx-2 border p-3 rounded-2xl w-full">زمن</button>
+                <button wire:click="$set('tab','enforcement')"
+                    class="relative group focus:border-[#3A564F] mx-2 border p-3 rounded-2xl w-full">إنفاذ</button>
 
             </div>
 
@@ -716,6 +724,7 @@
         </div>
 
     </div>
+
 
 
 </div>

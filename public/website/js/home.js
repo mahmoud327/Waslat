@@ -6,10 +6,6 @@ setTimeout(() => {
     const HomeSearchInput = document.getElementById('HomeSearchInput')
     btnRent.addEventListener('focus',()=>{console.log("fouced")})
 
-
-
-
-
     // slider
 
     function currentDiv(n) {
@@ -31,8 +27,6 @@ setTimeout(() => {
       x[slideIndex-1].style.display = "block";
       dots[slideIndex-1].className += " w3-opacity-off";
     }
-
-
 
 
     }, 1000);

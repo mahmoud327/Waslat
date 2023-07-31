@@ -3,7 +3,7 @@
     <style>
         #scroll {
             /* transform: translateY(-100%);
-       */
+               */
             opacity: 0;
             transition: transform 0.3s ease;
         }
@@ -137,7 +137,7 @@
             <div class="border bg-white rounded-md  text-black mt-5 shadow text-right">
                 <div class="bg-yellow-400 text-black text-center text-lg rounded-t-md p-3">
                     <h1> يبدأ التسجيل من
-                     {{ $auction->start_date }}</h1>
+                        {{ $auction->start_date }}</h1>
 
                 </div>
 
@@ -153,7 +153,7 @@
                     </div>
                     <div class="flex justify-between  flex-row-reverse text-gray-500">
                         <h1> الإجمالي </h1>
-                        <p class="flex flex-row-reverse gap-1">  {{ $auction->after_price }} <span>ر.س</span></p>
+                        <p class="flex flex-row-reverse gap-1"> {{ $auction->after_price }} <span>ر.س</span></p>
                     </div>
 
 
@@ -181,23 +181,16 @@
 
         <div class=" w-full flex flex-col items-end text-black gap-y-4 text-right ">
             <!-- slider -->
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/thumbnail/lg-thumbnail.umd.min.js">
-            </script>
-
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/lightgallery.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/fullscreen/lg-fullscreen.min.js">
-            </script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/zoom/lg-zoom.min.js"></script>
 
 
 
             <div id="inline-gallery-container" class="inline-gallery-container">
-                <a href="/asset/citys/jeddah-city-view.jpg"><img src="/asset/citys/jeddah-city-view.jpg" alt=""></a>
-                <a href="/asset/citys/riyadh-city-view.jpg"><img src="/asset/citys/riyadh-city-view.jpg" alt=""></a>
-                <a href="/asset/citys/medina-city-view.jpg"><img src="/asset/citys/medina-city-view.jpg" alt=""></a>
-                <a href="/asset/citys/mecca-city-view.png"><img src="/asset/citys/mecca-city-view.png" alt=""></a>
+
+                @foreach ($auction->getMedia('auctions') as $image)
+                    <a href="{{ asset($image->getUrl()) }}"><img src="{{ asset($image->getUrl()) }}" alt=""></a>
+                @endforeach
+
             </div>
-            <script src="/gallery.js"></script>
             <!-- slider -->
 
 
@@ -210,7 +203,7 @@
                 <h1 class="text-3xl font-semibold">{{ $auction->name }}</h1>
                 <p class=" text-gray-600">{{ optional($auction->city)->name }}</p>
             </div>
-
+            {{--
             <div class="flex flex-row-reverse flex-wrap gap-8 w-1/2">
 
                 <div class="flex items-center gap-1">
@@ -236,7 +229,7 @@
                 </div>
 
             </div>
-
+ --}}
 
 
 
@@ -291,8 +284,8 @@
 
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387131.68899103706!2d-74.25986739450048!3d40.69714942235554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a2a3735d893%3A0xd4e119e4713c8eab!2sNew%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1568180855449!5m2!1sen!2sus"
-                    width="100%" height="100%" frameborder="0" style="border: 0;" allowfullscreen=""
-                    aria-hidden="false" tabindex="0"></iframe>
+                    width="100%" height="100%" frameborder="0" style="border: 0;" allowfullscreen="" aria-hidden="false"
+                    tabindex="0"></iframe>
             </div>
 
 
@@ -304,10 +297,10 @@
                 <div class="flex  w-full  gap-6  justify-between ">
                     <div class="gap-y-4 flex  flex-col ">
                         <h1>
-                            {!! $auction->description!!}
+                            {!! $auction->description !!}
 
 
-                            </h1>
+                        </h1>
                     </div>
 
                 </div>
@@ -344,6 +337,15 @@
     </div>
 @endsection
 @push('js')
+    <script src="{{ asset('website/js/gallery.js') }}"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/thumbnail/lg-thumbnail.umd.min.js">
+            </script>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/lightgallery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/fullscreen/lg-fullscreen.min.js">
+            </script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/zoom/lg-zoom.min.js"></script>
+
     <script>
         function togglePopUp(popUpId) {
             document.getElementById('popUp').classList.toggle('hidden')

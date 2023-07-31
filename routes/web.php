@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuctionController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\RealEstateController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +21,15 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/',[HomeController::class,'index'])->name('home');
-Route::get('login-page',[AuthController::class,'login'])->name('login-page');
-Route::resource('auctions', AuctionController::class);
+
+Route::group([
+    'prefix' => LaravelLocalization::setLocale(),
+    'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
+], function () {
+
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('login-page', [AuthController::class, 'login'])->name('login-page');
+    Route::resource('auctions', AuctionController::class);
+    Route::resource('real-estates', RealEstateController::class)->except('index');
+    Route::get('real-estates-city/{city_id}/{type?}', [RealEstateController::class, 'index'])->name('real-estates.index');
+});

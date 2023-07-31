@@ -17,9 +17,9 @@ return [
     'feature list' => 'feature list',
     'image' => 'image',
     'roles' => 'roles',
-    'images'=>'images',
-    'genral'=>'genral',
-    'price'=>'price',
+    'images' => 'images',
+    'genral' => 'genral',
+    'price' => 'price',
 
     'permissions' => 'roles',
     'choose any roles' => 'choose any roles',
@@ -32,6 +32,8 @@ return [
         'start_price' => 'start_price',
         'status' => 'status',
         'zaman' => 'zaman',
+        'about us' => 'about us',
+
         'seller type' => 'seller_type',
         'enforcement' => 'enforcement',
 
@@ -50,25 +52,37 @@ return [
 
 
     ],
+    'categories' => [
+        'title'  => 'title ',
+        'categories'  => 'categories ',
+        'active'  => 'active ',
+        'description'  => 'description',
+    ],
+    'banners' => [
+        'title'  => 'الاسم ',
+        'banners'  => 'البانر ',
+        'active'  => 'تفعيل ',
+        'description'  => 'الوصف',
+    ],
     'real estates' => [
         'real estates'  => 'real estates ',
         'min price' => 'min price',
         'max price' => ' max price',
-        'pending'=>'pending',
-        'approved'=>'approved',
-        'rejected'=>'rejected ',
-        'buying'=>'buying',
-        'hire'=>'hire',
-        'purpose'=>'purpose',
-        'searching real estate'=>'searching real estate',
-        'investor'=>'investor',
-        'broker'=>'broker',
+        'pending' => 'pending',
+        'approved' => 'approved',
+        'rejected' => 'rejected ',
+        'buying' => 'buying',
+        'hire' => 'hire',
+        'purpose' => 'purpose',
+        'searching real estate' => 'searching real estate',
+        'investor' => 'investor',
+        'broker' => 'broker',
 
-        'description'=>'description',
-        'type clinet'=>'type clinet',
-        'how want purchase'=>'how want purchase',
-        'cash'=>'cash',
-        'finance'=>'finance',
+        'description' => 'description',
+        'type clinet' => 'type clinet',
+        'how want purchase' => 'how want purchase',
+        'cash' => 'cash',
+        'finance' => 'finance',
 
 
     ]

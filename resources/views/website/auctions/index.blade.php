@@ -8,6 +8,10 @@
             scale: .7;
         }
 
+        /* body {
+            overflow: hidden;
+        } */
+
         .mousey {
             width: 3px;
             padding: 10px 15px;
@@ -29,6 +33,7 @@
             animation-iteration-count: infinite;
         }
 
+
         @keyframes scroll {
             0% {
                 opacity: 0;
@@ -46,19 +51,18 @@
     </style>
 @endsection
 @section('content')
-
-
-
-
-<livewire:filter-auction-search-component />
-
+    <livewire:filter-auction-search-component />
 @endsection
 @push('js')
-    <script>
+    {{-- <script>
+                    alert('ff')
+
         function togglePopUp(popUpId) {
             document.getElementById('popUp').classList.toggle('hidden')
             document.getElementById(popUpId).classList.toggle('hidden')
 
         }
-    </script>
+    </script> --}}
+
+
 @endpush

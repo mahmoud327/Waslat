@@ -46,16 +46,77 @@
                 <h1>تسجيل الدخول <i class="fa-solid fa-user"></i></h1>
             </a>
         </div>
+{{--
+        <div class="relative">
+            <button class="hover:bg-gray-100 p-3 rounded-lg cursor-pointer">
+                {{ LaravelLocalization::getCurrentLocaleNative() }}
+            </button> --}}
+            {{-- <ul class="absolute left-0 mt-2 bg-white border rounded-lg shadow-lg hidden ulCustomDeopDown">
+                @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                    <li>
+                        <a rel="alternate" hreflang="{{ $localeCode }}"
+                            href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}"
+                            class="block px-4 py-2 text-gray-800 hover:bg-gray-200">
+                            {{ $properties['native'] }}
+                        </a>
+                    </li>
+                @endforeach
+            </ul> --}}
 
-        <div class="hover:bg-gray-100 p-3 rounded-lg cursor-pointer">
-            <h1>English <i class="fa-solid fa-earth-americas"></i></h1>
+
+
+
+
+
+
+
+
+            <div class="relative">
+                <button onclick="toggleHidden('budget_dropDown')"
+                    class="relative group focus:border-[#6f10a2] mx-2 border p-1 md:p-3 md:px-5 md:rounded-full">
+                    <h1 class="flex flex-row-reverse items-center gap-2 text-gray-500">
+                                        {{ LaravelLocalization::getCurrentLocaleNative() }}
+                     <i class="fa-solid fa-angle-down"></i>
+                    </h1>
+                </button>
+
+
+                <div id="budget_dropDown"
+                    class="absolute right-0 hidden p-1 py-2 mt-2 bg-white border border-gray-300 rounded-lg shadow-lg">
+                    <div class="w-full text-right">
+                        <ul class="absolute left-0 mt-2 bg-white border rounded-lg shadow-lg hidden ulCustomDeopDown">
+                            @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                                <li>
+                                    <a rel="alternate" hreflang="{{ $localeCode }}"
+                                        href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}"
+                                        class="block px-4 py-2 text-gray-800 hover:bg-gray-200">
+                                        {{ $properties['native'] }}
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+
+
+
         </div>
+
+        <!-- Add this script to handle the dropdown toggle -->
+
     </div>
 
     <a href="{{ route('home') }}" class="hidden lg:flex text-4xl uppercase  flex-col items-center  ">
         <h1>زم<span class="text-[#7E918C]">ن</span></h1>
         <h1><span class="text-[#7E918C]">za</span>man</h1>
-      </a>
+    </a>
 
     <div class="hidden lg:flex   gap-4 flex-row-reverse text-lg whitespace-nowrap">
         <button id="mySearchBtn" class="group relative hover:bg-gray-100 p-3 rounded-lg cursor-pointer">
@@ -87,80 +148,36 @@
 
             </div>
         </button>
-
-
-
-
         <div id="search_dialoag"
             class=" hidden  absolute top-[5rem] z-[2] left-0 bg-white w-4/5 ml-10 m-auto h-48 rounded-lg drop-shadow-lg justify-center items-center overflow-x-scroll">
-
             <div class="absolute top-5 right-8 cursor-pointer text-3xl" onclick="hideSearch_dialoag()"><i
                     class="fa-solid fa-xmark"></i></div>
+            @foreach ($cities as $city)
+                <div class="group text-center h-full p-2 cursor-pointer">
+                    <a href="{{ route('real-estates.index', ['city_id' => $city->id, 'type' => 'hire']) }}">
+                        <img src="{{ asset($city->getFirstMedia('cities')->getUrl()) }}" alt=""
+                            class="h-4/5 rounded-lg group-hover:scale-110 transition-all w-[204px] h-[130px]" />
+                        <h1 class="text-black">{{ $city->name }}</h1>
 
-            <div class="group text-center h-full p-2 cursor-pointer">
-                <img src="asset/citys/jeddah-city-view.jpg" alt=""
-                    class="h-4/5 rounded-lg group-hover:scale-110 transition-all" />
-                <h1 class="text-black">جدة</h1>
-            </div>
-            <div class="group text-center h-full p-2 cursor-pointer">
-                <img src="asset/citys/mecca-city-view.png" alt=""
-                    class="h-4/5 rounded-lg group-hover:scale-110 transition-all" />
-                <h1 class="text-black">مكة</h1>
-            </div>
-            <div class="group text-center h-full p-2 cursor-pointer">
-                <img src="asset/citys/jeddah-city-view.jpg" alt=""
-                    class="h-4/5 rounded-lg group-hover:scale-110 transition-all" />
-                <h1 class="text-black">مدينة</h1>
-            </div>
-            <div class="group text-center h-full p-2 cursor-pointer">
-                <img src="asset/citys/riyadh-city-view.jpg" alt=""
-                    class="h-4/5 rounded-lg group-hover:scale-110 transition-all" />
-                <h1 class="text-black">الرياض</h1>
-            </div>
-
+                    </a>
+                </div>
+            @endforeach
         </div>
 
         <div class="hover:bg-gray-100 p-3 rounded-lg cursor-pointer">
+
             <h1>
-                <a href="{{ route('auctions.index') }}">المزادات</a>
+                <a href="{{ route('auctions.index') }}">{{ trans('lang.auctions.auctions') }}</a>
             </h1>
         </div>
 
-        <div class="hover:bg-gray-100 p-3 rounded-lg cursor-pointer">
-            <h1>المخططات</h1>
-        </div>
 
         <div class="hover:bg-gray-100 p-3 rounded-lg cursor-pointer">
-            <button class="relative group">
-                <h1 class="flex flex-row-reverse items-center gap-1">
-                    المساعدة <i class="fa-solid fa-question scale-x-[-1]"></i>
-                </h1>
-
-                <div
-                    class="hidden absolute top-16 -right-3 bg-white drop-shadow-md w-[350px] h-48 rounded-tl-2xl
-        rounded-bl-2xl border group-focus:flex flex-col gap-3 justify-around p-4">
-
-                    <div onclick="makeCall('+201276277')"
-                        class="flex text-right items-center justify-around w-full hover:bg-gray-100 p-2 rounded-lg">
-                        <div>
-                            <h1 class="">استعلامات المزادات</h1>
-                            <p class="text-gray-400 font-thin">+201276277</p>
-                        </div>
-                        <i class="fa-solid fa-phone text-3xl"></i>
-                    </div>
-
-                    <div onclick="makeCall('+201276277')"
-                        class="  focus:bg-red-500 flex  text-right items-center justify-around  w-full hover:bg-gray-100 p-2 rounded-lg">
-                        <div>
-                            <h1 class="">الاستعلامات العامة</h1>
-                            <p class="text-gray-400 font-thin">+201276277</p>
-                        </div>
-                        <i class="fa-solid fa-phone text-2xl"></i>
-                    </div>
-
-                </div>
-            </button>
+            <h1>
+                <a href="{{ route('auctions.index') }}">@lang('lang.about us')</a>
+            </h1>
         </div>
+
 
     </div>
 
@@ -175,11 +192,12 @@
 
     <!-- __________________small screens -->
     <div class="lg:hidden  flex hover:bg-gray-100 p-3 rounded-lg cursor-pointer z-50 mt-5">
-        <h1>English <i class="fa-solid fa-earth-americas"></i></h1>
+        <h1>{{ LaravelLocalization::getCurrentLocaleNative() }} <i class="fa-solid fa-earth-americas"></i></h1>
+
     </div>
 
-    <div class="lg:hidden  flex  w-44"><a href="/index.html"><img src="{{ asset('website/image/logo.svg')}}" alt=""
-                class="w-full" /></a></div>
+    <div class="lg:hidden  flex  w-44"><a href="/index.html"><img src="{{ asset('website/image/logo.svg') }}"
+                alt="" class="w-full" /></a></div>
 
 
     <div class="lg:hidden  flex cursor-pointer" onclick="toggleMenuSM()"><i class="fa-solid fa-bars text-3xl"></i>

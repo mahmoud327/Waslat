@@ -7,7 +7,9 @@ use App\Filament\Resources\CityResource\RelationManagers;
 use App\Models\City;
 use App\Models\State;
 use Filament\Forms;
+use Filament\Forms\Components\Card;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Resources\Concerns\Translatable;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
@@ -39,9 +41,13 @@ class CityResource extends Resource
         return $form
             ->schema([
 
-                Forms\Components\FileUpload::make('image')
+                Card::make()->schema([
+
+
+                SpatieMediaLibraryFileUpload::make('image')
                 ->label(trans('lang.image'))
-                ->required(),
+                ->collection('cities')
+                ,
                 //
                 Forms\Components\TextInput::make('name')
                     ->label(trans('lang.name'))
@@ -57,6 +63,7 @@ class CityResource extends Resource
                     ->relationship('state', 'name')
                     ->searchable()
                     ->required(),
+                ])
 
             ]);
     }
