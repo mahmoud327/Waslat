@@ -155,7 +155,7 @@
             @foreach ($cities as $city)
                 <div class="group text-center h-full p-2 cursor-pointer">
                     <a href="{{ route('real-estates.index', ['city_id' => $city->id, 'type' => 'hire']) }}">
-                        <img src="{{ asset($city->getFirstMedia('cities')->getUrl()) }}" alt=""
+                        <img src="{{ asset(optional($city->getFirstMedia('cities'))->getUrl()) }}" alt=""
                             class="h-4/5 rounded-lg group-hover:scale-110 transition-all w-[204px] h-[130px]" />
                         <h1 class="text-black">{{ $city->name }}</h1>
 
