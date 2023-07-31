@@ -188,7 +188,8 @@
 
                                                 <img class="rounded-md w-full"
                                                     src="{{ optional($realEstate->getFirstMedia('images'))->getUrl() }}"
-                                                    alt="Image 2">
+                                                    alt="Image 2" style="
+                                                    height: 280px;">
                                             </div>
                                             <div class="absolute bottom-2 right-0 ">
 
