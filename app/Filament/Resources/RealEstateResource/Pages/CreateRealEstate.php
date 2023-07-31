@@ -16,7 +16,7 @@ class CreateRealEstate extends CreateRecord
             Actions\LocaleSwitcher::make(),
             // ...
         ];
-    // }
+    }
     // protected function mutateFormDataBeforeCreate(array $data): array
     // {
     //     $data['user_id'] = auth()->id();
