@@ -76,7 +76,11 @@ class RealEstateResource extends Resource
                                         ->required(),
 
 
-                           
+                                    Select::make('user_id')
+                                        ->relationship('user','name')
+                                        ->label(trans('lang.users'))
+                                        ->required()
+                                        ->preload(),
 
                                     Select::make('category_id')
                                         ->relationship('category', 'title')
