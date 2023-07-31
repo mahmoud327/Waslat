@@ -83,6 +83,13 @@ class RealEstateResource extends Resource
                                         ->required()
                                         ->preload(),
 
+                                    Select::make('category_id')
+                                        ->relationship('category', 'title')
+                                        ->label(trans('lang.category'))
+
+                                        ->required()
+                                        ->preload(),
+
 
                                     Select::make('status')
                                         ->options([

@@ -31,6 +31,10 @@ class RealEstate extends Model implements HasMedia
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+    public function category(): BelongsTo
+    {
+        return $this->belongsTo(Category::class, 'user_id');
+    }
 
     public function getStartDate()
     {
