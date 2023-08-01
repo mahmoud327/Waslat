@@ -11,6 +11,7 @@ return [
     'phone code' => 'phone code',
     'users' => 'users',
     'email' => 'email',
+    'about us' => 'about us',
     'password' => 'password',
     'users' => 'users',
     'created_at' => 'created_at',
