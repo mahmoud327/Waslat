@@ -2,7 +2,7 @@
 
 
     <div
-        class="border border-gray-300 w-full justify-around items-center p-5 text-black mt-[82px] bg-white drop-shadow-lg flex flex-wrap-reverse  gap-y-2  z-[99]">
+        class="border border-gray-300 w-full justify-around items-center p-5 text-black mt-[130px] bg-white drop-shadow-lg flex flex-wrap-reverse  gap-y-2  z-[99]">
 
         <button class="relative group border p-2 rounded-md shadow cursor-pointer  ">
             <h1><i class="fa-solid fa-ellipsis-v"></i> قائمة المزاد</h1>
@@ -52,7 +52,7 @@
 
     <div class="grid grid-cols-12 justify-center lg:justify-end md:w-4/5 mt-5  m-auto gap-5  ">
         @foreach ($auctions as $auction)
-            <a href="{{ route('auctions.show', $auction->id) }}" class="col-span-4">
+            <a href="{{ route('auctions.show', $auction->id) }}" class="col-span-12  md:col-span-6  lg:col-span-4">
                 <div
                     class="relative overflow-hidden rounded-t-md border bg-green-400  drop-shadow-md   rounded-b-lg z-[-1] ">
 

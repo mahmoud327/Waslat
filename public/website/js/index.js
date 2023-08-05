@@ -44,7 +44,7 @@ function addScriptToHeadOnce() {
     sell.style.color='black'
     rent.style.background = '#6f10a2'
     rent.style.color='white'
-    document.getElementById('search_dialoag').style.display = 'flex'
+    document.getElementById('search_rent').style.display = 'flex'
   }
 
   }

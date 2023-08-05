@@ -15,6 +15,7 @@ class HomeController extends Controller
             ->get();
 
         $categories = Category::latest()
+            ->active()
             ->with(['realEstates','realEstates.city'])
             ->get();
         return view('website.home', get_defined_vars());

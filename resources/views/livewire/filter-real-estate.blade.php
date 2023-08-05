@@ -1,6 +1,6 @@
 <div class="container">
     <div
-        class=" bg-white border border-gray-300 w-full justify-around items-center p-5 text-black mt-[82px]  drop-shadow-lg flex flex-wrap-reverse gap-y-3">
+        class=" bg-white border border-gray-300 w-full justify-around items-center p-5 text-black mt-[130px]  drop-shadow-lg flex flex-wrap-reverse gap-y-3">
 
 
 
@@ -283,10 +283,10 @@
         <div><img src="" alt=""></div>
     </div>
 
-    <div class="grid grid-cols-12     m-auto gap-10 px-[40px]">
+    <div class="grid grid-cols-4     m-auto gap-10 md:px-[40px]">
 
         @foreach ($real_estates as $real_estate)
-            <div class=" mt-5 z-[1]  sm:col-span-12 md:col-span-6 lg:col-span-3  m-auto ">
+            <div class=" mt-5 z-[1]  col-span-4 md:col-span-2 lg:col-span-1  m-auto ">
                 <a href="{{ route('real-estates.show', $real_estate->id) }}">
 
                     <div
@@ -296,10 +296,10 @@
                             class=" absolute top-48 right-2 text-white bg-purple-400 text-black p-2 rounded text-xs ">
                             مشروع
                         </button>
-               
 
 
-                        <img src="{{ asset(optional($real_estate->getFirstMedia('images'))->getUrl()) }}"
+
+                        <img class="w-[532px] md:w-full h-[200px]" src="{{ asset(optional($real_estate->getFirstMedia('images'))->getUrl()) }}"
                             alt="" class="w-full h-60">
                         <div class="flex flex-col items-end text-black bg-[#f6f6de00] border p-5">
 

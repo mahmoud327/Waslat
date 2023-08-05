@@ -34,7 +34,7 @@
 
 
         </div>
-{{--
+        {{--
         <div class="bg-main p-3 rounded-lg cursor-pointer text-white">
             <h1 class="flex flex-row-reverse items-center gap-3">
                 إضافة عقار <i class="fa-solid fa-plus"></i>
@@ -46,12 +46,12 @@
                 <h1>تسجيل الدخول <i class="fa-solid fa-user"></i></h1>
             </a>
         </div> --}}
-{{--
+        {{--
         <div class="relative">
             <button class="hover:bg-gray-100 p-3 rounded-lg cursor-pointer">
                 {{ LaravelLocalization::getCurrentLocaleNative() }}
             </button> --}}
-            {{-- <ul class="absolute left-0 mt-2 bg-white border rounded-lg shadow-lg hidden ulCustomDeopDown">
+        {{-- <ul class="absolute left-0 mt-2 bg-white border rounded-lg shadow-lg hidden ulCustomDeopDown">
                 @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                     <li>
                         <a rel="alternate" hreflang="{{ $localeCode }}"
@@ -71,8 +71,8 @@
 
 
 
-            <div class="relative">
-                {{-- <button onclick="toggleHidden('budget_dropDown')"
+        <div class="relative">
+            {{-- <button onclick="toggleHidden('budget_dropDown')"
                     class="relative group focus:border-[#6f10a2] mx-2 border p-1 md:p-3 md:px-5 md:rounded-full">
                     <h1 class="flex flex-row-reverse items-center gap-2 text-gray-500">
                                         {{ LaravelLocalization::getCurrentLocaleNative() }}
@@ -81,7 +81,7 @@
                 </button> --}}
 
 
-                {{-- <div id="budget_dropDown"
+            {{-- <div id="budget_dropDown"
                     class="absolute right-0 hidden p-1 py-2 mt-2 bg-white border border-gray-300 rounded-lg shadow-lg">
                     <div class="w-full text-right">
                         <ul class="absolute left-0 mt-2 bg-white border rounded-lg shadow-lg hidden ulCustomDeopDown">
@@ -99,22 +99,22 @@
                     </div>
                 </div> --}}
 
-            </div>
-
-
-
-
-
-
-
         </div>
 
-        <!-- Add this script to handle the dropdown toggle -->
+
+
+
+
+
+
+    </div>
+
+    <!-- Add this script to handle the dropdown toggle -->
 
     </div>
 
     <a href="{{ route('home') }}" class="hidden lg:flex text-4xl uppercase  flex-col items-center  ">
-      <img src="{{ asset('website/image/logo.png') }}" style="width:150px">
+        <img src="{{ asset('website/image/logo.png') }}" style="width:150px">
     </a>
 
     <div class="hidden lg:flex   gap-4 flex-row-reverse text-lg whitespace-nowrap">
@@ -163,6 +163,24 @@
             @endforeach
         </div>
 
+
+
+      <div id="search_rent"
+        class=" hidden  absolute top-[5rem] z-[2] left-0 bg-white w-4/5 ml-10 m-auto h-48 rounded-lg drop-shadow-lg justify-center items-center overflow-x-scroll">
+        <div class="absolute top-5 right-8 cursor-pointer text-3xl" onclick="hideSearch_dialoag()"><i
+                class="fa-solid fa-xmark"></i></div>
+        @foreach ($cities as $city)
+            <div class="group text-center h-full p-2 cursor-pointer">
+                <a href="{{ route('real-estates.index', ['city_id' => $city->id, 'type' => 'buying']) }}">
+                    <img src="{{ asset(optional($city->getFirstMedia('cities'))->getUrl()) }}" alt=""
+                        class="h-4/5 rounded-lg group-hover:scale-110 transition-all w-[204px] h-[130px]" />
+                    <h1 class="text-black">{{ $city->name }}</h1>
+
+                </a>
+            </div>
+        @endforeach
+    </div>
+
         <div class="hover:bg-gray-100 p-3 rounded-lg cursor-pointer">
 
             <h1>
@@ -195,8 +213,8 @@
 
     </div>
 
-    <div class="lg:hidden  flex  w-44"><a href="/index.html"><img src="{{ asset('website/image/logo.svg') }}"
-                alt="" class="w-full" /></a></div>
+    <div class="lg:hidden  flex  w-44"><a href="{{ route('home') }}">      <img src="{{ asset('website/image/logo.png') }}" style="width:150px">
+    </a></div>
 
 
     <div class="lg:hidden  flex cursor-pointer" onclick="toggleMenuSM()"><i class="fa-solid fa-bars text-3xl"></i>

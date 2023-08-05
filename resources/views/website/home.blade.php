@@ -123,7 +123,7 @@
     <main class=" md:mt-32 mt-14 ">
 
 
-        <div class="w-full  overflow-hidden drop-shadow-lg px-10 mb-[50px]">
+        <div class="w-full  overflow-hidden drop-shadow-lg  mb-[50px]">
             <div class="swiper-container3 relative w-full m-auto ">
                 <div class="swiper-wrapper drop-shadow-lg p-2">
 
@@ -147,8 +147,7 @@
 
 
                 <!-- Add navigation arrows -->
-                <div id="swiper-button-prev1" class="swiper-button-prev "></div>
-                <div id="swiper-button-next1" class="swiper-button-next "></div>
+
 
             </div>
 
@@ -172,7 +171,7 @@
 
 
             @foreach ($categories as $category)
-                <div class=" container rtl:text-right ltr:text-left flex flex-col items-end mt-5  m-auto px-[110px]">
+                <div class=" container rtl:text-right ltr:text-left flex flex-col items-end mt-5  m-auto px-[10] md:px-[110px]">
 
                     <h1 class="text-black text-3xl mb-2"> {{ $category->title }} </h1>
 
@@ -319,39 +318,6 @@
 
             <!-- ______ -->
 
-            <div
-                class="fade-in relative bg-[#3A564F] bg-opacity-10 w-full h-96 flex flex-col items-end lg:items-center justify-around overflow-hidden  lg:flex-row mt-5 ">
-                <img class=" absolute bottom-0 left-0 md:left-3 h-40  md:static md:h-full "
-                    src="{{ asset('website/image/homepageDownloadAppBanner.png') }}" alt="">
-
-
-                <div class="rtl:text-right ltr:text-left flex flex-col items-end gap-3 p-3">
-                    <h1 class="text-4xl font-semibold">حمل تطبيقنا</h1>
-                    <p class="text-gray-600 md:text-xl group-hover:text-white ">اضغط على الرابط ادناه لتحميل تطبيق وصلت
-                        وتصفح
-                        الآلاف
-                        من العقارات</p>
-
-                    <div class="flex items-center justify-between gap-5">
-                        <div class="w-32 md:w-40 m-auto">
-                            <a href=""><img src="https://wasalt.com/images/AppStore.svg" alt=""
-                                    class="w-full"></a>
-                        </div>
-                        <div class="w-32 md:w-40 m-auto">
-                            <a href=""><img src="https://wasalt.com/images/PlayStore.svg" alt=""
-                                    class="w-full"></a>
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col items-center justify-between gap-5">
-                        <p class="text-gray-600 text-xl group-hover:text-white ">او امسح رمز الكيو أر (QR) مباشرة</p>
-                        <div class="ml-40  md:ml-0 w-28 m-auto p-2 bg-white drop-shadow-md">
-                            <img src="https://wasalt.com/images/wasalt_qr_header.svg" alt="" class="w-full">
-                        </div>
-                    </div>
-                </div>
-
-            </div>
 
 
 

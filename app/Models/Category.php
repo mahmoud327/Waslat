@@ -23,5 +23,10 @@ class Category extends Model implements HasMedia
     public function realEstates(){
         return $this->hasmany(RealEstate::class);
     }
+
+    public function scopeActive($q){
+      return   $q->where('active',1);
+
+    }
     protected $guarded = ['id'];
 }
