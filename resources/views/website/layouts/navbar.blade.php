@@ -114,7 +114,7 @@
     </div>
 
     <a href="{{ route('home') }}" class="hidden lg:flex text-4xl uppercase  flex-col items-center  ">
-      <img src="{{ asset('website/image/logo.png') }}" width="120">
+      <img src="{{ asset('website/image/logo.png') }}" style="width:150px">
     </a>
 
     <div class="hidden lg:flex   gap-4 flex-row-reverse text-lg whitespace-nowrap">
