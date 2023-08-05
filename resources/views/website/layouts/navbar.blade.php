@@ -34,7 +34,7 @@
 
 
         </div>
-
+{{--
         <div class="bg-main p-3 rounded-lg cursor-pointer text-white">
             <h1 class="flex flex-row-reverse items-center gap-3">
                 إضافة عقار <i class="fa-solid fa-plus"></i>
@@ -45,7 +45,7 @@
             <a href="{{ route('login-page') }}">
                 <h1>تسجيل الدخول <i class="fa-solid fa-user"></i></h1>
             </a>
-        </div>
+        </div> --}}
 {{--
         <div class="relative">
             <button class="hover:bg-gray-100 p-3 rounded-lg cursor-pointer">
@@ -72,16 +72,16 @@
 
 
             <div class="relative">
-                <button onclick="toggleHidden('budget_dropDown')"
+                {{-- <button onclick="toggleHidden('budget_dropDown')"
                     class="relative group focus:border-[#6f10a2] mx-2 border p-1 md:p-3 md:px-5 md:rounded-full">
                     <h1 class="flex flex-row-reverse items-center gap-2 text-gray-500">
                                         {{ LaravelLocalization::getCurrentLocaleNative() }}
                      <i class="fa-solid fa-angle-down"></i>
                     </h1>
-                </button>
+                </button> --}}
 
 
-                <div id="budget_dropDown"
+                {{-- <div id="budget_dropDown"
                     class="absolute right-0 hidden p-1 py-2 mt-2 bg-white border border-gray-300 rounded-lg shadow-lg">
                     <div class="w-full text-right">
                         <ul class="absolute left-0 mt-2 bg-white border rounded-lg shadow-lg hidden ulCustomDeopDown">
@@ -97,7 +97,7 @@
                         </ul>
 
                     </div>
-                </div>
+                </div> --}}
 
             </div>
 
@@ -114,8 +114,7 @@
     </div>
 
     <a href="{{ route('home') }}" class="hidden lg:flex text-4xl uppercase  flex-col items-center  ">
-        <h1>زم<span class="text-[#7E918C]">ن</span></h1>
-        <h1><span class="text-[#7E918C]">za</span>man</h1>
+      <img src="{{ asset('website/image/logo.png') }}" width="120">
     </a>
 
     <div class="hidden lg:flex   gap-4 flex-row-reverse text-lg whitespace-nowrap">
