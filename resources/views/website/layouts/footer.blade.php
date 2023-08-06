@@ -54,6 +54,5 @@
 
 
   </div>
-  <div class="text-blue-500 text-xl capitalize p-2 text-center mt-2">تم انشاء الموقع بواسطة <a href="https://www.facebook.com/profile.php?id=100010546894506">karem mahmoud</a> | <a href="https://www.linkedin.com/in/mustafa-gamal-ba48a7243/" class="hover:scale-y-110 transition-all">mustafa gamal</a></div>
 
   </footer>
