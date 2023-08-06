@@ -2,7 +2,7 @@
     class="flex justify-around items-center fixed top-0 drop-shadow-md bg-white w-full lg:p-3 p-0  md:justify-between z-10">
 
     <div class=" hidden  lg:flex  gap-4 flex-row-reverse text-lg whitespace-nowrap">
-        <div class="hover:bg-gray-100 p-3 rounded-lg cursor-pointer">
+        {{-- <div class="hover:bg-gray-100 p-3 rounded-lg cursor-pointer">
             <button class="relative group">
                 <h1>
                     تحميل التطبيق <i class="fa-solid fa-mobile-screen-button"></i>
@@ -10,7 +10,7 @@
 
                 <div
                     class="hidden absolute top-16 -right-3 bg-white drop-shadow-md w-[300px] h-96 rounded-br-2xl
-          rounded-bl-2xl border group-focus:flex flex-col gap-3 justify-around p-4 whitespace-nowrap">
+                    rounded-bl-2xl border group-focus:flex flex-col gap-3 justify-around p-4 whitespace-nowrap">
 
                     <h1>او امسح رمز الكيو أر (QR) مباشرة</h1>
 
@@ -33,7 +33,7 @@
 
 
 
-        </div>
+        </div> --}}
         {{--
         <div class="bg-main p-3 rounded-lg cursor-pointer text-white">
             <h1 class="flex flex-row-reverse items-center gap-3">
