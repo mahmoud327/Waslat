@@ -24,12 +24,12 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
 
-         $cities = City::latest()
-            ->get();
+        //  $cities = City::latest()
+        //     ->get();
 
 
 
 
-        View::share(['cities' => $cities]);
+        // View::share(['cities' => $cities]);
     }
 }

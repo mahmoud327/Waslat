@@ -20,7 +20,7 @@ return new class extends Migration
             $table->text('phone')->nullable();
             $table->text('image')->nullable();
             $table->double('start_price')->default(0);
-            $table->enum('seller_type',['seller','zaman'])->default(0);
+            $table->enum('seller_type',['seller','zaman']);
             $table->double('before_price')->default(0);
             $table->string('area')->nullable(0);
             $table->double('after_price')->default(0);
