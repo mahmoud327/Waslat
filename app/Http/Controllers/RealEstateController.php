@@ -31,6 +31,8 @@ class RealEstateController extends Controller
         $real_estates = RealEstate::query()
             ->latest()
             ->with(['city','category'])
+            ->filter($request->all())
+
             ->paginate($request->paginate);
             $real_estates = RealestateResource::collection($real_estates)->response()->getData(true);
             $success['real_estates'] = $real_estates['data'];
