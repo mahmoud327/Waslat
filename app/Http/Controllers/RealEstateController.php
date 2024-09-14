@@ -28,11 +28,11 @@ class RealEstateController extends Controller
     }
     public function homeRealEstates(Request $request)
     {
-        $real_estates = RealEstate::query()
+        $query = RealEstate::query()
             ->latest()
             ->with(['city','category'])
-            ->filter($request->all())
-            ->paginate($request->paginate);
+            ->filter($request->all());
+            $real_estates = $query->paginate($request->paginate);
             $real_estates = RealestateResource::collection($real_estates)->response()->getData(true);
             $success['real_estates'] = $real_estates['data'];
             $success['meta'] = $real_estates['meta'];
