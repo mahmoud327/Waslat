@@ -28,6 +28,7 @@ class RealEstateController extends Controller
     }
     public function homeRealEstates(Request $filters)
     {
+       return RealEstate::get();
         $real_estates = RealEstate::query()
             ->when($filters['type'] ,function($query)use($filters) {
                 $query->where('type', $filters['type'] );
