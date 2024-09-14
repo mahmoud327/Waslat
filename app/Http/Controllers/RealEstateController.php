@@ -26,7 +26,7 @@ class RealEstateController extends Controller
             return responseSuccess($success);
 
     }
-    public function homeRealEstates(Request $request)
+    public function homeRealEstates(Request $filters)
     {
         $real_estates = RealEstate::query()
             ->latest()
@@ -102,7 +102,7 @@ class RealEstateController extends Controller
             ->when($filters['user_id'] ?? null, function ($query, $userId) {
                 $query->where('user_id', $userId);
             })
-            ->paginate($request->paginate);
+            ->paginate($filters->paginate);
             $real_estates = RealestateResource::collection($real_estates)->response()->getData(true);
             $success['real_estates'] = $real_estates['data'];
             $success['meta'] = $real_estates['meta'];
