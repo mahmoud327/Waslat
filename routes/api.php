@@ -1,6 +1,9 @@
 <?php
 use App\Http\Controllers\Api\Auth\AuthController;
+use App\Http\Controllers\Api\CategoryController;
+use App\Http\Controllers\Api\CityController;
 use App\Http\Controllers\Api\User\UserController;
+use App\Http\Controllers\RealEstateController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 /*
@@ -27,5 +30,12 @@ Route::group(['prefix' => 'auth'], function () {
     });
     Route::post('resend-otp', [AuthController::class, 'resendOtp']);
 });
-Route::post('profile-info', [UserController::class, 'profileInfo'])->middleware('auth:sanctum');
-####### end auth #########
+Route::get('home-real-estates',[RealEstateController::class,'homeRealEstates']);
+Route::get('cities', [CityController::class, 'index']);
+Route::get('states', [CityController::class, 'states']);
+
+Route::middleware('auth:sanctum')->group(function () {
+    Route::post('profile-info', [UserController::class, 'profileInfo']);
+    Route::get('categories', [CategoryController::class, 'index']);
+    Route::apiResource('real-estates',RealEstateController::class);
+});

@@ -13,15 +13,31 @@ return new class extends Migration
     {
         Schema::create('real_estates', function (Blueprint $table) {
             $table->id();
-            $table->enum('purpose',['buying','Hire'])->nullable();
-            $table->enum('how_purchase',['cash','finance'])->nullable();
-            $table->double('min_price')->default(0);
+            $table->string('type')->nullable();
+            $table->double('price')->default(0);
             $table->string('phone')->nullable();
+            $table->string('number_of_rooms')->nullable();
+            $table->string('bathrooms_of_rooms')->nullable();
+            $table->string('hall_number')->nullable();
+            $table->string('number_of_council_rooms')->nullable();
+            $table->string('land_area')->nullable();
+            $table->string('street')->nullable();
+            $table->string('number_of_streets')->nullable();
+            $table->string('street_area')->nullable();
+            $table->string('street_facing')->nullable();
+            $table->tinyInteger('electricity')->default(0);
+            $table->tinyInteger('water')->default(0);
+            $table->string('Depth')->nullable();
+            $table->string('features_facilities')->nullable();
+            $table->string('Real_estate_characteristics')->nullable();
             $table->string('whatsup')->nullable();
+            $table->string('email')->nullable();
+            $table->string('marketer_name')->nullable();
+            $table->string('license_number')->nullable();
             $table->json('description')->nullable();
             $table->foreignId('city_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('category_id')->constrained()->cascadeOnDelete();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
-            $table->enum('type_clinet',['searching_real_estate','investor','broker'])->nullable();
 
 
             $table->timestamps();
