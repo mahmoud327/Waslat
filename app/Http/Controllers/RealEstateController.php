@@ -29,8 +29,8 @@ class RealEstateController extends Controller
     public function homeRealEstates(Request $filters)
     {
         $real_estates = RealEstate::query()
-            ->when($filters['type'] ?? null, function ($query, $type) {
-                $query->where('type', $type);
+            ->when($filters['type'] ,function($query)use($filters) {
+                $query->where('type', $filters['type'] );
             })
             ->when(($filters['price_from'] ?? null) &&
              ($filters['price_to'] ?? null), function ($query) use ($filters) {
