@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\User\UserController;
 use App\Http\Controllers\RealEstateController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -30,12 +31,17 @@ Route::group(['prefix' => 'auth'], function () {
     });
     Route::post('resend-otp', [AuthController::class, 'resendOtp']);
 });
-Route::get('home-real-estates',[RealEstateController::class,'homeRealEstates']);
-Route::get('cities', [CityController::class, 'index']);
-Route::get('states', [CityController::class, 'states']);
 
-Route::middleware('auth:sanctum')->group(function () {
-    Route::post('profile-info', [UserController::class, 'profileInfo']);
-    Route::get('categories', [CategoryController::class, 'index']);
-    Route::apiResource('real-estates',RealEstateController::class);
+Route::group(['middleware' => ['ChangeLanguage']], function () {
+
+    Route::get('home-real-estates', [RealEstateController::class, 'homeRealEstates']);
+    Route::get('cities', [CityController::class, 'index']);
+    Route::get('states', [CityController::class, 'states']);
+
+    Route::middleware('auth:sanctum')->group(function () {
+        Route::post('profile-info', [UserController::class, 'profileInfo']);
+        Route::get('categories', [CategoryController::class, 'index']);
+        Route::apiResource('real-estates', RealEstateController::class);
+    });
+
 });
