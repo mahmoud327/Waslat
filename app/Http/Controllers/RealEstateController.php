@@ -40,7 +40,6 @@ class RealEstateController extends Controller
     public function show($id)
     {
         $real_estate = RealEstate::query()
-            ->whereUserId(auth()->id())
             ->latest()
             ->with(['city', 'category'])
             ->find($id);

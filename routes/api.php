@@ -35,6 +35,7 @@ Route::group(['prefix' => 'auth'], function () {
 Route::group(['middleware' => ['ChangeLanguage']], function () {
 
     Route::get('home-real-estates', [RealEstateController::class, 'homeRealEstates']);
+    Route::get('home-real-estates/{id}', [RealEstateController::class, 'show']);
     Route::get('cities', [CityController::class, 'index']);
     Route::get('states', [CityController::class, 'states']);
 
