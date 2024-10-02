@@ -8,6 +8,7 @@ use App\Http\Controllers\BannerController;
 use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ChartsController;
+use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\FormController;
@@ -63,6 +64,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('admins', AdminController::class);
     Route::resource('users', UserController::class);
     Route::resource('auctions', AuctionController::class);
+    Route::resource('contact-us', ContactUsController::class);
     Route::get('terms', [TermController::class,'edit'])->name('term.edit');
     Route::put('terms', [TermController::class,'update'])->name('terms.update');
 

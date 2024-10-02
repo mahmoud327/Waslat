@@ -105,6 +105,11 @@ return [
     'Edit' => 'تعديل',
     'Delete' => 'حذف',
 
+    'Full Name' => 'الاسم الكامل',
+    'Contact Us Submissions' => 'تقديمات اتصل بنا',
+    'Contact Us' => 'تواصل معنا',
+    'Notes' => 'ملاحظات',
+
 
 ];
 

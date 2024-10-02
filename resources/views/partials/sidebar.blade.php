@@ -35,6 +35,12 @@
                         <span>{{ __('lang.Auctions') }}</span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{ route('contact-us.index') }}" class="waves-effect">
+                        <i class="mdi mdi-calendar-outline"></i>
+                        <span>{{ __('lang.Contact Us') }}</span>
+                    </a>
+                </li>
                 {{-- <li>
                     <a href="{{ route('admins.index') }}" class="waves-effect">
                         <i class="mdi mdi-calendar-outline"></i>

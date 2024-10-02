@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\Api\Auth\AuthController;
+use App\Http\Controllers\Api\Auth\ContactUsController;
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\CityController;
 use App\Http\Controllers\Api\User\UserController;
@@ -31,18 +32,15 @@ Route::group(['prefix' => 'auth'], function () {
     });
     Route::post('resend-otp', [AuthController::class, 'resendOtp']);
 });
-
 Route::group(['middleware' => ['ChangeLanguage']], function () {
-
     Route::get('home-real-estates', [RealEstateController::class, 'homeRealEstates']);
     Route::get('home-real-estates/{id}', [RealEstateController::class, 'show']);
     Route::get('cities', [CityController::class, 'index']);
     Route::get('states', [CityController::class, 'states']);
-
+    Route::post('contact-us', [ContactUsController::class, 'store']);
     Route::middleware('auth:sanctum')->group(function () {
         Route::post('profile-info', [UserController::class, 'profileInfo']);
         Route::get('categories', [CategoryController::class, 'index']);
         Route::apiResource('real-estates', RealEstateController::class);
     });
-
 });

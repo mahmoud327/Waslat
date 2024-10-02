@@ -145,4 +145,11 @@ return [
     'Edit' => 'Edit',
     'Delete' => 'Delete',
 
+
+    'Full Name' => 'Full Name',
+    'Contact Us Submissions' => 'Contact Us Submissions',
+    'Notes' => 'Notes',
+    'Contact Us' => 'Contact Us',
+
+
 ];
