@@ -25,7 +25,7 @@
     <section class="vh-100">
         <div class="container-fluid h-100">
             <div class="row h-100">
-                <div class="col-lg-6 d-flex align-items-center justify-content-center">
+                <div class="col-lg-4 d-flex align-items-center justify-content-center">
                     <div class="mx-auto w-100 max-w-sm">
                         <div class="text-center">
                             <a href="/">
@@ -162,7 +162,7 @@
                         </div> --}}
                     </div>
                 </div>
-                <div class="col-lg-6 d-none d-lg-block position-relative">
+                <div class="col-lg-8 d-none d-lg-block position-relative">
                     <img src="{{ asset('login.png')}}" class="position-absolute w-100 h-100 object-cover" alt="Login Image" />
                 </div>
             </div>
