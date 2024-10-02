@@ -14,13 +14,11 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
-    public function __construct(public AuthRepositoryInterface $authRepository)
-    {
-    }
+
     public function register(RegisterRequest $request)
     {
         try {
-            $user = $this->authRepository->register($request);
+             User::create($request->validated());
             return responseSuccess([
                 'code' => '1111',
             ], __('lang.users.Registered'));
