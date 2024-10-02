@@ -82,22 +82,25 @@
                                                     <td>{{ optional($auction->city)->name ?? 'N/A' }}</td>
                                                     <td>{{ optional($auction->category)->name ?? 'N/A' }}</td>
                                                     <td>
-                                                        @foreach ($auction->images as $image)
-                                                            <img src="{{ $image }}" alt="Auction Image" style="width: 50px; height: 50px; object-fit: cover; margin: 2px;">
+                                                        @foreach ($auction->getMedia('images') as $image)
+                                                            <img src="{{ $image->getUrl() }}" alt="Auction Image" style="width: 50px; height: 50px; object-fit: cover; margin: 2px;">
                                                         @endforeach
                                                     </td>
+
                                                     <td>
-                                                        @if ($auction->plan)
-                                                            <img src="{{ $auction->plan }}" alt="Plan" style="width: 50px; height: 50px; object-fit: cover;">
+                                                        @if ($auction->getFirstMedia('plans'))
+                                                            <img src="{{ $auction->getFirstMediaUrl('plans') }}" alt="Plan" style="width: 50px; height: 50px; object-fit: cover;">
                                                         @else
                                                             <span>No Plan</span>
                                                         @endif
                                                     </td>
                                                     <td>
-                                                        @foreach ($auction->videos as $video)
-                                                            <a href="{{ $video }}" target="_blank">View Video</a>
+                                                        @foreach ($auction->getMedia('videos') as $video)
+                                                            <a href="{{ $video->getUrl() }}" target="_blank">View Video</a>
                                                         @endforeach
                                                     </td>
+
+                                                    
                                                     <td>
                                                         <div class="d-flex flex-column flex-md-row" style="gap: 10px;">
                                                             {{-- Uncomment for Edit button
