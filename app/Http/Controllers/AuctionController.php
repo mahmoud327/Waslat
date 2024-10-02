@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Auction;
+use App\Models\RealEstate;
 use Illuminate\Http\Request;
 
 class AuctionController extends Controller
 {
     //
     public function index(){
-        $auctions=Auction::latest()->with('city')->get();
+        $auctions=RealEstate::latest()->with('city')->get();
         return view('auctions.index',compact('auctions'));
     }
     //

@@ -10,12 +10,8 @@
     <div class="main-content">
         <div class="page-content">
             <div class="container-fluid">
-
                 <div class="row">
                     <div class="col-12">
-                        {{-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bannerAddModal">
-                            @lang('lang.Add Auction')
-                        </button> --}}
                         <br>
 
                         <div class="card">
@@ -83,8 +79,8 @@
                                                     <td>{{ $auction->email }}</td>
                                                     <td>{{ $auction->marketer_name }}</td>
                                                     <td>{{ $auction->license_number }}</td>
-                                                    <td>{{ optional($auction->city)->name ?? 'N/A' }}</td> <!-- Assuming 'name' is a field in the cities table -->
-                                                    <td>{{ optional($auction->category)->name ?? 'N/A' }}</td> <!-- Assuming 'name' is a field in the categories table -->
+                                                    <td>{{ optional($auction->city)->name ?? 'N/A' }}</td>
+                                                    <td>{{ optional($auction->category)->name ?? 'N/A' }}</td>
                                                     <td>
                                                         @foreach ($auction->images as $image)
                                                             <img src="{{ $image }}" alt="Auction Image" style="width: 50px; height: 50px; object-fit: cover; margin: 2px;">
@@ -104,10 +100,11 @@
                                                     </td>
                                                     <td>
                                                         <div class="d-flex flex-column flex-md-row" style="gap: 10px;">
-                                                            {{-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bannerEditModal{{ $auction->id }}">
+                                                            {{-- Uncomment for Edit button
+                                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bannerEditModal{{ $auction->id }}">
                                                                 @lang('lang.Edit')
-                                                            </button> --}}
-
+                                                            </button>
+                                                            --}}
                                                             <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#bannerDeleteModal{{ $auction->id }}">
                                                                 @lang('lang.Delete')
                                                             </button>
@@ -123,16 +120,13 @@
                                         </tbody>
                                     </table>
                                 </div>
-
                             </div>
                         </div>
                     </div> <!-- end col -->
                 </div> <!-- end row -->
-
             </div>
         </div>
     </div>
-
 @endsection
 
 @push('scripts')
@@ -142,11 +136,11 @@
         });
     </script>
     <script>
-        function previewImage(event, bannerId = null) {
+        function previewImage(event, auctionId = null) {
             var reader = new FileReader();
             reader.onload = function() {
                 // Determine which image preview element to update
-                var outputId = bannerId ? 'imagePreview' + bannerId : 'imagePreview';
+                var outputId = auctionId ? 'imagePreview' + auctionId : 'imagePreview';
                 var output = document.getElementById(outputId);
                 output.src = reader.result;
                 output.style.display = 'block'; // Show the image when file is selected
