@@ -100,7 +100,7 @@
                                                         @endforeach
                                                     </td>
 
-                                                    
+
                                                     <td>
                                                         <div class="d-flex flex-column flex-md-row" style="gap: 10px;">
                                                             {{-- Uncomment for Edit button
@@ -115,7 +115,7 @@
                                                     </td>
                                                 </tr>
 
-                                                @include('auctions.edit_modal', ['auction' => $auction])
+                                                {{-- @include('auctions.edit_modal', ['auction' => $auction]) --}}
                                                 @include('auctions.delete_modal', ['auction' => $auction])
                                             @endforeach
 
