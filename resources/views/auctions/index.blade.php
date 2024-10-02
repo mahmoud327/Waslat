@@ -86,7 +86,6 @@
                                                             <img src="{{ $image->getUrl() }}" alt="Auction Image" style="width: 50px; height: 50px; object-fit: cover; margin: 2px;">
                                                         @endforeach
                                                     </td>
-
                                                     <td>
                                                         @if ($auction->getFirstMedia('plans'))
                                                             <img src="{{ $auction->getFirstMediaUrl('plans') }}" alt="Plan" style="width: 50px; height: 50px; object-fit: cover;">
@@ -99,8 +98,6 @@
                                                             <a href="{{ $video->getUrl() }}" target="_blank">View Video</a>
                                                         @endforeach
                                                     </td>
-
-
                                                     <td>
                                                         <div class="d-flex flex-column flex-md-row" style="gap: 10px;">
                                                             {{-- Uncomment for Edit button
