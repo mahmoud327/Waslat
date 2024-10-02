@@ -9,22 +9,39 @@
         .object-cover {
             object-fit: cover;
         }
+
         body {
-            overflow-x: hidden; /* إزالة التمرير الجانبي */
+            overflow-x: hidden;
+            /* إزالة التمرير الجانبي */
         }
 
+        /* إضافة أسلوب لجعل النموذج أصغر */
+        .login-form {
+            max-width: 400px;
+            /* الحد الأقصى للعرض */
+            width: 100%;
+            /* عرض كامل حتى الحد الأقصى */
+            padding: 20px;
+            /* إضافة حشوة */
+            background-color: white;
+            /* خلفية بيضاء */
+            border-radius: 5px;
+            /* زوايا دائرية */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* ظل */
+        }
     </style>
 </head>
 
 <body>
     <section class="vh-100">
         <div class="container-fluid h-100">
-            <div class="row h-100">
-                <div class="col-lg-4 d-flex align-items-center justify-content-center">
-                    <div class="mx-auto w-100 max-w-sm">
+            <div class="row h-100 justify-content-center align-items-center">
+                <div class="col-lg-4">
+                    <div class="mx-auto w-100 login-form">
                         <div class="text-center">
-                            <a href="/">
-                                <svg width="130" height="50" viewBox="0 0 173 79" fill="none"
+
+                            <svg width="130" height="50" viewBox="0 0 173 79" fill="none"
                                 xmlns="http://www.w3.org/2000/svg" class="h-14 w-auto" main_color="#21499f" alt="zaman">
                                 <path
                                     d="M158.453 35.5435C157.978 35.5048 157.502 35.4758 157.028 35.4232C156.639 35.3791 156.251 35.3125 155.864 35.2437C155.635 35.2028 155.411 35.1373 155.156 35.076C155.259 34.272 155.361 33.4799 155.466 32.6651C156.64 33.0811 157.81 33.238 159.01 33.1929C161.074 33.1144 162.307 32.1062 162.72 30.0748C162.868 29.345 162.947 28.5883 162.95 27.8445C162.969 22.7875 162.96 17.7293 162.96 12.6722V12.2971H165.861C165.866 12.4035 165.874 12.4949 165.874 12.5852C165.874 17.6713 165.88 22.7563 165.868 27.8424C165.866 29.0376 165.698 30.2156 165.293 31.3474C164.495 33.5755 162.896 34.8696 160.596 35.3082C160.019 35.4178 159.425 35.4382 158.839 35.5005C158.729 35.5124 158.619 35.5296 158.51 35.5446H158.454L158.453 35.5435Z"
@@ -38,8 +55,8 @@
                                 <path
                                     d="M78.836 13.6245C78.8413 12.6518 79.6007 11.8951 80.5685 11.8994C81.5384 11.9027 82.3215 12.6959 82.3097 13.66C82.2978 14.5865 81.5084 15.3507 80.5578 15.3561C79.5878 15.3615 78.8317 14.6016 78.836 13.6256V13.6245Z"
                                     fill="#264642"></path>
-                                <mask id="mask0_136_3567" style="mask-type:luminance;" maskUnits="userSpaceOnUse" x="72" y="37"
-                                    width="94" height="25">
+                                <mask id="mask0_136_3567" style="mask-type:luminance;" maskUnits="userSpaceOnUse" x="72"
+                                    y="37" width="94" height="25">
                                     <path d="M165.876 37.9662H72.8633V61.9521H165.876V37.9662Z" fill="white"></path>
                                 </mask>
                                 <g mask="url(#mask0_136_3567)">
@@ -126,39 +143,32 @@
                                     fill="#768C88">
                                 </path>
                             </svg>
-
-                            </a>
-                            <h2 class="mt-4 h3 fw-bold text-dark">Welcome Again</h2>
-                            <div class="mt-2 text-muted small">
-                                <div class="fw-semibold text-muted">Please Login</div>
-                            </div>
                         </div>
-
                         <div class="mt-4">
                             <form action="{{ route('login.check') }}" method="post">
                                 @csrf
                                 <div class="mb-3">
-                                    <label for="email" class="form-label">email</label>
-                                    <input type="text" name="email"  id="email" class="form-control" placeholder="example@gmail.com or +966-XX-XXXXXXX" required>
+                                    <label for="email" class="form-label">البريد الإلكتروني</label>
+                                    <input type="text" name="email" id="email" class="form-control"
+                                        placeholder="example@gmail.com or +966-XX-XXXXXXX" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="password" class="form-label">Password</label>
-                                    <input type="password" name="password" id="password" class="form-control" placeholder="******" required>
+                                    <label for="password" class="form-label">كلمة المرور</label>
+                                    <input type="password" name="password" id="password" class="form-control"
+                                        placeholder="******" required>
                                 </div>
 
                                 <button type="submit" class="btn btn-primary w-100">
-                                    Login
+                                    تسجيل الدخول
                                 </button>
                             </form>
                         </div>
-{{--
+
                         <div class="mt-4 text-center">
-                            <p class="text-muted small">Don't have an account? <a href="/register" class="fw-semibold text-primary">Register Now</a></p>
-                        </div> --}}
+                            <p class="text-muted small">لا تمتلك حساب؟ <a href="/register"
+                                    class="fw-semibold text-primary">سجل الآن</a></p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-8 d-none d-lg-block position-relative">
-                    <img src="{{ asset('login.png')}}" class="position-absolute w-100 h-100 object-cover" alt="Login Image" />
                 </div>
             </div>
         </div>
@@ -166,7 +176,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script>
-        @if(Session::has('message'))
+        @if (Session::has('message'))
             toastr.options = {
                 "closeButton": true,
                 "progressBar": true
@@ -174,7 +184,7 @@
             toastr.success("{{ Session::get('message') }}");
         @endif
 
-        @if(Session::has('error'))
+        @if (Session::has('error'))
             toastr.options = {
                 "closeButton": true,
                 "progressBar": true
@@ -182,7 +192,7 @@
             toastr.error("{{ Session::get('error') }}");
         @endif
 
-        @if(Session::has('info'))
+        @if (Session::has('info'))
             toastr.options = {
                 "closeButton": true,
                 "progressBar": true
@@ -190,7 +200,7 @@
             toastr.info("{{ Session::get('info') }}");
         @endif
 
-        @if(Session::has('warning'))
+        @if (Session::has('warning'))
             toastr.options = {
                 "closeButton": true,
                 "progressBar": true
