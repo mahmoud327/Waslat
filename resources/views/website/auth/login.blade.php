@@ -1,54 +1,63 @@
-@extends('website.layouts.master')
-@section('style')
-    <link rel="stylesheet" href="{{ asset('website/css/login.css') }}" />
-    <script src="https://cdn.tailwindcss.com"></script>
-@endsection
-@section('content')
-    <div class="container">
+<!DOCTYPE html>
+<html lang="en">
 
-        <div id="login">
-            <h1>تسجيل الدخول</h1>
-            <p style="padding: 0 20px 20px 20px; color: black;">ادخل رقم هاتقك</p>
-            <div class="input" id="inputbox">
-                <button>+996</button>
-                <input type="tel" placeholder="رقم" id="display"><br>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Add your custom styles here -->
+    <title>Login</title>
+</head>
 
+<body>
+    <section class="h-100">
+        <div class="d-flex min-vh-100 flex-column justify-content-center">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="text-center mb-4">
+                            <a href="/">
+                                <img src="{{ asset('login.png')}}" alt="zaman" class="h-14 w-auto" />
+                            </a>
+                            <h2 class="mt-3 font-weight-bold">Welcome Again</h2>
+                            <p class="text-muted">Please log in to your account</p>
+                        </div>
+                        <form id="login-form">
+                            <div class="form-group">
+                                <label for="username" id="usernameLabel">Email</label>
+                                <input type="text" class="form-control" id="username" name="username" placeholder="example@gmail.com" required>
+                                <div class="invalid-feedback">Please enter a valid email or phone number.</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password" name="password" placeholder="******" required>
+                                <div class="invalid-feedback">Password must be at least 6 characters long.</div>
+                            </div>
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="remember-me">
+                                <label class="form-check-label" for="remember-me">تذكرني</label>
+                            </div>
+                            <div class="d-flex justify-content-between mb-3">
+                                <a href="#" class="text-muted">Forgot Password?</a>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Login</button>
+                        </form>
+                        <p class="text-center text-muted mt-4">Don't have an account? <a href="/register" class="font-weight-bold">Register Now</a></p>
+                    </div>
+                </div>
             </div>
-            <span id="alert" style="color: red;"></span>
-            <button id="btn">استمرار</button>
-            <p style="color: black;">عند المتابعة، أوافق على</p>
-            <p><a href="/pages/privacy/privacy.html">وسياسة الخصوصية</a> <a href="">.الشروط والأحكام</a></p>
-
+            <div class="d-none d-lg-block flex-grow-1">
+                <img src="assets/img/login.png" alt="" class="img-fluid w-100 h-100" style="object-fit: cover;">
+            </div>
         </div>
-        <div id="menu">
-            <ul>
-                <p id="p">سجل الدخول لتجربة <br> مستخدم أفضل</p>
+    </section>
 
-                <li style="display: flex ;justify-content: space-between; height: 80px;">
-                    <p>
-                        <i class="fa-solid fa-wallet" style="color: #2e2a2a;"></i>
-                        <span style="margin-right: 10px;"> محفظة وصلت <br><span style="margin-right: 10px;">الإلكترونية
-                                </span< /span>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Add your JavaScript for form submission and validation here
+    </script>
+</body>
 
-                    </p>
-
-                    <p
-                        style="height: 30px; width: 60px; background-color:#10a26f; padding: 1px; color: #fff; border-radius: 5px; text-align: center; margin-left: 5px;">
-                        جديد</p>
-                </li>
-
-                <li> <i class="fa-regular fa-heart"></i> <span>
-                        المفضلة</span></li>
-                <li><i class="fa-regular fa-clock"></i>
-                    <span>نشاطك</span>
-                </li>
-            </ul>
-        </div>
-
-
-
-
-
-
-    </div>
-@endsection
+</html>
