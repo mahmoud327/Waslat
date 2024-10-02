@@ -147,11 +147,11 @@
                                 @csrf
                                 <div class="mb-3">
                                     <label for="email" class="form-label">email</label>
-                                    <input type="text" id="email" class="form-control" placeholder="example@gmail.com or +966-XX-XXXXXXX" required>
+                                    <input type="text" name="email"  id="email" class="form-control" placeholder="example@gmail.com or +966-XX-XXXXXXX" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="password" class="form-label">Password</label>
-                                    <input type="password" id="password" class="form-control" placeholder="******" required>
+                                    <input type="password" name="password" id="password" class="form-control" placeholder="******" required>
                                 </div>
 
                                 <button type="submit" class="btn btn-primary w-100">
