@@ -6,31 +6,33 @@
     <title>Login | Admin</title>
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
     <style>
-        .object-cover {
-            object-fit: cover;
-        }
-
         body {
-            overflow-x: hidden;
-            /* إزالة التمرير الجانبي */
+            overflow-x: hidden; /* إزالة التمرير الجانبي */
+            background-image: url('{{ asset('login.png') }}'); /* تحديد الصورة الخلفية */
+            background-size: cover; /* تغطية الخلفية */
+            background-position: center; /* محاذاة الصورة إلى المركز */
         }
 
         /* إضافة أسلوب لجعل النموذج أصغر */
         .login-form {
-            max-width: 400px;
-            /* الحد الأقصى للعرض */
-            width: 100%;
-            /* عرض كامل حتى الحد الأقصى */
-            padding: 20px;
-            /* إضافة حشوة */
-            background-color: white;
-            /* خلفية بيضاء */
-            border-radius: 5px;
-            /* زوايا دائرية */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            /* ظل */
+            max-width: 400px; /* الحد الأقصى للعرض */
+            width: 100%; /* عرض كامل حتى الحد الأقصى */
+            padding: 20px; /* إضافة حشوة */
+            background-color: white; /* خلفية بيضاء */
+            border-radius: 5px; /* زوايا دائرية */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* ظل */
+        }
+
+        /* تقليل حجم الخلفية على شاشات الموبايل */
+        @media (max-width: 767px) {
+            body {
+                background-size: contain; /* استخدام contain بدلاً من cover لتقليل الحجم */
+                background-repeat: no-repeat; /* عدم تكرار الخلفية */
+                background-position: top; /* محاذاة الصورة إلى الأعلى */
+            }
         }
     </style>
+
 </head>
 
 <body>
@@ -164,10 +166,10 @@
                             </form>
                         </div>
 
-                        <div class="mt-4 text-center">
+                        {{-- <div class="mt-4 text-center">
                             <p class="text-muted small">لا تمتلك حساب؟ <a href="/register"
                                     class="fw-semibold text-primary">سجل الآن</a></p>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
