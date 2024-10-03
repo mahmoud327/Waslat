@@ -71,8 +71,8 @@ return [
 
 
 
-    'Add Auction' => 'إضافة مزاد',
-    'Auctions' => 'المزادات',
+    'Add real estate' => 'اضافو عقار',
+    'real estates' => 'العقارات',
     'ID' => 'رقم التعريف',
     'Type' => 'النوع',
     'Price' => 'السعر',
@@ -97,7 +97,6 @@ return [
     'Marketer Name' => 'اسم المسوق',
     'License Number' => 'رقم الترخيص',
     'City' => 'المدينة',
-    'Category' => 'الفئة',
     'Category ID' => 'معرف الفئة',
     'Images' => 'الصور',
     'Plan' => 'الخطة',
@@ -109,6 +108,15 @@ return [
     'Contact Us Submissions' => 'تقديمات اتصل بنا',
     'Contact Us' => 'تواصل معنا',
     'Notes' => 'ملاحظات',
+
+    "Setting"=>'الاعدادت',
+    'Address' => 'العنوان',
+    'Facebook' => 'فيسبوك',
+    'Twitter' => 'تويتر',
+    'LinkedIn' => 'لينكد إن',
+    'Instagram' => 'انستغرام',
+    'WhatsApp' => 'واتساب',
+
 
 
 ];

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('head-content')
-    @include('partials.title-meta', ['title' => 'Auctions'])
+    @include('partials.title-meta', ['title' => 'real estates'])
     @include('partials.head-css')
     <link href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet">
 @endsection
@@ -16,7 +16,7 @@
 
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">@lang('lang.Auctions')</h4>
+                                <h4 class="card-title">@lang('lang.real estates')</h4>
                                 <div class="table-responsive">
                                     <table id="datatable" class="table table-bordered" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                         <thead>

@@ -11,15 +11,15 @@
 
                 <li>
                     <a href="{{ route('dashboard') }}" class="waves-effect">
-                        <i class="mdi mdi-home-variant-outline"></i>
-                        <span class="badge rounded-pill bg-primary float-end">3</span>
+                        <i class="mdi mdi-view-dashboard-outline"></i>
+                        {{-- <span class="badge rounded-pill bg-primary float-end">3</span> --}}
                         <span>{{ __('lang.Dashboard') }}</span>
                     </a>
                 </li>
 
                 <li>
                     <a href="{{ route('categories.index') }}" class="waves-effect">
-                        <i class="mdi mdi-calendar-outline"></i>
+                        <i class="mdi mdi-folder-outline"></i>
                         <span>{{ __('lang.Category') }}</span>
                     </a>
                 </li>
@@ -32,13 +32,19 @@
                 <li>
                     <a href="{{ route('auctions.index') }}" class="waves-effect">
                         <i class="mdi mdi-calendar-outline"></i>
-                        <span>{{ __('lang.Auctions') }}</span>
+                        <span>{{ __('lang.real estates') }}</span>
                     </a>
                 </li>
                 <li>
                     <a href="{{ route('contact-us.index') }}" class="waves-effect">
                         <i class="mdi mdi-calendar-outline"></i>
                         <span>{{ __('lang.Contact Us') }}</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('settings.edit') }}" class="waves-effect">
+                        <i class="mdi mdi-calendar-outline"></i>
+                        <span>{{ __('lang.Setting') }}</span>
                     </a>
                 </li>
                 {{-- <li>

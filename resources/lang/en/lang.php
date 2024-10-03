@@ -6,7 +6,6 @@ return [
     'Image' => 'Image',
     'Title' => 'Title',
     'Description' => 'Description',
-    'Category' => 'Category',
     'Dashboard' => 'Dashboard',
 
     'Add Category' => 'Add Category',
@@ -102,7 +101,7 @@ return [
     'Marketer Name' => 'Marketer Name',
     'License Number' => 'License Number',
     'City' => 'City',
-    'Category' => 'Category',
+    'Category' => 'Categories',
     'Category ID' => 'Category ID',
     'Images' => 'Images',
     'Plan' => 'Plan',
@@ -111,8 +110,9 @@ return [
     'Delete' => 'Delete',
 
 
-    'Add Auction' => 'Add Auction',
-    'Auctions' => 'Auctions',
+    'Add real estate' => 'Add real estate',
+    'real estates' => 'real estates',
+
     'ID' => 'ID',
     'Type' => 'Type',
     'Price' => 'Price',
@@ -137,7 +137,6 @@ return [
     'Marketer Name' => 'Marketer Name',
     'License Number' => 'License Number',
     'City' => 'City',
-    'Category' => 'Category',
     'Category ID' => 'Category ID',
     'Images' => 'Images',
     'Plan' => 'Plan',
@@ -151,5 +150,13 @@ return [
     'Notes' => 'Notes',
     'Contact Us' => 'Contact Us',
 
+    'Address' => 'Address',
+    'Facebook' => 'Facebook',
+    'Twitter' => 'Twitter',
+    'LinkedIn' => 'LinkedIn',
+    'Instagram' => 'Instagram',
+    'WhatsApp' => 'WhatsApp',
+
+    "Setting"=>"Settings"
 
 ];

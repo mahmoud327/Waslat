@@ -16,6 +16,7 @@ use App\Http\Controllers\IconsController;
 use App\Http\Controllers\LayoutsController;
 use App\Http\Controllers\MapsController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\SettingController;
 use App\Http\Controllers\TablesController;
 use App\Http\Controllers\TermController;
 use App\Http\Controllers\UiElementsController;
@@ -67,6 +68,8 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('contact-us', ContactUsController::class);
     Route::get('terms', [TermController::class,'edit'])->name('term.edit');
     Route::put('terms', [TermController::class,'update'])->name('terms.update');
+    Route::get('settings', [SettingController::class,'edit'])->name('settings.edit');
+    Route::put('settings', [SettingController::class,'update'])->name('settings.update');
 
 // Calendar Route
     Route::get('/calendar', [CalendarController::class, 'index'])->name('calendar');

@@ -29,6 +29,7 @@
         <link href="{{ asset('assets/css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css">
     @endif
 
+
     <!-- Icons CSS (same for both languages) -->
     <link href="{{ asset('assets/css/icons.min.css') }}" rel="stylesheet" type="text/css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
@@ -39,6 +40,7 @@
 
     <!-- Additional Inline Styles (can remain the same for both languages) -->
     <style id="apexcharts-css">
+        
         @keyframes opaque {
             0% {
                 opacity: 0;
