@@ -38,6 +38,7 @@ Route::group(['middleware' => ['ChangeLanguage']], function () {
     Route::get('cities', [CityController::class, 'index']);
     Route::get('states', [CityController::class, 'states']);
     Route::post('contact-us', [ContactUsController::class, 'store']);
+    Route::get('settings', [ContactUsController::class, 'getSetting']);
     Route::middleware('auth:sanctum')->group(function () {
         Route::post('profile-info', [UserController::class, 'profileInfo']);
         Route::get('categories', [CategoryController::class, 'index']);
