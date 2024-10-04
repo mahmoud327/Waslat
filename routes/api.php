@@ -1,6 +1,6 @@
 <?php
 use App\Http\Controllers\Api\Auth\AuthController;
-use App\Http\Controllers\Api\Auth\ContactUsController;
+use App\Http\Controllers\Api\ContactUsController;
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\CityController;
 use App\Http\Controllers\Api\User\UserController;
