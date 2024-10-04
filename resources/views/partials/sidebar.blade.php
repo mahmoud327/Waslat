@@ -8,45 +8,49 @@
             <!-- Left Menu Start -->
             <ul class="metismenu list-unstyled" id="side-menu">
                 <li class="menu-title">Menu</li>
-
-                <li>
+                <li class="{{ Route::is('dashboard') ? 'active' : '' }}">
                     <a href="{{ route('dashboard') }}" class="waves-effect">
-                        <i class="mdi mdi-view-dashboard-outline"></i>
-                        {{-- <span class="badge rounded-pill bg-primary float-end">3</span> --}}
+                        <i class="mdi mdi-home-variant-outline"></i>
                         <span>{{ __('lang.Dashboard') }}</span>
                     </a>
                 </li>
 
-                <li>
+                <li class="{{ Route::is('categories.index') ? 'active' : '' }}">
                     <a href="{{ route('categories.index') }}" class="waves-effect">
-                        <i class="mdi mdi-folder-outline"></i>
+                        <i class="mdi mdi-calendar-outline"></i>
                         <span>{{ __('lang.Category') }}</span>
                     </a>
                 </li>
-                <li>
+
+                <li class="{{ Route::is('users.index') ? 'active' : '' }}">
                     <a href="{{ route('users.index') }}" class="waves-effect">
                         <i class="mdi mdi-calendar-outline"></i>
                         <span>{{ __('lang.Users') }}</span>
                     </a>
                 </li>
-                <li>
+
+                <li class="{{ Route::is('auctions.index') ? 'active' : '' }}">
                     <a href="{{ route('auctions.index') }}" class="waves-effect">
                         <i class="mdi mdi-calendar-outline"></i>
                         <span>{{ __('lang.real estates') }}</span>
                     </a>
                 </li>
-                <li>
+
+                <li class="{{ Route::is('contact-us.index') ? 'active' : '' }}">
                     <a href="{{ route('contact-us.index') }}" class="waves-effect">
                         <i class="mdi mdi-calendar-outline"></i>
                         <span>{{ __('lang.Contact Us') }}</span>
                     </a>
                 </li>
-                <li>
+
+                <li class="{{ Route::is('settings.edit') ? 'active' : '' }}">
                     <a href="{{ route('settings.edit') }}" class="waves-effect">
                         <i class="mdi mdi-calendar-outline"></i>
                         <span>{{ __('lang.Setting') }}</span>
                     </a>
                 </li>
+
+
                 {{-- <li>
                     <a href="{{ route('admins.index') }}" class="waves-effect">
                         <i class="mdi mdi-calendar-outline"></i>
