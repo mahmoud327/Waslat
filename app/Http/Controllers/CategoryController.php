@@ -18,14 +18,14 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $category = new State();
-        $category->setTranslation('title', 'en', $request->title_en)
-        ->setTranslation('title', 'ar', $request->title_ar)
-        ->setTranslation('description', 'en', $request->description_en)
-        ->setTranslation('description', 'ar', $request->description_ar);
-        if ($request->hasFile('image')) {
-            $category->clearMediaCollection('categories');
-            $category->addMedia($request->file('image'))->toMediaCollection('categories');
-        }
+        $category->setTranslation('name', 'en', $request->name_en)
+        ->setTranslation('name', 'ar', $request->name_ar);
+        // ->setTranslation('description', 'en', $request->description_en)
+        // ->setTranslation('description', 'ar', $request->description_ar);
+        // if ($request->hasFile('image')) {
+        //     $category->clearMediaCollection('categories');
+        //     $category->addMedia($request->file('image'))->toMediaCollection('categories');
+        // }
         $category->save();
 
 
@@ -40,15 +40,15 @@ class CategoryController extends Controller
     {
 
         $category = State::findOrFail($id);
-        $category->setTranslation('title', 'en', $request->title_en)
-        ->setTranslation('title', 'ar', $request->title_ar)
-        ->setTranslation('description', 'en', $request->description_en)
-        ->setTranslation('description', 'ar', $request->description_ar);
+        $category->setTranslation('name', 'en', $request->name_en)
+        ->setTranslation('name', 'ar', $request->name_ar);
+        // ->setTranslation('description', 'en', $request->description_en)
+        // ->setTranslation('description', 'ar', $request->description_ar);
 
-        if ($request->hasFile('image')) {
-            $category->clearMediaCollection('categories');
-            $category->addMedia($request->file('image'))->toMediaCollection('categories');
-        }
+        // if ($request->hasFile('image')) {
+        //     $category->clearMediaCollection('categories');
+        //     $category->addMedia($request->file('image'))->toMediaCollection('categories');
+        // }
 
         $category->save();
 

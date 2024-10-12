@@ -41,9 +41,7 @@
                                         <tbody>
                                             @foreach ($items as $item)
                                                 <tr>
-                                                    <td><img src="{{ $item->image_url }}" alt="{{ $item->title }}" class="img-fluid" style="width: 50px; height: auto;"></td>
-                                                    <td>{{ $item->title }}</td>
-                                                    <td>{{ $item->description }}</td>
+                                                    <td>{{ $item->name }}</td>
                                                     <td>
                                                         <div class="d-flex flex-column flex-md-row gap-2">
                                                             <!-- زرار Edit -->
