@@ -132,5 +132,12 @@ class RealEstate extends Model implements HasMedia
             });
     }
 
+    // App\Models\Auction.php
+
+public function scopeActive($query)
+{
+    return $query->where('is_active', true);
+}
+
 
 }

@@ -28,6 +28,7 @@ class RealEstateController extends Controller
     {
         $real_estates = RealEstate::query()
             ->latest()
+            ->active()
             ->with(['city', 'category'])
             ->filter($request->all())
             ->paginate($request->paginate);

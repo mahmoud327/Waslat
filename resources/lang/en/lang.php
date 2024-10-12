@@ -157,6 +157,54 @@ return [
     'Instagram' => 'Instagram',
     'WhatsApp' => 'WhatsApp',
 
-    "Setting"=>"Settings"
+    "Setting"=>"Settings",
+
+    "Add City"=>"Add City",
+    "Edit City"=>"Edit City",
+    "cities"=>"cities,
+ 'edit_real_estate' => 'Edit Real Estate',
+    'update_details' => 'Update all the details of the real estate.',
+    'type' => 'Type',
+    'price' => 'Price',
+    'phone' => 'Phone',
+    'number_of_rooms' => 'Number of Rooms',
+    'number_of_bathrooms' => 'Number of Bathrooms',
+    'number_of_halls' => 'Number of Halls',
+    'number_of_council_rooms' => 'Number of Council Rooms',
+    'land_area' => 'Land Area',
+    'street' => 'Street',
+    'number_of_streets' => 'Number of Streets',
+    'street_area' => 'Street Area',
+    'street_facing' => 'Street Facing',
+    'electricity' => 'Electricity',
+    'water' => 'Water',
+    'city' => 'City',
+    'category' => 'Category',
+    'description' => 'Description',
+    'existing_media' => 'Existing Media',
+    'upload_new_images' => 'Upload New Images',
+    'upload_new_videos' => 'Upload New Videos',
+    'upload_new_plan' => 'Upload New Plan',
+    'update_real_estate' => 'Update Real Estate',
+
+
+
+       'view_real_estate' => 'View Real Estate',
+    'view_real_estate_details' => 'View Real Estate Details',
+    'details_description' => 'Below are the details and associated media files for this real estate.',
+    'type' => 'Type',
+    'price' => 'Price',
+    'phone' => 'Phone',
+    'number_of_rooms' => 'Number of Rooms',
+    'number_of_bathrooms' => 'Number of Bathrooms',
+    'street' => 'Street',
+    'description' => 'Description',
+    'media_files' => 'Media Files',
+        'Show' => 'Show',
+        'Activate'=>'approved',
+        'Deactivate'=>'disapproved',
+
+"
+
 
 ];

@@ -22,6 +22,14 @@
                     </a>
                 </li>
 
+
+                <li class="{{ Route::is('cities.index') ? 'active' : '' }}">
+                    <a href="{{ route('cities.index') }}" class="waves-effect">
+                        <i class="mdi mdi-calendar-outline"></i>
+                        <span>{{ __('lang.cities') }}</span>
+                    </a>
+                </li>
+
                 <li class="{{ Route::is('users.index') ? 'active' : '' }}">
                     <a href="{{ route('users.index') }}" class="waves-effect">
                         <i class="mdi mdi-calendar-outline"></i>
@@ -49,6 +57,7 @@
                         <span>{{ __('lang.Setting') }}</span>
                     </a>
                 </li>
+
 
 
                 {{-- <li>

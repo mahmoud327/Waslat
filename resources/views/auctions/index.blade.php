@@ -22,6 +22,7 @@
                                         <thead>
                                             <tr>
                                                 <th>@lang('lang.ID')</th>
+                                                <th>@lang('lang.Description')</th>
                                                 <th>@lang('lang.Type')</th>
                                                 <th>@lang('lang.Price')</th>
                                                 <th>@lang('lang.Phone')</th>
@@ -34,24 +35,45 @@
                                             @foreach ($auctions as $auction)
                                                 <tr>
                                                     <td>{{ $auction->id }}</td>
+                                                    <td>{{ $auction->description }}</td>
                                                     <td>{{ $auction->type }}</td>
                                                     <td>{{ $auction->price }}</td>
                                                     <td>{{ $auction->phone }}</td>
                                                     <td>{{ $auction->number_of_rooms }}</td>
                                                     <td>{{ $auction->bathrooms_of_rooms }}</td>
                                                     <td>
+
+
+
+
+
                                                         <div class="d-flex flex-column flex-md-row" style="gap: 10px;">
-                                                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#bannerDeleteModal{{ $auction->id }}">
+                                                            <form action="{{ route('auctions.toggleStatus', $auction->id) }}" method="POST" class="w-100">
+                                                                @csrf
+                                                                <button type="submit" class="btn {{ $auction->is_active ? 'btn-danger' : 'btn-success' }} w-100">
+                                                                    {{ $auction->is_active ? __('lang.Deactivate') : __('lang.Activate') }}
+                                                                </button>
+                                                            </form>
+
+                                                            <a href="{{ route('auctions.show', $auction->id) }}" class="btn btn-primary w-100">
+                                                                @lang('lang.Show')
+                                                            </a>
+
+                                                            <a href="{{ route('auctions.edit', $auction->id) }}" class="btn btn-primary w-100">
+                                                                @lang('lang.Edit')
+                                                            </a>
+
+                                                            <button type="button" class="btn btn-danger w-100" data-bs-toggle="modal" data-bs-target="#bannerDeleteModal{{ $auction->id }}">
                                                                 @lang('lang.Delete')
                                                             </button>
                                                         </div>
+
                                                     </td>
                                                 </tr>
 
                                                 @include('auctions.delete_modal', ['auction' => $auction])
                                             @endforeach
 
-                                            @include('auctions.add_modal')
                                         </tbody>
                                     </table>
                                 </div>

@@ -117,6 +117,52 @@ return [
     'Instagram' => 'انستغرام',
     'WhatsApp' => 'واتساب',
 
+    "Add City"=>"اضافة مدينه",
+    "Edit City"=>"تعديل مدينه",
+    "cities"=>"المدن",
+
+
+    'edit_real_estate' => 'تعديل العقار',
+    'update_details' => 'قم بتحديث جميع تفاصيل العقار.',
+    'type' => 'النوع',
+    'price' => 'السعر',
+    'phone' => 'الهاتف',
+    'number_of_rooms' => 'عدد الغرف',
+    'number_of_bathrooms' => 'عدد الحمامات',
+    'number_of_halls' => 'عدد الصالات',
+    'number_of_council_rooms' => 'عدد قاعات المجلس',
+    'land_area' => 'مساحة الأرض',
+    'street' => 'الشارع',
+    'number_of_streets' => 'عدد الشوارع',
+    'street_area' => 'مساحة الشارع',
+    'street_facing' => 'واجهة الشارع',
+    'electricity' => 'الكهرباء',
+    'water' => 'الماء',
+    'city' => 'المدينة',
+    'category' => 'الفئة',
+    'description' => 'الوصف',
+    'existing_media' => 'وسائط موجودة',
+    'upload_new_images' => 'رفع صور جديدة',
+    'upload_new_videos' => 'رفع فيديوهات جديدة',
+    'upload_new_plan' => 'رفع خطة جديدة',
+    'update_real_estate' => 'تحديث العقار',
+
+
+    'view_real_estate' => 'عرض العقار',
+    'view_real_estate_details' => 'عرض تفاصيل العقار',
+    'details_description' => 'فيما يلي التفاصيل والملفات الوسائط المرتبطة بهذا العقار.',
+    'type' => 'النوع',
+    'price' => 'السعر',
+    'phone' => 'الهاتف',
+    'number_of_rooms' => 'عدد الغرف',
+    'number_of_bathrooms' => 'عدد الحمامات',
+    'street' => 'الشارع',
+    'description' => 'الوصف',
+    'media_files' => 'ملفات الوسائط',
+    'Show' => 'عرض',
+    'Activate'=>'قبول',
+    'Deactivate'=>'رفض',
+
 
 
 ];

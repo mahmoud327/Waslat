@@ -8,6 +8,7 @@ use App\Http\Controllers\BannerController;
 use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ChartsController;
+use App\Http\Controllers\CityController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EmailController;
@@ -63,8 +64,12 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('categories', CategoryController::class);
     Route::resource('banners', BannerController::class);
     Route::resource('admins', AdminController::class);
+    Route::resource('cities', CityController::class);
     Route::resource('users', UserController::class);
     Route::resource('auctions', AuctionController::class);
+    // routes/web.p
+Route::post('/auctions/{id}/toggle-status', [AuctionController::class, 'toggleStatus'])->name('auctions.toggleStatus');
+
     Route::resource('contact-us', ContactUsController::class);
     Route::get('terms', [TermController::class,'edit'])->name('term.edit');
     Route::put('terms', [TermController::class,'update'])->name('terms.update');
