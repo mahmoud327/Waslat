@@ -159,9 +159,9 @@ return [
 
     "Setting"=>"Settings",
 
-    "Add City"=>"Add City",
-    "Edit City"=>"Edit City",
-    "cities"=>"cities,
+    "Add City"=>'Add City',
+    'Edit City'=>'Edit City',
+    'cities'=>'cities',
  'edit_real_estate' => 'Edit Real Estate',
     'update_details' => 'Update all the details of the real estate.',
     'type' => 'Type',
@@ -204,7 +204,6 @@ return [
         'Activate'=>'approved',
         'Deactivate'=>'disapproved',
 
-"
 
 
 ];
