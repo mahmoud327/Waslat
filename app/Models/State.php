@@ -15,7 +15,7 @@ class State extends Model
     use HasTranslations;
 
     protected $guarded = ['id'];
-    public $translatable = ['name'];
+    public $translatable = ['name','title'];
     public function cities()
     {
         return $this->hasMany(City::class,'state_id');

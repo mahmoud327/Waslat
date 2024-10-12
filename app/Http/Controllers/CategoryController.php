@@ -4,19 +4,20 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\State;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
     public function index()
     {
-        $items = Category::latest()->get();
+        $items = State::latest()->get();
         return view('categories.index', compact('items'));
     }
 
     public function store(Request $request)
     {
-        $category = new Category();
+        $category = new State();
         $category->setTranslation('title', 'en', $request->title_en)
         ->setTranslation('title', 'ar', $request->title_ar)
         ->setTranslation('description', 'en', $request->description_en)
@@ -32,13 +33,13 @@ class CategoryController extends Controller
     }
     public function destroy($id)
     {
-        $category = Category::findOrFail($id)->delete();
+        $category = State::findOrFail($id)->delete();
         return back()->with('message', __('lang.data_deleted'));
     }
     public function update(Request $request, $id)
     {
 
-        $category = Category::findOrFail($id);
+        $category = State::findOrFail($id);
         $category->setTranslation('title', 'en', $request->title_en)
         ->setTranslation('title', 'ar', $request->title_ar)
         ->setTranslation('description', 'en', $request->description_en)
