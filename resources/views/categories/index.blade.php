@@ -32,9 +32,7 @@
                                     <table id="datatable" class="table table-bordered" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                         <thead>
                                             <tr>
-                                                <th>@lang('lang.Image')</th>
                                                 <th>@lang('lang.Title')</th>
-                                                <th>@lang('lang.Description')</th>
                                                 <th>@lang('lang.Actions')</th>
                                             </tr>
                                         </thead>
