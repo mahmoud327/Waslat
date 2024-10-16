@@ -22,7 +22,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="bannerTitleEn" class="form-label">@lang('lang.password')</label>
-                        <input type="password" class="form-control" id="bannerTitleEn" name="password" required>
+                        <input type="password" class="form-control" id="bannerTitleEn" name="password">
                     </div>
                     <div class="mb-3">
                         <label for="bannerTitleEn" class="form-label">@lang('lang.email')</label>
@@ -34,7 +34,7 @@
                         <label for="roles" class="form-label">@lang('lang.Roles')</label>
                         <select multiple class="form-control" id="roles" name="roles[]" required>
                             @foreach(\App\Models\User::getRoles() as $role)
-                                <option  @if (in_array($role->name, $admin->roles)) checked @endif  value="{{ $role->id }}">{{ $role->name }}</option>
+                                <option  @if (in_array($role->name, $admin->roles)) selected @endif  value="{{ $role->id }}">{{ $role->name }}</option>
                             @endforeach
                         </select>
                     </div>
