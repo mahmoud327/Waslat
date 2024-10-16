@@ -45,7 +45,12 @@ class AdminController extends Controller
         $admin = User::findOrFail($id);
         $admin->assignRole($request['roles']);
 
-        $admin->update($request->all());
+        if (request()->has('password') && ! is_null(request('password'))) {
+            $request['password'] = $request['password'];
+        } else {
+            unset($request['password']);
+        }
+        $admin->update($request);
 
         return back()->with('message', __('lang.data_saved'));
     }
