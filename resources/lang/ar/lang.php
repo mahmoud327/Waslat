@@ -172,5 +172,11 @@ return [
     'save' => 'حفظ',
     'role_updated' => 'تم تحديث الصلاحية بنجاح!',
 
+    "Settings & Support"=>"الاعدادت والدعم",
+    "Management"=>"الاداره",
+    "Users & Roles"=>"المستخدمين & الصلاحيات",
+    "Main Menu"=>"الرئيسه",
+
+
 ];
 

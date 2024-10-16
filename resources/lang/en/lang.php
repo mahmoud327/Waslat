@@ -158,6 +158,10 @@ return [
     'WhatsApp' => 'WhatsApp',
 
     "Setting"=>"Settings",
+    "Settings & Support"=>"Settings & Support",
+    "Management"=>"Management",
+    "Users & Roles"=>"Users & Roles",
+    "Main Menu"=>"Main Menu",
 
     "Add City"=>'Add City',
     'Edit City'=>'Edit City',
