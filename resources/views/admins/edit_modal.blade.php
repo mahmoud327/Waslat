@@ -34,7 +34,7 @@
                         <label for="roles" class="form-label">@lang('lang.Roles')</label>
                         <select multiple class="form-control" id="roles" name="roles[]" required>
                             @foreach(\App\Models\User::getRoles() as $role)
-                                <option  @if (in_array($role->id, $admin->id)) selected @endif  value="{{ $role->id }}">{{ $role->name }}</option>
+                                <option  @if (in_array($role->id, $admin->roles)) selected @endif  value="{{ $role->id }}">{{ $role->name }}</option>
                             @endforeach
                         </select>
                     </div>
