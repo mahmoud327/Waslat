@@ -162,6 +162,9 @@ return [
     'Show' => 'عرض',
     'Activate'=>'قبول',
     'Deactivate'=>'رفض',
+    "Feature"=>'مميزات العقار',
+
+    "Add Feature"=>'اضافة ميزه'
 
 
 

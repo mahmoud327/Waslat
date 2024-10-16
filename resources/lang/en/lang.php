@@ -204,6 +204,11 @@ return [
         'Activate'=>'approved',
         'Deactivate'=>'disapproved',
 
+        "Feature"=>'Features',
+
+        "Add Feature"=>'Add Feature'
+
+
 
 
 ];

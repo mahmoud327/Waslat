@@ -37,6 +37,27 @@
                     </a>
                 </li>
 
+                <li>
+                    <a href="{{ route('admins.index') }}" class="waves-effect">
+                        <i class="mdi mdi-calendar-outline"></i>
+                        <span>{{ __('lang.Admins') }}</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('roles.index') }}" class="waves-effect">
+                        <i class="mdi mdi-calendar-outline"></i>
+                        <span>الصلاحيات</span>
+                    </a>
+                </li>
+
+
+                <li class="{{ Route::is('features.index') ? 'active' : '' }}">
+                    <a href="{{ route('features.index') }}" class="waves-effect">
+                        <i class="mdi mdi-calendar-outline"></i>
+                        <span>{{ __('lang.Feature') }}</span>
+                    </a>
+                </li>
+
                 <li class="{{ Route::is('auctions.index') ? 'active' : '' }}">
                     <a href="{{ route('auctions.index') }}" class="waves-effect">
                         <i class="mdi mdi-calendar-outline"></i>
@@ -60,12 +81,7 @@
 
 
 
-                {{-- <li>
-                    <a href="{{ route('admins.index') }}" class="waves-effect">
-                        <i class="mdi mdi-calendar-outline"></i>
-                        <span>{{ __('lang.Admins') }}</span>
-                    </a>
-                </li> --}}
+
                 {{-- <li>
                     <a href="{{ route('term.edit') }}" class="waves-effect">
                         <i class="mdi mdi-calendar-outline"></i>

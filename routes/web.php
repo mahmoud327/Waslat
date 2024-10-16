@@ -12,11 +12,13 @@ use App\Http\Controllers\CityController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EmailController;
+use App\Http\Controllers\FeatureController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\IconsController;
 use App\Http\Controllers\LayoutsController;
 use App\Http\Controllers\MapsController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\TablesController;
 use App\Http\Controllers\TermController;
@@ -62,8 +64,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::resource('categories', CategoryController::class);
+    Route::resource('features', FeatureController::class);
     Route::resource('banners', BannerController::class);
     Route::resource('admins', AdminController::class);
+    Route::resource('roles', RoleController::class);
     Route::resource('cities', CityController::class);
     Route::resource('users', UserController::class);
     Route::resource('auctions', AuctionController::class);
