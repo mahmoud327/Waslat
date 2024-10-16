@@ -38,7 +38,7 @@ class AdminController extends Controller
     {
 
         $admin = User::findOrFail($id);    $request->validate([
-            'name' => 'required|email|unique:users,name,'.$admin->id,
+            'name' => 'required|unique:users,name,'.$admin->id,
             'email' => 'required|email|unique:users,email,'.$admin->id,
             'phone' => 'required|unique:users,phone,'.$admin->id,
         ]);
