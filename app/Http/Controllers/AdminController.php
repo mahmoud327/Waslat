@@ -25,6 +25,8 @@ class AdminController extends Controller
         ]);
         $request['type']=1;
         $admin = User::create($request->all());
+        $admin->assignRole($request['roles']);
+
         return back()->with('message', __('lang.data_saved'));
     }
     public function destroy($id)
@@ -41,6 +43,8 @@ class AdminController extends Controller
             'phone' => 'required|unique:users,phone,' . $admin->id,
         ]);
         $admin = User::findOrFail($id);
+        $admin->assignRole($request['roles']);
+
         $admin->update($request->all());
 
         return back()->with('message', __('lang.data_saved'));

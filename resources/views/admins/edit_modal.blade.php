@@ -30,6 +30,15 @@
                     </div>
 
 
+                    <div class="mb-3">
+                        <label for="roles" class="form-label">@lang('lang.Roles')</label>
+                        <select multiple class="form-control" id="roles" name="roles[]" required>
+                            @foreach(\App\Models\User::getRoles() as $role)
+                                <option  @if (in_array($role->name, $admin->roles)) checked @endif  value="{{ $role->id }}">{{ $role->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
 
 
                     <div class="modal-footer">

@@ -26,6 +26,15 @@
                         <input type="text" class="form-control" id="bannerTitleEn" name="email" required>
                     </div>
 
+                    <div class="mb-3">
+                        <label for="roles" class="form-label">@lang('lang.Roles')</label>
+                        <select multiple class="form-control" id="roles" name="roles[]" required>
+                            @foreach(\App\Models\User::getRoles() as $role)
+                                <option value="{{ $role->id }}">{{ $role->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@lang('lang.Close')</button>

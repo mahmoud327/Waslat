@@ -46,7 +46,7 @@
                 <li>
                     <a href="{{ route('roles.index') }}" class="waves-effect">
                         <i class="mdi mdi-calendar-outline"></i>
-                        <span>الصلاحيات</span>
+                        <span>{{ __('lang.Roles') }}</span>
                     </a>
                 </li>
 

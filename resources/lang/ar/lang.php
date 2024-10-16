@@ -164,9 +164,13 @@ return [
     'Deactivate'=>'رفض',
     "Feature"=>'مميزات العقار',
 
-    "Add Feature"=>'اضافة ميزه'
-
-
+    "Roles"=>'الصلاحيات',
+    "Add Feature"=>'اضافة ميزه',
+    'permissions' => 'الصلاحيات',
+    'permission_name' => 'اسم الصلاحية',
+    'select_permissions' => 'اختر الصلاحيات',
+    'save' => 'حفظ',
+    'role_updated' => 'تم تحديث الصلاحية بنجاح!',
 
 ];
 

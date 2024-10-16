@@ -205,8 +205,13 @@ return [
         'Deactivate'=>'disapproved',
 
         "Feature"=>'Features',
-
-        "Add Feature"=>'Add Feature'
+      "Roles"=>'Roles',
+        "Add Feature"=>'Add Feature',
+        'permissions' => 'Permissions',
+        'permission_name' => 'Permission Name',
+        'select_permissions' => 'Select Permissions',
+        'save' => 'Save',
+        'role_updated' => 'Role updated successfully!',
 
 
 
