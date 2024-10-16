@@ -54,8 +54,8 @@
                                                     </td>
 
                                                 </tr>
-                                                @include('Features.edit_modal', ['item' => $item])
-                                                @include('Features.delete_modal', ['item' => $item])
+                                                @include('features.edit_modal', ['item' => $item])
+                                                @include('features.delete_modal', ['item' => $item])
                                             @endforeach
                                         </tbody>
                                     </table>
