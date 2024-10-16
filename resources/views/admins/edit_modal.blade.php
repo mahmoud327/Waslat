@@ -33,9 +33,15 @@
                     <div class="mb-3">
                         <label for="roles" class="form-label">@lang('lang.Roles')</label>
                         <select multiple class="form-control" id="roles" name="roles[]" required>
-                            @foreach(\App\Models\User::getRoles() as $role)
-                                <option  @if (in_array($role->name, $admin->roles)) selected @endif  value="{{ $role->id }}">{{ $role->name }}</option>
-                            @endforeach
+                            <select multiple class="form-control" id="roles" name="roles[]" required>
+                                @foreach(\App\Models\User::getRoles() as $role)
+                                    <option value="{{ $role->id }}"
+                                        @if ($admin->roles->contains('id', $role->id)) selected @endif>
+                                        {{ $role->name }}
+                                    </option>
+                                @endforeach
+                            </select>
+
                         </select>
                     </div>
 
