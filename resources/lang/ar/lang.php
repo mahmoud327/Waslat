@@ -176,6 +176,7 @@ return [
     "Management"=>"الاداره",
     "Users & Roles"=>"المستخدمين & الصلاحيات",
     "Main Menu"=>"الرئيسه",
+    "banners"=>"البانرات"
 
 
 ];

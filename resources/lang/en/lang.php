@@ -219,5 +219,11 @@ return [
 
 
 
+        "banners"=>"banners"
+
+
+
 
 ];
+
+
