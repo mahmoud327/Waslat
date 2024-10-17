@@ -23,7 +23,7 @@ class BannerController extends Controller
         ->setTranslation('title', 'ar', $request->title_ar)
         ->setTranslation('description', 'en', $request->description_en)
         ->setTranslation('description', 'ar', $request->description_ar);
-        $banner->active=$request->active;
+        // $banner->active=$request->active;
         if ($request->hasFile('image')) {
             $banner->clearMediaCollection('banners');
             $banner->addMedia($request->file('image'))->toMediaCollection('banners');
@@ -43,7 +43,7 @@ class BannerController extends Controller
         ->setTranslation('title', 'ar', $request->title_ar)
         ->setTranslation('description', 'en', $request->description_en)
         ->setTranslation('description', 'ar', $request->description_ar);
-        $banner->active=$request->active;
+        // $banner->active=$request->active;
         if ($request->hasFile('image')) {
             $banner->clearMediaCollection('banners');
             $banner->addMedia($request->file('image'))->toMediaCollection('banners');

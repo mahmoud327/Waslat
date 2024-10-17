@@ -31,15 +31,15 @@
                         <input type="file" class="form-control" id="bannerImage{{ $banner->id }}" name="image" onchange="previewImage(event, {{ $banner->id }})">
                         <img id="imagePreview{{ $banner->id }}" src="{{ $banner->image_url }}" alt="Banner Image" class="img-thumbnail mt-2" width="100">
                      </div>
-
+{{-- 
                     <div class="mb-3">
                         <label for="bannerActive" class="form-label">@lang('lang.Active')</label>
                         <select class="form-control" id="bannerActive" name="active">
                             <option value="1" {{ $banner->active ? 'selected' : '' }}>@lang('lang.Yes')</option>
                             <option value="0" {{ !$banner->active ? 'selected' : '' }}>@lang('lang.No')</option>
                         </select>
-                    </div>
-                    
+                    </div> --}}
+
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@lang('lang.Close')</button>
                         <button type="submit" class="btn btn-primary">@lang('lang.Save')</button>

@@ -31,13 +31,13 @@
                         <img id="imagePreview" alt="Banner Image Preview" class="img-thumbnail mt-2" style="display: none;" width="100">
                       </div>
 
-                    <div class="mb-3">
+                    {{-- <div class="mb-3">
                         <label for="bannerActive" class="form-label">@lang('lang.Active')</label>
                         <select class="form-control" id="bannerActive" name="active">
                             <option value="1">@lang('lang.Yes')</option>
                             <option value="0">@lang('lang.No')</option>
                         </select>
-                    </div>
+                    </div> --}}
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@lang('lang.Close')</button>
                         <button type="submit" class="btn btn-primary">@lang('lang.Save')</button>
