@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\BannerResource;
 use App\Http\Resources\CityResource;
 use App\Http\Resources\StateResource;
 use App\Http\Resources\UserResource;
+use App\Models\Banner;
 use App\Models\City;
 use App\Models\State;
 use App\Models\User;
@@ -19,7 +21,7 @@ class BannerController extends Controller
 
     public function index()
     {
-        return responseSuccess( StateResource::collection(State::latest()->get()));
+        return responseSuccess( BannerResource::collection(Banner::latest()->get()));
     }
 
 }

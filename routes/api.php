@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\Api\Auth\AuthController;
+use App\Http\Controllers\Api\BannerController;
 use App\Http\Controllers\Api\ContactUsController;
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\CityController;
@@ -37,7 +38,7 @@ Route::group(['middleware' => ['ChangeLanguage']], function () {
     Route::get('home-real-estates/{id}', [RealEstateController::class, 'show']);
     Route::get('cities', [CityController::class, 'index']);
     Route::get('states', [CityController::class, 'states']);
-    Route::get('banners', [CityController::class, 'states']);
+    Route::get('banners', [BannerController::class, 'index']);
     Route::get('categories', [CategoryController::class, 'index']);
     Route::post('contact-us', [ContactUsController::class, 'store']);
     Route::get('settings', [ContactUsController::class, 'getSetting']);
