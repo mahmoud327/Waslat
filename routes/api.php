@@ -37,6 +37,7 @@ Route::group(['middleware' => ['ChangeLanguage']], function () {
     Route::get('home-real-estates/{id}', [RealEstateController::class, 'show']);
     Route::get('cities', [CityController::class, 'index']);
     Route::get('states', [CityController::class, 'states']);
+    Route::get('banners', [CityController::class, 'states']);
     Route::get('categories', [CategoryController::class, 'index']);
     Route::post('contact-us', [ContactUsController::class, 'store']);
     Route::get('settings', [ContactUsController::class, 'getSetting']);

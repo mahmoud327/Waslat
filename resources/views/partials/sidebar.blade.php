@@ -70,6 +70,13 @@
                     </a>
                 </li>
 
+                <li class="{{ Route::is('banners.index') ? 'active' : '' }}">
+                    <a href="{{ route('banners.index') }}" class="waves-effect">
+                        <i class="mdi mdi-city-variant-outline"></i>
+                        <span>{{ __('lang.banners') }}</span>
+                    </a>
+                </li>
+
                 <!-- Contact & Settings Section -->
                 <li class="menu-title">{{ __('lang.Settings & Support') }}</li>
 

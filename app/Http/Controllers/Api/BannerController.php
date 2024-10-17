@@ -14,16 +14,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 
-class CityController extends Controller
+class BannerController extends Controller
 {
-    public function index(Request $request)
-    {
-        $states=City::latest()->when($request->state_id,function($q) use($request){
-            $q->where('state_id',$request->state_id);
-        })->get();
-        return responseSuccess( CityResource::collection($states));
-    }
-    public function states()
+
+    public function index()
     {
         return responseSuccess( StateResource::collection(State::latest()->get()));
     }
