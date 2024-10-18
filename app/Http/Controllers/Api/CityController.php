@@ -23,9 +23,13 @@ class CityController extends Controller
         })->get();
         return responseSuccess( CityResource::collection($states));
     }
-    public function states()
+    public function states(Request $request)
     {
-        return responseSuccess( StateResource::collection(State::latest()->get()));
+        $states=State::latest()->when($request->city_id,function($q) use($request){
+            $q->whereRelation('cities','id',$request->city_id);
+        })->get();
+
+        return responseSuccess( StateResource::collection($states));
     }
 
 }

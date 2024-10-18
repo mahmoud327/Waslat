@@ -1,8 +1,11 @@
 <?php
+
 namespace App\Http\Resources;
+
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
-class CityResource extends JsonResource
+
+class PartnerReource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -12,10 +15,9 @@ class CityResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'id' => $this->id,
-            "name" => $this->name,
-            "state_id"=>$this->state_id,
-            "state"=>StateResource::make($this->whenLoaded('state'))
+            "id" => $this->id,
+            "title" => $this->title,
+            "image" =>$this->image_url,
         ];
     }
 }

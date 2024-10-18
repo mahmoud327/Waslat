@@ -124,6 +124,9 @@ class RealEstate extends Model implements HasMedia
             ->when($filters['city_id'] ?? null, function ($query, $cityId) {
                 $query->where('city_id', $cityId);
             })
+            ->when($filters['state_id'] ?? null, function ($query, $cityId) {
+                $query->whereRelation('city','state_id', $cityId);
+            })
             ->when($filters['category_id'] ?? null, function ($query, $categoryId) {
                 $query->where('category_id', $categoryId);
             })

@@ -29,7 +29,7 @@ class RealEstateController extends Controller
         $real_estates = RealEstate::query()
             ->latest()
             ->active()
-            ->with(['city', 'category'])
+            ->with(['city', 'category','city.state'])
             ->filter($request->all())
             ->paginate($request->paginate);
         $real_estates = RealestateResource::collection($real_estates)->response()->getData(true);
@@ -42,7 +42,7 @@ class RealEstateController extends Controller
     {
         $real_estate = RealEstate::query()
             ->latest()
-            ->with(['city', 'category'])
+            ->with(['city', 'category','city.state'])
             ->find($id);
 
         return responseSuccess(RealestateResource::make($real_estate));

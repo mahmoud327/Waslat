@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\BannerController;
 use App\Http\Controllers\Api\ContactUsController;
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\CityController;
+use App\Http\Controllers\Api\PartnerController;
 use App\Http\Controllers\Api\User\UserController;
 use App\Http\Controllers\RealEstateController;
 use Illuminate\Http\Request;
@@ -40,6 +41,7 @@ Route::group(['middleware' => ['ChangeLanguage']], function () {
     Route::get('states', [CityController::class, 'states']);
     Route::get('banners', [BannerController::class, 'index']);
     Route::get('categories', [CategoryController::class, 'index']);
+    Route::get('partners', [PartnerController::class, 'index']);
     Route::post('contact-us', [ContactUsController::class, 'store']);
     Route::get('settings', [ContactUsController::class, 'getSetting']);
     Route::middleware('auth:sanctum')->group(function () {

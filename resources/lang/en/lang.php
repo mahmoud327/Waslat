@@ -219,7 +219,10 @@ return [
 
 
 
-        "banners"=>"banners"
+        "banners"=>"banners",
+        "Add Partner"=>'Add Partner',
+        "Partners"=>"Partners"
+
 
 
 

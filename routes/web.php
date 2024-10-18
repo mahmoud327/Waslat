@@ -18,6 +18,7 @@ use App\Http\Controllers\IconsController;
 use App\Http\Controllers\LayoutsController;
 use App\Http\Controllers\MapsController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\TablesController;
@@ -66,6 +67,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('categories', CategoryController::class);
     Route::resource('features', FeatureController::class);
     Route::resource('banners', BannerController::class);
+    Route::resource('partners', PartnerController::class);
     Route::resource('admins', AdminController::class);
     Route::resource('roles', RoleController::class);
     Route::resource('cities', CityController::class);

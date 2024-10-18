@@ -176,7 +176,9 @@ return [
     "Management"=>"الاداره",
     "Users & Roles"=>"المستخدمين & الصلاحيات",
     "Main Menu"=>"الرئيسه",
-    "banners"=>"البانرات"
+    "banners"=>"البانرات",
+    "Add Partner"=>'اضافة شريك',
+    "Partners"=>"الشركاء"
 
 
 ];
