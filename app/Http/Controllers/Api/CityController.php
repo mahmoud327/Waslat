@@ -18,14 +18,17 @@ class CityController extends Controller
 {
     public function index(Request $request)
     {
-        $states=City::latest()->when($request->state_id,function($q) use($request){
+        $states=City::latest()
+          ->with('state')
+        ->when($request->state_id,function($q) use($request){
             $q->where('state_id',$request->state_id);
         })->get();
         return responseSuccess( CityResource::collection($states));
     }
     public function states(Request $request)
     {
-        $states=State::latest()->when($request->city_id,function($q) use($request){
+        $states=State::latest()
+        ->when($request->city_id,function($q) use($request){
             $q->whereRelation('cities','id',$request->city_id);
         })->get();
 
