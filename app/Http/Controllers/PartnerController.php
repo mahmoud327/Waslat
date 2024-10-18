@@ -24,7 +24,7 @@ class PartnerController extends Controller
         // $banner->active=$request->active;
         if ($request->hasFile('image')) {
             $banner->clearMediaCollection('partners');
-            $banner->addMedia($request->file('image'))->toMediaCollection('banners');
+            $banner->addMedia($request->file('image'))->toMediaCollection('partners');
         }
         $banner->save();
         return back()->with('message', __('lang.data_saved'));

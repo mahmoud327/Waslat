@@ -76,6 +76,12 @@
                         <span>{{ __('lang.banners') }}</span>
                     </a>
                 </li>
+                <li class="{{ Route::is('partners.index') ? 'active' : '' }}">
+                    <a href="{{ route('partners.index') }}" class="waves-effect">
+                        <i class="mdi mdi-city-variant-outline"></i>
+                        <span>{{ __('lang.Partners') }}</span>
+                    </a>
+                </li>
 
                 <!-- Contact & Settings Section -->
                 <li class="menu-title">{{ __('lang.Settings & Support') }}</li>

@@ -24,7 +24,7 @@
 
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">@lang('lang.Partner')</h4>
+                                <h4 class="card-title">@lang('lang.Partners')</h4>
                                 <div class="table-responsive">
                                     <table id="datatable" class="table table-bordered"
                                         style="border-collapse: collapse; border-spacing: 0; width: 100%;">
