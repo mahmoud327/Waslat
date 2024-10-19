@@ -39,7 +39,7 @@
                                         <tbody>
                                             @foreach ($items as $item)
                                                 <tr>
-                                                    <td>{{ $item->name }}</td>
+                                                    <td>{{ $item->title }}</td>
                                                     <td>
                                                         <div class="d-flex flex-column flex-md-row gap-2">
                                                             <!-- زرار Edit -->

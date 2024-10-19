@@ -15,14 +15,14 @@
                     <div class="mb-3">
                         <label for="categoryTitleEn" class="form-label">@lang('lang.Title (English)')</label>
                         <input type="text" class="form-control" id="categoryTitleEn" name="name_en"
-                            value="{{ old('name.en', $item->getTranslation('name', 'en')) }}">
+                            value="{{ old('title.en', $item->getTranslation('title', 'en')) }}">
                     </div>
 
                     <!-- Title Arabic -->
                     <div class="mb-3">
                         <label for="categoryTitleAr" class="form-label">@lang('lang.Title (Arabic)')</label>
                         <input type="text" class="form-control" id="categoryTitleAr" name="name_ar"
-                            value="{{ old('name.ar', $item->getTranslation('title', 'ar')) }}">
+                            value="{{ old('title.ar', $item->getTranslation('title', 'ar')) }}">
                     </div>
 
 
