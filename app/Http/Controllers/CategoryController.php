@@ -11,15 +11,15 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        $items = State::latest()->get();
+        $items = Category::latest()->get();
         return view('categories.index', compact('items'));
     }
 
     public function store(Request $request)
     {
-        $category = new State();
-        $category->setTranslation('name', 'en', $request->name_en)
-        ->setTranslation('name', 'ar', $request->name_ar);
+        $category = new Category();
+        $category->setTranslation('title', 'en', $request->name_en)
+        ->setTranslation('title', 'ar', $request->name_ar);
         // ->setTranslation('description', 'en', $request->description_en)
         // ->setTranslation('description', 'ar', $request->description_ar);
         // if ($request->hasFile('image')) {
@@ -33,15 +33,15 @@ class CategoryController extends Controller
     }
     public function destroy($id)
     {
-        $category = State::findOrFail($id)->delete();
+        $category = Category::findOrFail($id)->delete();
         return back()->with('message', __('lang.data_deleted'));
     }
     public function update(Request $request, $id)
     {
 
-        $category = State::findOrFail($id);
-        $category->setTranslation('name', 'en', $request->name_en)
-        ->setTranslation('name', 'ar', $request->name_ar);
+        $category = Category::findOrFail($id);
+        $category->setTranslation('title', 'en', $request->name_en)
+        ->setTranslation('title', 'ar', $request->name_ar);
         // ->setTranslation('description', 'en', $request->description_en)
         // ->setTranslation('description', 'ar', $request->description_ar);
 

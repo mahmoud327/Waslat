@@ -22,7 +22,7 @@
                     <div class="mb-3">
                         <label for="categoryTitleAr" class="form-label">@lang('lang.Title (Arabic)')</label>
                         <input type="text" class="form-control" id="categoryTitleAr" name="name_ar"
-                            value="{{ old('name.ar', $item->getTranslation('name', 'ar')) }}">
+                            value="{{ old('name.ar', $item->getTranslation('title', 'ar')) }}">
                     </div>
 
 
