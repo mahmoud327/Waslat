@@ -18,6 +18,7 @@ class RealestateResource extends JsonResource
             'id' => $this->id,
             'type' => $this->type,
             'price' => $this->price,
+            "name"=>"شقه للبيع",
             'phone' => $this->phone,
             'number_of_rooms' => $this->number_of_rooms,
             'bathrooms_of_rooms' => $this->bathrooms_of_rooms,
