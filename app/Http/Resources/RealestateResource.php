@@ -40,7 +40,7 @@ class RealestateResource extends JsonResource
             'license_number' => $this->license_number,
             'city_id' => $this->city_id,
             "city"=>CityResource::make($this->whenLoaded('city')),
-            "category"=>CityResource::make($this->whenLoaded('category')),
+            "category"=>CategoryResource::make($this->whenLoaded('category')),
             'category_id' => $this->category_id,
             'images' => $this->getMedia('images')->map->getUrl(), // Assuming you're using Spatie's media library
              'plan' => $this->getFirstMediaUrl('plans'), // Get the URL of the first (and in this case, the only) image in the 'plan' collection
