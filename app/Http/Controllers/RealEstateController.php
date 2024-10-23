@@ -61,6 +61,7 @@ class RealEstateController extends Controller
             ->setTranslation('name', 'ar', $request->name_ar)
             ->setTranslation('description', 'en', $request->description_en)
             ->setTranslation('description', 'ar', $request->description_ar);
+           $realEstate->unique_code=$realEstate.rand(1000, 9999);
 
         // Save the real estate model after setting translations
         $realEstate->save();
