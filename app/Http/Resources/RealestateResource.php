@@ -39,6 +39,8 @@ class RealestateResource extends JsonResource
             'marketer_name' => $this->marketer_name,
             'license_number' => $this->license_number,
             'city_id' => $this->city_id,
+            "uniqu_code"=>"2344",
+            "created_at"=>$this->created_at,
             "city"=>CityResource::make($this->whenLoaded('city')),
             "category"=>CategoryResource::make($this->whenLoaded('category')),
             'category_id' => $this->category_id,
