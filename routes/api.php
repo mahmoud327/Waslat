@@ -41,6 +41,7 @@ Route::group(['middleware' => ['ChangeLanguage']], function () {
     Route::get('states', [CityController::class, 'states']);
     Route::get('banners', [BannerController::class, 'index']);
     Route::get('categories', [CategoryController::class, 'index']);
+    Route::get('features', [CategoryController::class, 'getFeatures']);
     Route::get('partners', [PartnerController::class, 'index']);
     Route::post('contact-us', [ContactUsController::class, 'store']);
     Route::get('settings', [ContactUsController::class, 'getSetting']);
