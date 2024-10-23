@@ -34,8 +34,10 @@ class RealEstate extends Model implements HasMedia
         return $this->belongsTo(Category::class, 'category_id');
     }
     public function features()
-    {        return $this->belongsToMany(RealEstate::class, 'real_estate_features');
+    {
+        return $this->belongsToMany(Feature::class, 'real_estate_features', 'real_estate_id', 'feature_id');
     }
+
     public function getStartDate()
     {
         if ($this->start_date > now()) {
