@@ -39,7 +39,6 @@ class StoreRealEstateRequest extends FormRequest
             'city_id' => 'required|exists:cities,id',
             'category_id' => 'required|exists:categories,id',
             'images.*' => 'file|mimes:jpeg,png,jpg,gif',
-            'videos.*' => 'file',
         ];
     }
 }
