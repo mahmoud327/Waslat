@@ -53,22 +53,29 @@ class RealEstateController extends Controller
         $data = $request->validated();
         $data['user_id'] = auth()->id();
 
+        // Create the RealEstate model using the data, excluding specific fields from the request
+        $realEstate = RealEstate::create($request->except(['name_en', 'name_ar', 'description_en', 'description_ar']));
 
-
-
-        $realEstate = RealEstate::create($data->except(['name_en', 'name_ar', 'description_en', 'description_ar']));
-
+        // Set translations for 'name' and 'description' using the request data
         $realEstate->setTranslation('name', 'en', $request->name_en)
-        ->setTranslation('name', 'ar', $request->name_ar)
-        ->setTranslation('description', 'en', $request->description_en)
-        ->setTranslation('description', 'ar', $request->description_ar);
+            ->setTranslation('name', 'ar', $request->name_ar)
+            ->setTranslation('description', 'en', $request->description_en)
+            ->setTranslation('description', 'ar', $request->description_ar);
+
+        // Save the real estate model after setting translations
         $realEstate->save();
+
+        // Attach features if any
         $realEstate->features()->attach($request->features);
+
+        // Handle images
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
                 $realEstate->addMedia($image)->toMediaCollection('images');
             }
         }
+
+        // Handle plan file
         if ($request->hasFile('plan')) {
             $realEstate->addMedia($request->plan)->toMediaCollection('plans');
         }
