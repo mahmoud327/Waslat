@@ -51,7 +51,7 @@ class RealEstateController extends Controller
     public function store(StoreRealEstateRequest $request)
     {
         $data = $request->validated();
-        $data['user_id'] = auth()->id();
+        $request['user_id'] = auth()->id();
 
         // Create the RealEstate model using the data, excluding specific fields from the request
         $realEstate = RealEstate::create($request->except(['name_en', 'name_ar', 'description_en', 'description_ar']));
