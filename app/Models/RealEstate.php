@@ -14,19 +14,17 @@ use Spatie\Translatable\HasTranslations;
 class RealEstate extends Model implements HasMedia
 {
     use HasFactory;
-
     use InteractsWithMedia;
-
     protected $guarded = ['id'];
     use HasTranslations;
-    public $translatable = ['description'];
-
-
+    public $translatable = ['description','name'];
+    protected $casts=[
+        'videos'=>'json'
+    ];
     public function city(): BelongsTo
     {
         return $this->belongsTo(City::class, 'city_id');
     }
-
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class, 'user_id');
@@ -35,10 +33,11 @@ class RealEstate extends Model implements HasMedia
     {
         return $this->belongsTo(Category::class, 'category_id');
     }
-
+    public function features()
+    {        return $this->belongsToMany(RealEstate::class, 'real_estate_features');
+    }
     public function getStartDate()
     {
-
         if ($this->start_date > now()) {
             return 'قادم';
         } else if ($this->start_date == now()) {

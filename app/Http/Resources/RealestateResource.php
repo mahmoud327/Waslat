@@ -1,10 +1,7 @@
 <?php
-
 namespace App\Http\Resources;
-
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
-
 class RealestateResource extends JsonResource
 {
     /**
@@ -18,7 +15,8 @@ class RealestateResource extends JsonResource
             'id' => $this->id,
             'type' => $this->type,
             'price' => $this->price,
-            "name"=>"شقه للبيع",
+            "name"=>$this->name,
+            "videos"=>$this->videos,
             'phone' => $this->phone,
             'number_of_rooms' => $this->number_of_rooms,
             'bathrooms_of_rooms' => $this->bathrooms_of_rooms,
@@ -33,6 +31,7 @@ class RealestateResource extends JsonResource
             'water' => $this->water,
             'depth' => $this->depth,
             'features_facilities' => $this->features_facilities,
+            "features"=>FeatureReource::collection($this->features??[]),
             'description' => $this->description,
             'real_estate_characteristics' => $this->real_estate_characteristics,
             'whatsup' => $this->whatsup,
@@ -45,7 +44,6 @@ class RealestateResource extends JsonResource
             'category_id' => $this->category_id,
             'images' => $this->getMedia('images')->map->getUrl(), // Assuming you're using Spatie's media library
              'plan' => $this->getFirstMediaUrl('plans'), // Get the URL of the first (and in this case, the only) image in the 'plan' collection
-             'videos' => $this->getMedia('videos')->map->getUrl(), // Assuming you're using Spatie's media library
         ];
     }
 }

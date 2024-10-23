@@ -23,10 +23,10 @@ class FeatureController extends Controller
         ->setTranslation('name', 'ar', $request->name_ar);
         // ->setTranslation('description', 'en', $request->description_en)
         // ->setTranslation('description', 'ar', $request->description_ar);
-        // if ($request->hasFile('image')) {
-        //     $category->clearMediaCollection('categories');
-        //     $category->addMedia($request->file('image'))->toMediaCollection('categories');
-        // }
+        if ($request->hasFile('image')) {
+            $category->clearMediaCollection('features');
+            $category->addMedia($request->file('image'))->toMediaCollection('features');
+        }
         $category->save();
 
 
@@ -45,12 +45,10 @@ class FeatureController extends Controller
         ->setTranslation('name', 'ar', $request->name_ar);
         // ->setTranslation('description', 'en', $request->description_en)
         // ->setTranslation('description', 'ar', $request->description_ar);
-
-        // if ($request->hasFile('image')) {
-        //     $category->clearMediaCollection('categories');
-        //     $category->addMedia($request->file('image'))->toMediaCollection('categories');
-        // }
-
+        if ($request->hasFile('image')) {
+            $category->clearMediaCollection('features');
+            $category->addMedia($request->file('image'))->toMediaCollection('features');
+        }
         $category->save();
 
         return back()->with('message', __('lang.data_saved'));

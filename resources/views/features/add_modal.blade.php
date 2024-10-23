@@ -18,7 +18,13 @@
                         <label for="categoryTitleAr" class="form-label">@lang('lang.Title (AR)')</label>
                         <input type="text" class="form-control" id="categoryTitleAr" name="name_ar">
                     </div>
-               >
+
+                    <div class="mb-3">
+                        <label for="bannerImage" class="form-label">@lang('lang.Image')</label>
+                        <input type="file" class="form-control" id="bannerImage" name="image" onchange="previewImage(event)" required>
+                        <img id="imagePreview" alt="Banner Image Preview" class="img-thumbnail mt-2" style="display: none;" width="100">
+                      </div>
+
 
             </div>
             <div class="modal-footer">

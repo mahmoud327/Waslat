@@ -26,6 +26,12 @@
                     </div>
 
 
+                    <div class="mb-3">
+                        <label for="bannerImage" class="form-label">@lang('lang.Image')</label>
+                        <input type="file" class="form-control" id="bannerImage{{ $item->id }}" name="image" onchange="previewImage(event, {{ $item->id }})">
+                        <img id="imagePreview{{ $item->id }}" src="{{ $item->image_url }}" alt="Banner Image" class="img-thumbnail mt-2" width="100">
+                     </div>
+
                     <!-- Image -->
 
             </div>
