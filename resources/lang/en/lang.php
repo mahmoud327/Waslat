@@ -226,6 +226,7 @@ return [
         "states"=>'states',
         "Add States"=>'Add State',
         "edit States"=>'edit State',
+        "State"=>'حى'
 
 
 

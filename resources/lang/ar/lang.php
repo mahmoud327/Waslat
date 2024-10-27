@@ -182,7 +182,9 @@ return [
     "Main Menu"=>"الرئيسه",
     "banners"=>"البانرات",
     "Add Partner"=>'اضافة شريك',
-    "Partners"=>"الشركاء"
+    "Partners"=>"الشركاء",
+    "State"=>'State'
+
 
 
 ];
