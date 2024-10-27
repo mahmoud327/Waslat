@@ -12,7 +12,7 @@ class StateController extends Controller
 {
     public function index()
     {
-        $states = State::latest()->get();
+        $states = State::latest()->with('city')->get();
         $cites=City::latest()->get();
 
         return view('states.index', compact('cites','states'));
@@ -20,7 +20,6 @@ class StateController extends Controller
 
     public function store(Request $request)
     {
-
 
         $banner = new State();
         $banner->setTranslation('name', 'en', $request->name_en)

@@ -29,6 +29,7 @@
                                         <thead>
                                             <tr>
                                                 <th>@lang('lang.Title')</th>
+                                                <th>@lang('lang.State')</th>
                                                 <th>@lang('lang.Actions')</th>
                                             </tr>
                                         </thead>
@@ -36,6 +37,7 @@
                                             @foreach ($states as $city)
                                                 <tr>
                                                     <td>{{ $city->getTranslation('name', app()->getLocale()) }}</td>
+                                                    <td>{{ optional($city->city)->name }}</td>
                                                     <td>
                                                         <div class="d-flex gap-2">
                                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"

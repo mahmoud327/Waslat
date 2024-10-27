@@ -16,9 +16,9 @@ class State extends Model
 
     protected $guarded = ['id'];
     public $translatable = ['name','title'];
-    public function cities()
+    public function city()
     {
-        return $this->hasMany(City::class,'state_id');
+        return $this->belongsTo(City::class,'city_id');
     }
 
     public function users(): HasMany
