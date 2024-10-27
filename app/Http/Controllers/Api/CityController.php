@@ -29,9 +29,8 @@ class CityController extends Controller
     {
         $states=State::latest()
         ->when($request->city_id,function($q) use($request){
-            $q->whereRelation('cities','id',$request->city_id);
+            $q->where('city_id',$request->city_id);
         })->get();
-
         return responseSuccess( StateResource::collection($states));
     }
 

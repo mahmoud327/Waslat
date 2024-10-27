@@ -25,9 +25,8 @@ class StateController extends Controller
         $banner = new State();
         $banner->setTranslation('name', 'en', $request->name_en)
         ->setTranslation('name', 'ar', $request->name_ar);
+        $banner->city_id=$request->city_id;
         $banner->save();
-        $city=  City::find($request->city_id);
-        $city->update(['state_id'=>$city->id]);
         return back()->with('message', __('lang.data_saved'));
     }
     public function destroy($id)
@@ -36,13 +35,13 @@ class StateController extends Controller
         return back()->with('message', __('lang.data_deleted'));
     }
     public function update(Request $request, $id)
+
     {
         $banner = State::findOrFail($id);
         $banner->setTranslation('name', 'en', $request->name_en)
         ->setTranslation('name', 'ar', $request->name_ar);
+       $banner->city_id=$request->city_id;
         $banner->save();
-        $city=  City::find($request->city_id);
-        $city->update(['state_id'=>$city->id]);
         return back()->with('message', __('lang.data_saved'));
     }
 
