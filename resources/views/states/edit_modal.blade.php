@@ -19,13 +19,13 @@
                         <input type="text" class="form-control" id="bannerTitleAr" name="name_ar" value="{{ $city->getTranslation('name', 'ar') }}" required>
                     </div>
 
-                    <div class="col-sm-12">
+                    <div class="col-md-12">
                         <label>{{ __('lang.city') }}</label>
-                        <select class="form-group" name="city_id">
-                            @foreach ($cites as $city)
+                        <select class="form-control" name="city_id">
+                            @foreach ($cites as $state)
                                 <option value="{{ $city->id }}"
-                                    {{ $city->id == $city->city_id ? 'selected' : '' }}>
-                                    {{ $city->name }}</option>
+                                    {{ $state->id == $city->city_id ? 'selected' : '' }}>
+                                    {{ $state->name }}</option>
                             @endforeach
                         </select>
                     </div>
