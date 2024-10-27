@@ -21,6 +21,7 @@ use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SettingController;
+use App\Http\Controllers\StateController;
 use App\Http\Controllers\TablesController;
 use App\Http\Controllers\TermController;
 use App\Http\Controllers\UiElementsController;
@@ -71,6 +72,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('admins', AdminController::class);
     Route::resource('roles', RoleController::class);
     Route::resource('cities', CityController::class);
+    Route::resource('states', StateController::class);
     Route::resource('users', UserController::class);
     Route::resource('auctions', AuctionController::class);
     // routes/web.p

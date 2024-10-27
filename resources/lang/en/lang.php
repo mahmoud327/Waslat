@@ -221,7 +221,11 @@ return [
 
         "banners"=>"banners",
         "Add Partner"=>'Add Partner',
-        "Partners"=>"Partners"
+        "Partners"=>"Partners",
+
+        "states"=>'states',
+        "Add States"=>'Add State',
+        "edit States"=>'edit State',
 
 
 

@@ -69,6 +69,12 @@
                         <span>{{ __('lang.cities') }}</span>
                     </a>
                 </li>
+                <li class="{{ Route::is('states.index') ? 'active' : '' }}">
+                    <a href="{{ route('states.index') }}" class="waves-effect">
+                        <i class="mdi mdi-city-variant-outline"></i>
+                        <span>{{ __('lang.states') }}</span>
+                    </a>
+                </li>
 
                 <li class="{{ Route::is('banners.index') ? 'active' : '' }}">
                     <a href="{{ route('banners.index') }}" class="waves-effect">

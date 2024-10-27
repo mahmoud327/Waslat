@@ -70,6 +70,10 @@ return [
     'Delete' => 'حذف',
 
 
+    "states"=>'الاحياء',
+    "Add State"=>'اضافة حى',
+    "edit State"=>'تعديل حى',
+
 
     'Add real estate' => 'اضافو عقار',
     'real estates' => 'العقارات',
