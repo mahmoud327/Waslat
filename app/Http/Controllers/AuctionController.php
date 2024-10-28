@@ -72,6 +72,12 @@ class AuctionController extends Controller
             $realEstate->features()->attach($request->features);
         }
 
+        if ($request->hasFile('image')) {
+            $realEstate->clearMediaCollection('images');
+             $realEstate->addMedia($request->image)->toMediaCollection('images');
+         }
+
+
         // Handle images
         if ($request->has('uploaded_images')) {
             $base64Images = json_decode($request->uploaded_images, true);
@@ -120,6 +126,11 @@ class AuctionController extends Controller
             ->setTranslation('description', 'ar', $request->description_ar);
 
         $realEstate->save();
+
+        if ($request->hasFile('image')) {
+            $realEstate->clearMediaCollection('images');
+            $realEstate->addMedia($request->image)->toMediaCollection('images');
+    }
 
         // Attach features if any
         if ($request->has('features')) {
