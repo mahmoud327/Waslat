@@ -95,7 +95,6 @@ class AuctionController extends Controller
 
     public function update(Request $request, $id)
     {
-        return $request;
         // Validate the incoming request data
         $request->validate([
             'name_en' => 'required|string|max:255',
