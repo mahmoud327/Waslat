@@ -40,8 +40,8 @@ class RealestateResource extends JsonResource
             'license_number' => $this->license_number,
             'city_id' => $this->city_id,
             "uniqu_code"=>$this->uniqu_code,
-            "date" => $this->created_at->format('Y-m-d'), // Returns only the date
-            "time" => $this->created_at->format('h:i:s A'), // 12-hour format with AM/PM
+            "date" => $this->created_at ? $this->created_at->format('Y-m-d') : null,
+            "time" => $this->created_at ? $this->created_at->format('h:i:s A') : null,
             "city"=>CityResource::make($this->whenLoaded('city')),
             "category"=>CategoryResource::make($this->whenLoaded('category')),
             'category_id' => $this->category_id,

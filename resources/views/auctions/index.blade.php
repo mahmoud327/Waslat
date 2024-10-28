@@ -12,6 +12,10 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
+                        <a href="{{ route('auctions.create') }}" type="button" class="btn btn-primary" >
+                            @lang('lang.Add real estates')
+                        </a>
+                        <br>
                         <br>
 
                         <div class="card">

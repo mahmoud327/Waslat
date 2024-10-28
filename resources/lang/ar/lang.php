@@ -188,7 +188,37 @@ return [
     "Note"=>'الملاحظه',
     "booking"=>"حجوزات العقار",
     "userName"=>'اسم العميل',
-    "notifications"=>'ابلاغات العقار'
+    "notifications"=>'ابلاغات العقار',
+
+    'Add Real Estate' => 'إضافة عقار',
+    'Basic Info' => 'المعلومات الأساسية',
+    'Prices' => 'الأسعار',
+    'Images' => 'الصور',
+    'Videos' => 'الفيديوهات',
+    'Name EN' => 'الاسم (بالإنجليزية)',
+    'Name AR' => 'الاسم (بالعربية)',
+    'Type' => 'النوع',
+    'Rent' => 'إيجار',
+    'Sale' => 'بيع',
+    'Price' => 'السعر',
+    'Phone' => 'الهاتف',
+    'Number of Rooms' => 'عدد الغرف',
+    'Bathrooms' => 'الحمامات',
+    'Land Area' => 'مساحة الأرض',
+    'City' => 'المدينة',
+    'Category' => 'الفئة',
+    'Description EN' => 'الوصف (بالإنجليزية)',
+    'Description AR' => 'الوصف (بالعربية)',
+    'WhatsApp' => 'واتساب',
+    'Email' => 'البريد الإلكتروني',
+    'Marketer Name' => 'اسم المسوق',
+    'License Number' => 'رقم الترخيص',
+    'Upload Images' => 'تحميل الصور',
+    'Upload Videos Links' => 'تحميل روابط الفيديو',
+    'Save' => 'حفظ',
+    'Cancel' => 'إلغاء',
+
+
 
 
 

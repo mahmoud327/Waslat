@@ -79,6 +79,10 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('booking-real-estates', BookingRealEstateController::class);
     Route::resource('notification-real-estates', NotificationRealEstateController::class);
     Route::resource('auctions', AuctionController::class);
+
+
+    Route::post('/realestates/upload-images', [AuctionController::class,'uploadImages'])
+    ->name('realestates.uploadImages');
     // routes/web.p
 Route::post('/auctions/{id}/toggle-status', [AuctionController::class, 'toggleStatus'])->name('auctions.toggleStatus');
 

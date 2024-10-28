@@ -231,7 +231,36 @@ return [
         "Note"=>'Note',
         "booking"=>"Booking RealEstate",
         "userName"=>'Client Name',
-        "notifications"=>"Notifications RealEstate"
+        "notifications"=>"Notifications RealEstate",
+
+
+        'Add Real Estate' => 'Add Real Estate',
+        'Basic Info' => 'Basic Info',
+        'Prices' => 'Prices',
+        'Images' => 'Images',
+        'Videos' => 'Videos',
+        'Name EN' => 'Name (EN)',
+        'Name AR' => 'Name (AR)',
+        'Type' => 'Type',
+        'Rent' => 'Rent',
+        'Sale' => 'Sale',
+        'Price' => 'Price',
+        'Phone' => 'Phone',
+        'Number of Rooms' => 'Number of Rooms',
+        'Bathrooms' => 'Bathrooms',
+        'Land Area' => 'Land Area',
+        'City' => 'City',
+        'Category' => 'Category',
+        'Description EN' => 'Description (EN)',
+        'Description AR' => 'Description (AR)',
+        'WhatsApp' => 'WhatsApp',
+        'Email' => 'Email',
+        'Marketer Name' => 'Marketer Name',
+        'License Number' => 'License Number',
+        'Upload Images' => 'Upload Images',
+        'Upload Videos Links' => 'Upload Video Links',
+        'Save' => 'Save',
+        'Cancel' => 'Cancel',
 
 
 
