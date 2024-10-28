@@ -53,35 +53,29 @@
                                                     <input type="file" class="form-control" id="bannerImage"
                                                         name="image" onchange="previewImage(event)">
                                                     <img id="imagePreview" alt="Banner Image Preview"
-                                                        class="img-thumbnail mt-2"
-                                                        style="display: {{ $real_estate->getFirstMediaUrl('images') ? 'block' : 'none' }};"
-                                                        src="{{ $real_estate->getFirstMediaUrl('images') }}" width="100">
+                                                        class="img-thumbnail mt-2" style="display: {{ $real_estate->getFirstMediaUrl('images') ? 'block' : 'none' }};"
+                                                        src="{{ $real_estate->getFirstMediaUrl('images') }}"
+                                                        width="100">
                                                 </div>
 
                                                 <div class="col-md-6">
-                                                    <label for="realEstateNameEn"
-                                                        class="form-label">@lang('lang.Name EN')</label>
+                                                    <label for="realEstateNameEn" class="form-label">@lang('lang.Name EN')</label>
                                                     <input type="text" class="form-control" id="realEstateNameEn"
                                                         placeholder="Property Name (EN)" name="name_en"
-                                                        value="{{ old('name_en', $real_estate->getTranslation('name', 'en')) }}"
-                                                        required>
+                                                        value="{{ old('name_en', $real_estate->getTranslation('name', 'en')) }}" required>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <label for="realEstateNameAr"
-                                                        class="form-label">@lang('lang.Name AR')</label>
+                                                    <label for="realEstateNameAr" class="form-label">@lang('lang.Name AR')</label>
                                                     <input type="text" class="form-control" id="realEstateNameAr"
                                                         placeholder="اسم العقار" name="name_ar"
-                                                        value="{{ old('name_ar', $real_estate->getTranslation('name', 'ar')) }}"
-                                                        required>
+                                                        value="{{ old('name_ar', $real_estate->getTranslation('name', 'ar')) }}" required>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label for="type" class="form-label">@lang('lang.Type')</label>
                                                     <select class="form-control" id="type" name="type" required>
-                                                        <option value="rent"
-                                                            {{ $real_estate->type == 'rent' ? 'selected' : '' }}>
+                                                        <option value="rent" {{ $real_estate->type == 'rent' ? 'selected' : '' }}>
                                                             @lang('lang.Rent')</option>
-                                                        <option value="sale"
-                                                            {{ $real_estate->type == 'sale' ? 'selected' : '' }}>
+                                                        <option value="sale" {{ $real_estate->type == 'sale' ? 'selected' : '' }}>
                                                             @lang('lang.Sale')</option>
                                                     </select>
                                                 </div>
@@ -98,8 +92,7 @@
                                                         value="{{ old('phone', $real_estate->phone) }}" required>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <label for="numberOfRooms"
-                                                        class="form-label">@lang('lang.Number of Rooms')</label>
+                                                    <label for="numberOfRooms" class="form-label">@lang('lang.Number of Rooms')</label>
                                                     <input type="number" class="form-control" id="numberOfRooms"
                                                         placeholder="Number of Rooms" name="number_of_rooms"
                                                         value="{{ old('number_of_rooms', $real_estate->number_of_rooms) }}">
@@ -108,8 +101,7 @@
                                                     <label for="bathrooms" class="form-label">@lang('lang.Bathrooms')</label>
                                                     <input type="number" class="form-control" id="bathrooms"
                                                         placeholder="Number of Bathrooms" name="bathrooms_of_rooms"
-                                                        value="{{ old('bathrooms', $real_estate->bathrooms_of_rooms) }}"
-                                                        required>
+                                                        value="{{ old('bathrooms', $real_estate->bathrooms_of_rooms) }}" required>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label for="landArea" class="form-label">@lang('lang.Land Area')</label>
@@ -121,8 +113,7 @@
                                                     <label for="city" class="form-label">@lang('lang.City')</label>
                                                     <select class="form-control" id="city" name="city_id" required>
                                                         @foreach ($cities as $city)
-                                                            <option value="{{ $city->id }}"
-                                                                {{ $real_estate->city_id == $city->id ? 'selected' : '' }}>
+                                                            <option value="{{ $city->id }}" {{ $real_estate->city_id == $city->id ? 'selected' : '' }}>
                                                                 {{ $city->name }}</option>
                                                         @endforeach
                                                     </select>
@@ -133,8 +124,7 @@
                                                     <select class="form-control" id="features" name="features[]"
                                                         multiple>
                                                         @foreach ($features as $feature)
-                                                            <option value="{{ $feature->id }}"
-                                                                {{ $real_estate->features->contains($feature->id) ? 'selected' : '' }}>
+                                                            <option value="{{ $feature->id }}" {{ $real_estate->features->contains($feature->id) ? 'selected' : '' }}>
                                                                 {{ $feature->name }}</option>
                                                         @endforeach
                                                     </select>
@@ -146,8 +136,7 @@
                                                     <select class="form-control" id="category" name="category_id"
                                                         required>
                                                         @foreach ($categories as $category)
-                                                            <option value="{{ $category->id }}"
-                                                                {{ $real_estate->category_id == $category->id ? 'selected' : '' }}>
+                                                            <option value="{{ $category->id }}" {{ $real_estate->category_id == $category->id ? 'selected' : '' }}>
                                                                 {{ $category->title }}</option>
                                                         @endforeach
                                                     </select>
@@ -170,28 +159,10 @@
                                                 <label for="videoLinks">@lang('lang.Upload Videos Links')</label>
                                                 <div id="videoLinksContainer">
                                                     <div class="video-links">
-                                                        @if (is_iterable($real_estate->videos) && $real_estate->videos->isNotEmpty())
-                                                            @foreach ($real_estate->videos as $video)
-                                                                <div class="video-link-group mb-2">
-                                                                    <input type="text" class="form-control"
-                                                                        placeholder="Enter video link" name="videos[]"
-                                                                        value="{{ $video->link }}">
-                                                                    <!-- Adjust based on how your video link is stored -->
-                                                                    <button type="button"
-                                                                        class="btn btn-danger remove-video-link"
-                                                                        style="margin-top: 5px;">-</button>
-                                                                </div>
-                                                            @endforeach
-                                                        @else
                                                             <div class="video-link-group mb-2">
-                                                                <input type="text" class="form-control"
-                                                                    placeholder="Enter video link" name="videos[]"
-                                                                    value="">
-                                                                <button type="button"
-                                                                    class="btn btn-danger remove-video-link"
-                                                                    style="margin-top: 5px;">-</button>
+                                                                <input type="text" class="form-control" placeholder="Enter video link" name="videos[]" value="">
+                                                                <button type="button" class="btn btn-danger remove-video-link" style="margin-top: 5px;">-</button>
                                                             </div>
-                                                        @endif
                                                     </div>
 
 
@@ -207,29 +178,23 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <label for="whatsup" class="form-label">@lang('lang.WhatsApp')</label>
-                                                    <input type="text" class="form-control" id="whatsup"
-                                                        placeholder="WhatsApp Number" name="whatsup"
-                                                        value="{{ $real_estate->whatsup }}" required>
+                                                    <input type="text" class="form-control" id="whatsup" placeholder="WhatsApp Number"
+                                                           name="whatsup" value="{{ $real_estate->whatsup }}" required>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label for="email" class="form-label">@lang('lang.Email')</label>
-                                                    <input type="email" class="form-control" id="email"
-                                                        placeholder="Email" name="email"
-                                                        value="{{ $real_estate->email }}" required>
+                                                    <input type="email" class="form-control" id="email" placeholder="Email"
+                                                           name="email" value="{{$real_estate->email}}" required>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <label for="marketerName"
-                                                        class="form-label">@lang('lang.Marketer Name')</label>
-                                                    <input type="text" class="form-control" id="marketerName"
-                                                        placeholder="Marketer Name" name="marketer_name"
-                                                        value="{{ $real_estate->marketer_name }}" required>
+                                                    <label for="marketerName" class="form-label">@lang('lang.Marketer Name')</label>
+                                                    <input type="text" class="form-control" id="marketerName" placeholder="Marketer Name"
+                                                           name="marketer_name" value="{{  $real_estate->marketer_name }}" required>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <label for="licenseNumber"
-                                                        class="form-label">@lang('lang.License Number')</label>
-                                                    <input type="text" class="form-control" id="licenseNumber"
-                                                        placeholder="License Number" name="license_number"
-                                                        value="{{ $real_estate->license_number }}" required>
+                                                    <label for="licenseNumber" class="form-label">@lang('lang.License Number')</label>
+                                                    <input type="text" class="form-control" id="licenseNumber" placeholder="License Number"
+                                                           name="license_number" value="{{$real_estate->license_number }}" required>
                                                 </div>
                                             </div>
                                         </div>
