@@ -5,6 +5,7 @@ use App\Http\Controllers\AuctionController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BannerController;
+use App\Http\Controllers\BookingRealEstateController;
 use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ChartsController;
@@ -17,6 +18,7 @@ use App\Http\Controllers\FormController;
 use App\Http\Controllers\IconsController;
 use App\Http\Controllers\LayoutsController;
 use App\Http\Controllers\MapsController;
+use App\Http\Controllers\NotificationRealEstateController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\RoleController;
@@ -74,6 +76,8 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('cities', CityController::class);
     Route::resource('states', StateController::class);
     Route::resource('users', UserController::class);
+    Route::resource('booking-real-estates', BookingRealEstateController::class);
+    Route::resource('notification-real-estates', NotificationRealEstateController::class);
     Route::resource('auctions', AuctionController::class);
     // routes/web.p
 Route::post('/auctions/{id}/toggle-status', [AuctionController::class, 'toggleStatus'])->name('auctions.toggleStatus');

@@ -55,11 +55,22 @@
                         <span>{{ __('lang.Feature') }}</span>
                     </a>
                 </li>
-
                 <li class="{{ Route::is('auctions.index') ? 'active' : '' }}">
                     <a href="{{ route('auctions.index') }}" class="waves-effect">
                         <i class="mdi mdi-home-outline"></i>
                         <span>{{ __('lang.real estates') }}</span>
+                    </a>
+                </li>
+                <li class="{{ Route::is('booking-real-estates.index') ? 'active' : '' }}">
+                    <a href="{{ route('booking-real-estates.index') }}" class="waves-effect">
+                        <i class="mdi mdi-home-outline"></i>
+                        <span>{{ __('lang.booking') }}</span>
+                    </a>
+                </li>
+                <li class="{{ Route::is('notification-real-estates.index') ? 'active' : '' }}">
+                    <a href="{{ route('notification-real-estates.index') }}" class="waves-effect">
+                        <i class="mdi mdi-home-outline"></i>
+                        <span>{{__('lang.notifications') }}</span>
                     </a>
                 </li>
 

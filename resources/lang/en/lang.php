@@ -226,7 +226,16 @@ return [
         "states"=>'states',
         "Add States"=>'Add State',
         "edit States"=>'edit State',
-        "State"=>'حى'
+        "State"=>'State',
+        "Name RealEstate"=>'Name RealEstate',
+        "Note"=>'Note',
+        "booking"=>"Booking RealEstate",
+        "userName"=>'Client Name',
+        "notifications"=>"Notifications RealEstate"
+
+
+
+
 
 
 

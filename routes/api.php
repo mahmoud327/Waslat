@@ -48,5 +48,7 @@ Route::group(['middleware' => ['ChangeLanguage']], function () {
     Route::middleware('auth:sanctum')->group(function () {
         Route::post('profile-info', [UserController::class, 'profileInfo']);
         Route::apiResource('real-estates', RealEstateController::class);
+        Route::post('notify-real-estates', [RealEstateController::class,'notifyRealEstates']);
+        Route::post('booking-real-estates', [RealEstateController::class,'bookingRealEstates']);
     });
 });

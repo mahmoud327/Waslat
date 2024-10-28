@@ -183,7 +183,13 @@ return [
     "banners"=>"البانرات",
     "Add Partner"=>'اضافة شريك',
     "Partners"=>"الشركاء",
-    "State"=>'State'
+    "State"=>'حى',
+    "Name RealEstate"=>'اسم العقار',
+    "Note"=>'الملاحظه',
+    "booking"=>"حجوزات العقار",
+    "userName"=>'اسم العميل',
+    "notifications"=>'ابلاغات العقار'
+
 
 
 

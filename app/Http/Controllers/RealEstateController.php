@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreRealEstateRequest;
 use App\Http\Resources\RealestateResource;
+use App\Models\BookingRealEstate;
+use App\Models\NotifyRealEstate;
 use App\Models\RealEstate;
 use Illuminate\Http\Request;
 
@@ -126,8 +128,16 @@ class RealEstateController extends Controller
         $realEstate->clearMediaCollection('videos');
 
         $realEstate->delete();
-
         return responseSuccess([], 'Real estate deleted successfully');
     }
-
+    public function notifyRealEstates(Request $request){
+        $request['user_id']=auth()->id();
+        NotifyRealEstate::create($request->all());
+        return responseSuccess([], 'Real estate successfully');
+    }
+    public function bookingRealEstates(Request $request){
+        $request['user_id']=auth()->id();
+        BookingRealEstate::create($request->all());
+        return responseSuccess([], 'Real estate successfully');
+    }
 }
