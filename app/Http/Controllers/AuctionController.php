@@ -57,9 +57,8 @@ class AuctionController extends Controller
 
         // Create the RealEstate model using the data, excluding specific fields from the request
         $realEstate = RealEstate::create($request->except(['name_en', 'name_ar', 'description_en', 'description_ar', 'images', 'plan', 'features']));
-        $request['unique_code']=$realEstate.rand(1000, 9999);
+        $request['unique_code']=$realEstate->id.rand(1000, 9999);
 
-        $realEstate->unique_code = rand(1000, 9999);
 
         // Set translations for 'name' and 'description' using the request data
         $realEstate->setTranslation('name', 'en', $request->name_en)
