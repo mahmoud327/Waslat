@@ -38,7 +38,7 @@
                                         <tbody>
                                             @foreach ($auctions as $auction)
                                                 <tr>
-                                                    <td>{{ $auction->id }}</td>
+                                                    <td>{{ $auction->unique_code }}</td>
                                                     <td>{{ $auction->description }}</td>
                                                     <td>{{ $auction->type }}</td>
                                                     <td>{{ $auction->price }}</td>
