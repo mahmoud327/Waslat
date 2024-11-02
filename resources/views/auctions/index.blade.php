@@ -92,8 +92,10 @@
 
 @push('scripts')
     <script>
-        $(document).ready(function() {
-            $('#datatable').DataTable();
+      $(document).ready(function() {
+        $('#datatable').DataTable({
+            ordering: false
         });
-    </script>
+    });
+</script>
 @endpush
