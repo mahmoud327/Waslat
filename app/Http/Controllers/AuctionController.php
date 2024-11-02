@@ -15,7 +15,7 @@ class AuctionController extends Controller
     //
     public function index()
     {
-        $auctions = RealEstate::orderby('id','desc')->with('city')->get();
+        $auctions = RealEstate::orderby('created_at','desc')->with('city')->get();
         return view('auctions.index', compact('auctions'));
     }
     public function create()
@@ -54,8 +54,10 @@ class AuctionController extends Controller
         ]);
         $request['user_id'] = auth()->id();
 
+
         // Create the RealEstate model using the data, excluding specific fields from the request
         $realEstate = RealEstate::create($request->except(['name_en', 'name_ar', 'description_en', 'description_ar', 'images', 'plan', 'features']));
+        $request['unique_code']=$realEstate.rand(1000, 9999);
 
         $realEstate->unique_code = rand(1000, 9999);
 
