@@ -15,7 +15,7 @@ class AuctionController extends Controller
     //
     public function index()
     {
-        $auctions = RealEstate::orderBy('created_at', 'desc')->with('city')->get();
+        $auctions = RealEstate::latest()->with('city')->get();
         return view('auctions.index', compact('auctions'));
     }
     public function create()
