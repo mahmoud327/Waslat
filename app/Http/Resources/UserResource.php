@@ -25,6 +25,7 @@ class UserResource extends JsonResource
             'val_license' => $this->val_license,
             'commercial_registration_number' => $this->commercial_registration_number,
             'city_id' => $this->city_id,
+            'state_id' => $this->state_id,
             'profileImage' => $this->profile_image,
           ];
     }

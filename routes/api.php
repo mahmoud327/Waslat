@@ -1,10 +1,12 @@
 <?php
 use App\Http\Controllers\Api\Auth\AuthController;
 use App\Http\Controllers\Api\BannerController;
+use App\Http\Controllers\Api\BookingRealEstateController;
 use App\Http\Controllers\Api\ContactUsController;
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\CityController;
 use App\Http\Controllers\Api\PartnerController;
+use App\Http\Controllers\Api\RequestRealEstateController;
 use App\Http\Controllers\Api\User\UserController;
 use App\Http\Controllers\RealEstateController;
 use Illuminate\Http\Request;
@@ -47,8 +49,10 @@ Route::group(['middleware' => ['ChangeLanguage']], function () {
     Route::get('settings', [ContactUsController::class, 'getSetting']);
     Route::middleware('auth:sanctum')->group(function () {
         Route::post('profile-info', [UserController::class, 'profileInfo']);
+        Route::post('update-profile', [UserController::class, 'updateProfile']);
         Route::apiResource('real-estates', RealEstateController::class);
         Route::post('notify-real-estates', [RealEstateController::class,'notifyRealEstates']);
-        Route::post('booking-real-estates', [RealEstateController::class,'bookingRealEstates']);
+        Route::apiResource('booking-real-estates',BookingRealEstateController::class);
+        Route::apiResource('request-real-estates', RequestRealEstateController::class);
     });
 });

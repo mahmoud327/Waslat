@@ -135,9 +135,5 @@ class RealEstateController extends Controller
         NotifyRealEstate::create($request->all());
         return responseSuccess([], 'Real estate successfully');
     }
-    public function bookingRealEstates(Request $request){
-        $request['user_id']=auth()->id();
-        BookingRealEstate::create($request->all());
-        return responseSuccess([], 'Real estate successfully');
-    }
+
 }
