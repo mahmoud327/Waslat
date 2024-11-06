@@ -45,6 +45,7 @@ Route::group(['middleware' => ['ChangeLanguage']], function () {
     Route::get('categories', [CategoryController::class, 'index']);
     Route::get('features', [CategoryController::class, 'getFeatures']);
     Route::get('partners', [PartnerController::class, 'index']);
+    Route::get('certificates', [PartnerController::class, 'certificates']);
     Route::post('contact-us', [ContactUsController::class, 'store']);
     Route::get('settings', [ContactUsController::class, 'getSetting']);
     Route::middleware('auth:sanctum')->group(function () {
