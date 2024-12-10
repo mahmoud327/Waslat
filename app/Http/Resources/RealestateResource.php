@@ -29,6 +29,7 @@ class RealestateResource extends JsonResource
             'street_facing' => $this->street_facing,
             'electricity' => $this->electricity,
             'water' => $this->water,
+            "location"=>$this->location,
             'depth' => $this->depth,
             'features_facilities' => $this->features_facilities,
             "features"=>FeatureReource::collection($this->features??[]),

@@ -49,6 +49,13 @@
                     </a>
                 </li>
 
+                <li class="{{ Route::is('about-us.index') ? 'active' : '' }}">
+                    <a href="{{ route('about-us.index') }}" class="waves-effect">
+                        <i class="mdi mdi-shape-outline"></i>
+                        <span>{{ __('lang.about-us') }}</span>
+                    </a>
+                </li>
+
                 <li class="{{ Route::is('features.index') ? 'active' : '' }}">
                     <a href="{{ route('features.index') }}" class="waves-effect">
                         <i class="mdi mdi-feature-search-outline"></i>

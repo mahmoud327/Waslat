@@ -1,4 +1,6 @@
 <?php
+
+use App\Http\Controllers\Api\AboutUsController;
 use App\Http\Controllers\Api\Auth\AuthController;
 use App\Http\Controllers\Api\BannerController;
 use App\Http\Controllers\Api\BookingRealEstateController;
@@ -9,6 +11,7 @@ use App\Http\Controllers\Api\PartnerController;
 use App\Http\Controllers\Api\RequestRealEstateController;
 use App\Http\Controllers\Api\User\UserController;
 use App\Http\Controllers\RealEstateController;
+use App\Models\AboutUs;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -42,6 +45,7 @@ Route::group(['middleware' => ['ChangeLanguage']], function () {
     Route::get('cities', [CityController::class, 'index']);
     Route::get('states', [CityController::class, 'states']);
     Route::get('banners', [BannerController::class, 'index']);
+    Route::get('about-us', [AboutUsController::class, 'index']);
     Route::get('categories', [CategoryController::class, 'index']);
     Route::get('features', [CategoryController::class, 'getFeatures']);
     Route::get('partners', [PartnerController::class, 'index']);

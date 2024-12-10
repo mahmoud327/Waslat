@@ -255,6 +255,7 @@ return [
         'Description AR' => 'Description (AR)',
         'WhatsApp' => 'WhatsApp',
         'Email' => 'Email',
+        'about-us'=>"about-us",
         'Marketer Name' => 'Marketer Name',
         'License Number' => 'License Number',
         'Upload Images' => 'Upload Images',

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuctionController;
 use App\Http\Controllers\AuthController;
@@ -32,7 +33,6 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -43,7 +43,6 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 | be assigned to the "web" middleware group. Make something great!
 |
  */
-
 Route::get('/test', function () {
     User::create([
         'email'=>'admin@gmail.com',
@@ -55,21 +54,18 @@ Route::get('/test', function () {
 Route::get('/', function () {
     return redirect()->route('login');
 });
-
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login'])->name('login.check');
-
 Route::group(
     ['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']],
     function () {
-
 Route::middleware(['auth'])->group(function () {
     Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-
     Route::resource('categories', CategoryController::class);
     Route::resource('features', FeatureController::class);
     Route::resource('banners', BannerController::class);
+    Route::resource('about-us', AboutUsController::class);
     Route::resource('partners', PartnerController::class);
     Route::resource('admins', AdminController::class);
     Route::resource('roles', RoleController::class);
@@ -79,13 +75,10 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('booking-real-estates', BookingRealEstateController::class);
     Route::resource('notification-real-estates', NotificationRealEstateController::class);
     Route::resource('auctions', AuctionController::class);
-
-
     Route::post('/realestates/upload-images', [AuctionController::class,'uploadImages'])
     ->name('realestates.uploadImages');
     // routes/web.p
 Route::post('/auctions/{id}/toggle-status', [AuctionController::class, 'toggleStatus'])->name('auctions.toggleStatus');
-
     Route::resource('contact-us', ContactUsController::class);
     Route::get('terms', [TermController::class,'edit'])->name('term.edit');
     Route::put('terms', [TermController::class,'update'])->name('terms.update');

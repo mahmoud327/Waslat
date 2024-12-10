@@ -18,7 +18,6 @@ class Banner extends Model implements HasMedia
 
     use HasTranslations;
     use InteractsWithMedia;
-
     public $translatable = ['title', 'description'];
     protected $guarded = ['id'];
     protected $table = "banners";
