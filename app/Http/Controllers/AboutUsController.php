@@ -17,6 +17,7 @@ class AboutUsController extends Controller
     public function store(Request $request)
     {
         $banner = new AboutUs();
+        $banner->place=$request->place;
         $banner->setTranslation('title', 'en', $request->title_en)
         ->setTranslation('title', 'ar', $request->title_ar)
         ->setTranslation('description', 'en', $request->description_en)
@@ -40,6 +41,8 @@ class AboutUsController extends Controller
         ->setTranslation('title', 'ar', $request->title_ar)
         ->setTranslation('description', 'en', $request->description_en)
         ->setTranslation('description', 'ar', $request->description_ar);
+        $banner->place=$request->place;
+
         // $banner->active=$request->active;
         if ($request->hasFile('image')) {
             $banner->clearMediaCollection('about-us');

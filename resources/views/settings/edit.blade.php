@@ -80,6 +80,31 @@
                                         <input type="text" class="form-control" name="tw_link" id="tw_link"
                                             value="{{ $setting->tw_link }}">
                                     </div>
+                                    <div class="form-group">
+                                        <label for="tw_link">{{ __('lang.Tiktok') }}</label>
+                                        <input type="text" class="form-control" name="tiktok" id="tiktok"
+                                            value="{{ $setting->tiktok }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="tw_link">{{ __('lang.Snapchat') }}</label>
+                                        <input type="text" class="form-control" name="snapchat" id="snapchat"
+                                            value="{{ $setting->snapchat }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="tw_link">{{ __('lang.Appgallery') }}</label>
+                                        <input type="text" class="form-control" name="link_appgallery" id="snapchat"
+                                            value="{{ $setting->link_appgallery }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="tw_link">{{ __('lang.Googleplay') }}</label>
+                                        <input type="text" class="form-control" name="link_googleplay" id="snapchat"
+                                            value="{{ $setting->link_googleplay }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="tw_link">{{ __('lang.Appstore') }}</label>
+                                        <input type="text" class="form-control" name="link_appstore" id="snapchat"
+                                            value="{{ $setting->link_appstore }}">
+                                    </div>
 
                                     <div class="form-group">
                                         <label for="linkedin_link">{{ __('lang.LinkedIn') }}</label>

@@ -262,15 +262,4 @@ return [
         'Upload Videos Links' => 'Upload Video Links',
         'Save' => 'Save',
         'Cancel' => 'Cancel',
-
-
-
-
-
-
-
-
-
 ];
-
-

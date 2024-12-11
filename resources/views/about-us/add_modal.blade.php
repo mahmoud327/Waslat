@@ -25,6 +25,23 @@
                         <label for="bannerDescriptionAr" class="form-label">@lang('lang.Description (AR)')</label>
                         <textarea class="form-control" id="bannerDescriptionAr" name="description_ar" required></textarea>
                     </div>
+
+                    <div class="radio-top-container">
+                        <label>
+                            <input type="radio" name="place" value="first">
+                             first
+                        </label>
+                        <label>
+                            <input type="radio" name="place" value="center">
+                           center
+                        </label>
+                        <label>
+                            <input type="radio" name="place" value="last">
+                            last
+                        </label>
+                    </div>
+
+
                     <div class="mb-3">
                         <label for="bannerImage" class="form-label">@lang('lang.Image')</label>
                         <input type="file" class="form-control" id="bannerImage" name="image" onchange="previewImage(event)" required>

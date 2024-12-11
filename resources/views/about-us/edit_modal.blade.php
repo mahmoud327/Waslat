@@ -3,7 +3,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="bannerEditModalLabel{{$banner->id}}">@lang('lang.Edit Banner')</h5>
+                <h5 class="modal-title" id="bannerEditModalLabel{{$banner->id}}">@lang('lang.Edit About Us')</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -26,6 +26,21 @@
                         <label for="bannerDescriptionAr" class="form-label">@lang('lang.Description (AR)')</label>
                         <textarea class="form-control" id="bannerDescriptionAr" name="description_ar" required>{{ $banner->getTranslation('description', 'ar') }}</textarea>
                     </div>
+                    <div class="radio-top-container">
+                        <label>
+                            <input type="radio" name="place" value="first"  {{ $banner->place == 'first' ? 'checked' : '' }}>
+                            first
+                        </label>
+                        <label>
+                            <input type="radio" name="place" value="center" {{ $banner->place == 'center' ? 'checked' : '' }}>
+                            center
+                        </label>
+                        <label>
+                            <input type="radio" name="place" value="last" {{ $banner->place == 'last' ? 'checked' : '' }}>
+                            last
+                        </label>
+                    </div>
+
                     <div class="mb-3">
                         <label for="bannerImage" class="form-label">@lang('lang.Image')</label>
                         <input type="file" class="form-control" id="bannerImage{{ $banner->id }}" name="image" onchange="previewImage(event, {{ $banner->id }})">

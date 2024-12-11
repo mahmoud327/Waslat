@@ -21,9 +21,13 @@ use Illuminate\Support\Facades\Log;
 class AboutUsController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
-        return responseSuccess( AboutUsResource::collection(AboutUs::latest()->get()));
+        $about_us=AboutUs::
+        when($request->place,function($q)use($request){
+          $q->where('place',$request->place);
+        })->latest()->get();
+        return responseSuccess( AboutUsResource::collection());
     }
 
 }

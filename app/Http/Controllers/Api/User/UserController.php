@@ -1,14 +1,11 @@
 <?php
-
 namespace App\Http\Controllers\Api\User;
-
 use App\Http\Controllers\Controller;
 use App\Http\Resources\UserResource;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-
 class UserController extends Controller
 {
 
@@ -20,7 +17,6 @@ class UserController extends Controller
     public function updateProfile(Request $request)
     {
         $user = auth()->user();
-
         $validatedData = $request->validate([
             'name' => 'required|string|max:255|unique:users,name,' . $user->id,
             'email' => 'required|string|email|max:255|unique:users,email,' . $user->id,
@@ -31,7 +27,6 @@ class UserController extends Controller
             'password' => 'nullable|string|min:6|confirmed',
             'profile_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048', // Profile image validation
         ]);
-
         $user->update([
             'name' => $request->name,
             'email' => $request->email,
@@ -40,13 +35,11 @@ class UserController extends Controller
             'city_id' => $request->city_id,
             'state_id' => $request->state_id,
         ]);
-
         // Update password if provided
         if ($request->filled('password')) {
             $user->password = Hash::make($request->password);
             $user->save();
         }
-
         if ($request->hasFile('profile_image')) {
             // Delete old profile image if it exists
             if ($user->hasMedia('profile')) {
@@ -54,8 +47,6 @@ class UserController extends Controller
             }
             $user->addMediaFromRequest('profile_image')->toMediaCollection('profile');
         }
-
-
         return  responseSuccess(UserResource::make($user));
     }
 

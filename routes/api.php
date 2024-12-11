@@ -53,7 +53,7 @@ Route::group(['middleware' => ['ChangeLanguage']], function () {
     Route::post('contact-us', [ContactUsController::class, 'store']);
     Route::get('settings', [ContactUsController::class, 'getSetting']);
     Route::middleware('auth:sanctum')->group(function () {
-        Route::post('profile-info', [UserController::class, 'profileInfo']);
+        Route::get('profile-info', [UserController::class, 'profileInfo']);
         Route::post('update-profile', [UserController::class, 'updateProfile']);
         Route::apiResource('real-estates', RealEstateController::class);
         Route::post('notify-real-estates', [RealEstateController::class,'notifyRealEstates']);
