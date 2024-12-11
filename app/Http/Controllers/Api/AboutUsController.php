@@ -23,11 +23,10 @@ class AboutUsController extends Controller
 
     public function index(Request $request)
     {
-        $about_us=AboutUs::
-        when($request->place,function($q)use($request){
+        $about_us=AboutUs::when($request->place,function($q)use($request){
           $q->where('place',$request->place);
         })->latest()->get();
-        return responseSuccess( AboutUsResource::collection());
+        return responseSuccess( AboutUsResource::collection($about_us));
     }
 
 }
