@@ -133,7 +133,26 @@ class RealEstate extends Model implements HasMedia
             })
             ->when($filters['user_id'] ?? null, function ($query, $userId) {
                 $query->where('user_id', $userId);
+            })
+            ->when($filters['list_order'] ?? null, function ($query, $order) {
+                switch ($order) {
+                    case 'new':
+                        $query->orderBy('created_at', 'desc');
+                        break;
+                    case 'high_price':
+                        $query->orderBy('price', 'desc');
+                        break;
+                    case 'low_price':
+                        $query->orderBy('price', 'asc');
+                        break;
+                    case 'old':
+                        $query->orderBy('created_at', 'asc');
+                        break;
+                    default:
+                        $query->orderBy('created_at', 'desc');
+                }
             });
+
     }
 
     // App\Models\Auction.php
