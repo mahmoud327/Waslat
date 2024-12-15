@@ -19,6 +19,7 @@ class BookingRealEstateController extends Controller
     {
         $real_estates = BookingRealEstate::query()
             ->whereUserId(auth()->id())
+            ->with("realEstate")
             ->latest()
             ->paginate($request->paginate);
 

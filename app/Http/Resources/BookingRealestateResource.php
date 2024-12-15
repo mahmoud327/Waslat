@@ -21,6 +21,7 @@ class BookingRealestateResource extends JsonResource
             'date' => $this->date,
             'note' => $this->note,
             "code"=>$this->code,
+            "realEstate"=>RealestateResource::make($this->whenLoaded('realEstate')),
             "status"=>null,
             'created_at' => $this->created_at ? $this->created_at->format('y-m-d') : null, // Format created_at
         ];
