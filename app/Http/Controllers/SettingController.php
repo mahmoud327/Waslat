@@ -22,6 +22,11 @@ class SettingController extends Controller
         $terms->setTranslation('about_us', 'en', $request->input('about_us_en'));
         $terms->setTranslation('about_us', 'ar', $request->input('about_us_ar'));
         $terms->save();
+
+        if ($request->hasFile('image')) {
+            $terms->clearMediaCollection('image_app');
+            $terms->addMedia($request->file('image'))->toMediaCollection('image_app');
+        }
         return back()->with('message',__('lang.data_saved'));
 
     }

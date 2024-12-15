@@ -21,7 +21,7 @@
                                     </select>
                                 </div>
 
-                                <form method="post" action="{{ route('settings.update') }}">
+                                <form method="post" action="{{ route('settings.update') }}" enctype="multipart/form-data">
                                     @method('put')
                                     @csrf
 
@@ -85,6 +85,13 @@
                                         <input type="text" class="form-control" name="tiktok" id="tiktok"
                                             value="{{ $setting->tiktok }}">
                                     </div>
+
+                                    <div class="mb-3">
+                                        <label for="bannerImage" class="form-label">@lang('lang.Image')</label>
+                                        <input type="file" class="form-control" id="bannerImage{{ $setting->id }}" name="image" onchange="previewImage(event, {{ $setting->id }})">
+                                        <img id="imagePreview{{ $setting->id }}" src="{{ $setting->image_url }}" alt="Banner Image" class="img-thumbnail mt-2" width="100">
+                                     </div>
+
                                     <div class="form-group">
                                         <label for="tw_link">{{ __('lang.Snapchat') }}</label>
                                         <input type="text" class="form-control" name="snapchat" id="snapchat"
@@ -105,6 +112,7 @@
                                         <input type="text" class="form-control" name="link_appstore" id="snapchat"
                                             value="{{ $setting->link_appstore }}">
                                     </div>
+
 
                                     <div class="form-group">
                                         <label for="linkedin_link">{{ __('lang.LinkedIn') }}</label>
@@ -211,5 +219,18 @@
                 $('#hidden_about_us_ar').val(quillAr.root.innerHTML);
             });
         });
+    </script>
+    <script>
+        function previewImage(event, bannerId = null) {
+            var reader = new FileReader();
+            reader.onload = function() {
+                // Determine which image preview element to update
+                var outputId = bannerId ? 'imagePreview' + bannerId : 'imagePreview';
+                var output = document.getElementById(outputId);
+                output.src = reader.result;
+                output.style.display = 'block'; // Show the image when file is selected
+            }
+            reader.readAsDataURL(event.target.files[0]);
+        }
     </script>
 @endpush

@@ -20,6 +20,7 @@ class SettingResource extends JsonResource
             'email' => $this->email,
             'phone' => $this->phone,
             'address' => $this->address,
+            "image_app"=>$this->imageUrl,
             'fb_link' => $this->fb_link,
             'tw_link' => $this->tw_link,
             'link_appstore' => $this->link_appstore,
