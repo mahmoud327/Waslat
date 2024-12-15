@@ -37,8 +37,8 @@
                                             @foreach ($bookings as $booking)
                                                 <tr>
                                                     <td>{{ $booking->id }}</td>
-                                                    <td>{{ $booking->city->name }}</td>
-                                                    <td>{{ $booking->state->name }}</td>
+                                                    <td>{{ optional($booking->city)->name }}</td>
+                                                    <td>{{ optional($booking->state)->name }}</td>
                                                     <td>{{ $booking->type }}</td>
                                                     <td>{{ optional($booking->category)->name }}</td>
                                                     <td>{{ $booking->price_from }}</td>
