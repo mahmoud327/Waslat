@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\RequestRealEstateController;
 use App\Http\Controllers\AuctionController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Auth\LoginController;
@@ -73,6 +74,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('states', StateController::class);
     Route::resource('users', UserController::class);
     Route::resource('booking-real-estates', BookingRealEstateController::class);
+    Route::resource('requests-real-estates', RequestRealEstateController::class);
     Route::resource('notification-real-estates', NotificationRealEstateController::class);
     Route::resource('auctions', AuctionController::class);
     Route::post('/realestates/upload-images', [AuctionController::class,'uploadImages'])

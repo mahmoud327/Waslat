@@ -16,17 +16,20 @@
 
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">@lang('lang.real estates')</h4>
+                                <h4 class="card-title">@lang('lang.Request real estates')</h4>
                                 <div class="table-responsive">
                                     <table id="datatable" class="table table-bordered" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                         <thead>
                                             <tr>
                                                 <th>@lang('lang.ID')</th>
+                                                <th>@lang('lang.City')</th>
+                                                <th>@lang('lang.State')</th>
                                                 <th>@lang('lang.Type')</th>
-                                                <th>@lang('lang.Phone')</th>
+                                                <th>@lang('lang.Category')</th>
+                                                <th>@lang('lang.Price From')</th>
+                                                <th>@lang('lang.Price To')</th>
                                                 <th>@lang('lang.Note')</th>
                                                 <th>@lang('lang.userName')</th>
-                                                <th>@lang('lang.Name RealEstate')</th>
                                                 <th>@lang('lang.Actions')</th>
                                             </tr>
                                         </thead>
@@ -34,11 +37,14 @@
                                             @foreach ($bookings as $booking)
                                                 <tr>
                                                     <td>{{ $booking->id }}</td>
+                                                    <td>{{ $booking->city->name }}</td>
+                                                    <td>{{ $booking->state->name }}</td>
                                                     <td>{{ $booking->type }}</td>
-                                                    <td>{{ $booking->phone }}</td>
-                                                    <td>{{ $booking->note }}</td>
+                                                    <td>{{ optional($booking->category)->name }}</td>
+                                                    <td>{{ $booking->price_from }}</td>
+                                                    <td>{{ $booking->price_to }}</td>
                                                     <td>{{ optional($booking->user)->name }}</td>
-                                                    <td>{{ optional($booking->realEstate)->name }}</td>
+                                                    <td>{{ $booking->note }}</td>
                                                     <td>
 
                                                         <div class="d-flex flex-column flex-md-row">
@@ -50,7 +56,7 @@
                                                     </td>
                                                 </tr>
 
-                                                @include('bookings.delete_modal', ['booking' => $booking])
+                                                @include('requests.delete_modal', ['booking' => $booking])
                                             @endforeach
 
                                         </tbody>
@@ -74,4 +80,3 @@
     });
 </script>
 @endpush
-

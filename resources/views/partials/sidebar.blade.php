@@ -68,6 +68,12 @@
                         <span>{{ __('lang.real estates') }}</span>
                     </a>
                 </li>
+                <li class="{{ Route::is('requests-real-estates.index') ? 'active' : '' }}">
+                    <a href="{{ route('requests-real-estates.index') }}" class="waves-effect">
+                        <i class="mdi mdi-home-outline"></i>
+                        <span>{{ __('lang.Request real estates') }}</span>
+                    </a>
+                </li>
                 <li class="{{ Route::is('booking-real-estates.index') ? 'active' : '' }}">
                     <a href="{{ route('booking-real-estates.index') }}" class="waves-effect">
                         <i class="mdi mdi-home-outline"></i>
