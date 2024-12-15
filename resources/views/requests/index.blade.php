@@ -43,12 +43,12 @@
                                                     <td>{{ optional($booking->category)->name }}</td>
                                                     <td>{{ $booking->price_from }}</td>
                                                     <td>{{ $booking->price_to }}</td>
-                                                    <td>{{ optional($booking->user)->name }}</td>
                                                     <td>{{ $booking->note }}</td>
+                                                    <td>{{ optional($booking->user)->name }}</td>
                                                     <td>
 
                                                         <div class="d-flex flex-column flex-md-row">
-                                                            <button type="button" class="btn btn-danger w-50" data-bs-toggle="modal" data-bs-target="#bannerDeleteModal{{ $booking->id }}">
+                                                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#bannerDeleteModal{{ $booking->id }}">
                                                                 @lang('lang.Delete')
                                                             </button>
                                                         </div>

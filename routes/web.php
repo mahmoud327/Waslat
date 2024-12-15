@@ -10,6 +10,7 @@ use App\Http\Controllers\BannerController;
 use App\Http\Controllers\BookingRealEstateController;
 use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CertificateController;
 use App\Http\Controllers\ChartsController;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\ContactUsController;
@@ -68,6 +69,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('banners', BannerController::class);
     Route::resource('about-us', AboutUsController::class);
     Route::resource('partners', PartnerController::class);
+    Route::resource('certificates', CertificateController::class);
     Route::resource('admins', AdminController::class);
     Route::resource('roles', RoleController::class);
     Route::resource('cities', CityController::class);

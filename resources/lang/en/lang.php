@@ -252,6 +252,8 @@ return [
         "Price To"=>"Price To",
         "Price From"=>"Price From",
         "Request real estates"=>"Request real estates",
+        "Certificates"=>"Certificates",
+        "Add Certificate"=>"Add Certificate",
         'City' => 'City',
         'Category' => 'Category',
         'Description EN' => 'Description (EN)',

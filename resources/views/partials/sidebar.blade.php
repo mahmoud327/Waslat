@@ -112,6 +112,12 @@
                         <span>{{ __('lang.Partners') }}</span>
                     </a>
                 </li>
+                <li class="{{ Route::is('certificates.index') ? 'active' : '' }}">
+                    <a href="{{ route('certificates.index') }}" class="waves-effect">
+                        <i class="mdi mdi-city-variant-outline"></i>
+                        <span>{{ __('lang.Certificates') }}</span>
+                    </a>
+                </li>
 
                 <!-- Contact & Settings Section -->
                 <li class="menu-title">{{ __('lang.Settings & Support') }}</li>
