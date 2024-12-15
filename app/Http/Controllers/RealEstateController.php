@@ -77,12 +77,10 @@ class RealEstateController extends Controller
                 $realEstate->addMedia($image)->toMediaCollection('images');
             }
         }
-
         // Handle plan file
         if ($request->hasFile('plan')) {
             $realEstate->addMedia($request->plan)->toMediaCollection('plans');
         }
-
         return responseSuccess([], 'Real estate created successfully');
     }
 
