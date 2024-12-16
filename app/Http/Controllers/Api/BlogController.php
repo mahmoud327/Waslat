@@ -28,7 +28,7 @@ class BlogController extends Controller
 
     public function show($id)
     {
-        return responseSuccess( BlogResource::collection(Blog::latest()->get()));
+        return responseSuccess( BlogResource::make(Blog::latest()->find($id)));
     }
 
 }
