@@ -19,7 +19,8 @@ class BlogResource extends JsonResource
             "title" => $this->title,
             "description" => $this->description,
             "image" =>$this->image_url,
-            "videos"=>$this->videos
+            "videos"=>$this->videos,
+            "date" => $this->created_at->format('d F Y'),
         ];
     }
 }
