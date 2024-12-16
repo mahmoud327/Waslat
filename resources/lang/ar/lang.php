@@ -23,6 +23,8 @@ return [
     "Request real estates"=>"طلبات العقار",
     "Certificates"=>"الشهادات",
     "Add Certificate"=>"اضافة شهاده",
+    "Add Blog"=>"اضافة خبر",
+    "Blogs"=>"الاخبار",
     'Edit' => 'تعديل',
     'Delete' => 'حذف',
     "Are you sure you want to delete this category">" هل تريد حذف القسم",

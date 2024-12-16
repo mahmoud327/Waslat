@@ -7,6 +7,7 @@ use App\Http\Controllers\AuctionController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BannerController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BookingRealEstateController;
 use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\CategoryController;
@@ -67,6 +68,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('categories', CategoryController::class);
     Route::resource('features', FeatureController::class);
     Route::resource('banners', BannerController::class);
+    Route::resource('blogs', BlogController::class);
     Route::resource('about-us', AboutUsController::class);
     Route::resource('partners', PartnerController::class);
     Route::resource('certificates', CertificateController::class);

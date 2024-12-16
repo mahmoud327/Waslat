@@ -253,6 +253,8 @@ return [
         "Price From"=>"Price From",
         "Request real estates"=>"Request real estates",
         "Certificates"=>"Certificates",
+        "Add Blog"=>"Add Blog",
+        "Blogs"=>"Blogs",
         "Add Certificate"=>"Add Certificate",
         'City' => 'City',
         'Category' => 'Category',

@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\AboutUsController;
 use App\Http\Controllers\Api\Auth\AuthController;
 use App\Http\Controllers\Api\BannerController;
+use App\Http\Controllers\Api\BlogController;
 use App\Http\Controllers\Api\BookingRealEstateController;
 use App\Http\Controllers\Api\ContactUsController;
 use App\Http\Controllers\Api\CategoryController;
@@ -49,6 +50,7 @@ Route::group(['middleware' => ['ChangeLanguage']], function () {
     Route::get('categories', [CategoryController::class, 'index']);
     Route::get('features', [CategoryController::class, 'getFeatures']);
     Route::get('partners', [PartnerController::class, 'index']);
+    Route::apiResource('blogs', BlogController::class);
     Route::get('certificates', [PartnerController::class, 'certificates']);
     Route::post('contact-us', [ContactUsController::class, 'store']);
     Route::get('settings', [ContactUsController::class, 'getSetting']);

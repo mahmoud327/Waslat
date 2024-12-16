@@ -118,6 +118,12 @@
                         <span>{{ __('lang.Certificates') }}</span>
                     </a>
                 </li>
+                <li class="{{ Route::is('Blogs.index') ? 'active' : '' }}">
+                    <a href="{{ route('blogs.index') }}" class="waves-effect">
+                        <i class="mdi mdi-city-variant-outline"></i>
+                        <span>{{ __('lang.Blogs') }}</span>
+                    </a>
+                </li>
 
                 <!-- Contact & Settings Section -->
                 <li class="menu-title">{{ __('lang.Settings & Support') }}</li>
