@@ -9,6 +9,7 @@ use App\Http\Controllers\Api\ContactUsController;
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\CityController;
 use App\Http\Controllers\Api\PartnerController;
+use App\Http\Controllers\Api\ProjectController;
 use App\Http\Controllers\Api\RequestRealEstateController;
 use App\Http\Controllers\Api\User\UserController;
 use App\Http\Controllers\RealEstateController;
@@ -51,6 +52,8 @@ Route::group(['middleware' => ['ChangeLanguage']], function () {
     Route::get('features', [CategoryController::class, 'getFeatures']);
     Route::get('partners', [PartnerController::class, 'index']);
     Route::apiResource('blogs', BlogController::class);
+    Route::apiResource('projects', ProjectController::class);
+    Route::post('booking-project',[ProjectController::class,'bookingProject']);
     Route::get('certificates', [PartnerController::class, 'certificates']);
     Route::post('contact-us', [ContactUsController::class, 'store']);
     Route::get('settings', [ContactUsController::class, 'getSetting']);

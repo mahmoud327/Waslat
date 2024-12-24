@@ -124,6 +124,12 @@
                         <span>{{ __('lang.Blogs') }}</span>
                     </a>
                 </li>
+                <li class="{{ Route::is('Projects.index') ? 'active' : '' }}">
+                    <a href="{{ route('projects.index') }}" class="waves-effect">
+                        <i class="mdi mdi-city-variant-outline"></i>
+                        <span>{{ __('lang.projects') }}</span>
+                    </a>
+                </li>
 
                 <!-- Contact & Settings Section -->
                 <li class="menu-title">{{ __('lang.Settings & Support') }}</li>

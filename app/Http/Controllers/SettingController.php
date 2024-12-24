@@ -20,6 +20,10 @@ class SettingController extends Controller
         $terms = Setting::first();
         $terms->update($request->except(['about_us_en','about_us_ar']));
         $terms->setTranslation('about_us', 'en', $request->input('about_us_en'));
+        $terms->setTranslation('title', 'en', $request->input('title_en'));
+        $terms->setTranslation('title', 'en', $request->input('title_ar'));
+        $terms->setTranslation('description', 'en', $request->input('description_en'));
+        $terms->setTranslation('description', 'en', $request->input('description_ar'));
         $terms->setTranslation('about_us', 'ar', $request->input('about_us_ar'));
         $terms->save();
 

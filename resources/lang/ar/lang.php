@@ -25,6 +25,8 @@ return [
     "Add Certificate"=>"اضافة شهاده",
     "Add Blog"=>"اضافة خبر",
     "Blogs"=>"الاخبار",
+    "projects"=>"المشاريع",
+    "Add Project"=>"اضاقه مشروع",
     'Edit' => 'تعديل',
     'Delete' => 'حذف',
     "Are you sure you want to delete this category">" هل تريد حذف القسم",

@@ -10,7 +10,7 @@ use Spatie\Translatable\HasTranslations;
 class Setting extends Model  implements HasMedia {
     use HasTranslations;
     use InteractsWithMedia;
-    public $translatable = ['about_us'];
+    public $translatable = ['about_us','description','title'];
     protected $guarded = ['id'];
     protected $table = "settings";
 

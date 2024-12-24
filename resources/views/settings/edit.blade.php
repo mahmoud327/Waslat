@@ -28,7 +28,39 @@
                                     <!-- Hidden field to store the selected language -->
                                     <input type="hidden" name="selectedLanguage" id="selectedLanguage" value="en">
 
-                                    <!-- English about_us Editor -->
+                                    <!-- Title Arabic -->
+                                    <div class="form-group">
+                                        <label for="title_ar">Project Title (Arabic)</label>
+                                        <input type="text" class="form-control" name="title_ar" id="title_ar"
+                                               value="{{ $setting->getTranslation('title', 'ar') }}" required>
+                                    </div>
+
+                                    <!-- Title English -->
+                                    <div class="form-group">
+                                        <label for="title_en">Project Title (English)</label>
+                                        <input type="text" class="form-control" name="title_en" id="title_en"
+                                               value="{{ $setting->getTranslation('title', 'en') }}" required>
+                                    </div>
+
+                                    <!-- Description Arabic -->
+                                    <div class="form-group" id="description_ar" style="display: none;">
+                                        <label for="description_ar_editor">وصف المشروع (عربي)</label>
+                                        <div id="description_ar_editor" style="height: 200px;">
+                                            {!! $setting->getTranslation('description', 'ar') !!}
+                                        </div>
+                                        <input type="hidden" name="description_ar" id="hidden_description_ar">
+                                    </div>
+
+                                    <!-- Description English -->
+                                    <div class="form-group" id="description_en">
+                                        <label for="description_en_editor">Project Description (English)</label>
+                                        <div id="description_en_editor" style="height: 200px;">
+                                            {!! $setting->getTranslation('description', 'en') !!}
+                                        </div>
+                                        <input type="hidden" name="description_en" id="hidden_description_en">
+                                    </div>
+
+                                    <!-- English About Us -->
                                     <div class="form-group" id="about_us_en">
                                         <label for="about_us_en_editor">About us (English)</label>
                                         <div id="about_us_en_editor" style="height: 300px;">
@@ -37,7 +69,7 @@
                                         <input type="hidden" name="about_us_en" id="hidden_about_us_en">
                                     </div>
 
-                                    <!-- Arabic about_us Editor (Hidden by default) -->
+                                    <!-- Arabic About Us -->
                                     <div class="form-group" id="about_us_ar" style="display: none;">
                                         <label for="about_us_ar_editor">من نحن (عربي)</label>
                                         <div id="about_us_ar_editor" style="height: 300px;">
@@ -46,191 +78,61 @@
                                         <input type="hidden" name="about_us_ar" id="hidden_about_us_ar">
                                     </div>
 
-                                    <!-- Email -->
+                                    <!-- Other Fields -->
                                     <div class="form-group">
                                         <label for="email">{{ __('lang.Email') }}</label>
                                         <input type="email" class="form-control" name="email" id="email"
-                                            value="{{ $setting->email }}" required>
+                                               value="{{ $setting->email }}" required>
                                     </div>
-
-                                    <!-- Phone -->
                                     <div class="form-group">
                                         <label for="phone">{{ __('lang.Phone') }}</label>
                                         <input type="text" class="form-control" name="phone" id="phone"
-                                            value="{{ $setting->phone }}" required>
+                                               value="{{ $setting->phone }}" required>
                                     </div>
-
-                                    <!-- Address (with translation) -->
-
-
-                                    <div class="form-group" id="address" style="display: none;">
-                                        <label for="address">{{ __('lang.Address') }} (عربي)</label>
-                                        <input type="text" class="form-control"  value={{ $setting->address }} name="address">
-                                    </div>
-
-                                    <!-- Social Media Links -->
-                                    <div class="form-group">
-                                        <label for="fb_link">{{ __('lang.Facebook') }}</label>
-                                        <input type="text" class="form-control" name="fb_link" id="fb_link"
-                                            value="{{ $setting->fb_link }}">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="tw_link">{{ __('lang.Twitter') }}</label>
-                                        <input type="text" class="form-control" name="tw_link" id="tw_link"
-                                            value="{{ $setting->tw_link }}">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="tw_link">{{ __('lang.Tiktok') }}</label>
-                                        <input type="text" class="form-control" name="tiktok" id="tiktok"
-                                            value="{{ $setting->tiktok }}">
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <label for="bannerImage" class="form-label">@lang('lang.Image')</label>
-                                        <input type="file" class="form-control" id="bannerImage{{ $setting->id }}" name="image" onchange="previewImage(event, {{ $setting->id }})">
-                                        <img id="imagePreview{{ $setting->id }}" src="{{ $setting->image_url }}" alt="Banner Image" class="img-thumbnail mt-2" width="100">
-                                     </div>
-
-                                    <div class="form-group">
-                                        <label for="tw_link">{{ __('lang.Snapchat') }}</label>
-                                        <input type="text" class="form-control" name="snapchat" id="snapchat"
-                                            value="{{ $setting->snapchat }}">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="tw_link">{{ __('lang.Appgallery') }}</label>
-                                        <input type="text" class="form-control" name="link_appgallery" id="snapchat"
-                                            value="{{ $setting->link_appgallery }}">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="tw_link">{{ __('lang.Googleplay') }}</label>
-                                        <input type="text" class="form-control" name="link_googleplay" id="snapchat"
-                                            value="{{ $setting->link_googleplay }}">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="tw_link">{{ __('lang.Appstore') }}</label>
-                                        <input type="text" class="form-control" name="link_appstore" id="snapchat"
-                                            value="{{ $setting->link_appstore }}">
-                                    </div>
-
-
-                                    <div class="form-group">
-                                        <label for="linkedin_link">{{ __('lang.LinkedIn') }}</label>
-                                        <input type="text" class="form-control" name="linkedin_link" id="linkedin_link"
-                                            value="{{ $setting->linkedin_link }}">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="inst_link">{{ __('lang.Instagram') }}</label>
-                                        <input type="text" class="form-control" name="inst_link" id="inst_link"
-                                            value="{{ $setting->inst_link }}">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="whatsapp">{{ __('lang.WhatsApp') }}</label>
-                                        <input type="text" class="form-control" name="whatsapp" id="whatsapp"
-                                            value="{{ $setting->whatsapp }}">
-                                    </div>
+                                    <!-- Add other fields as necessary -->
 
                                     <!-- Submit Button -->
                                     <button type="submit" id="save-content"
-                                        class="btn btn-success mt-3">{{ __('lang.Save') }}</button>
+                                            class="btn btn-success mt-3">{{ __('lang.Save') }}</button>
                                 </form>
 
                             </div>
                         </div>
-                    </div> <!-- end col -->
-                </div> <!-- end row -->
-            </div> <!-- container-fluid -->
+                    </div>
+                </div>
+            </div>
         </div>
         @include('partials.footer')
     </div>
 @endsection
 
 @push('scripts')
-    <!-- Include Quill's JavaScript -->
     <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
-
     <script>
-        // Initialize Quill editors for both English and Arabic
-        var quillEn = new Quill('#about_us_en_editor', {
-            theme: 'snow',
-            modules: {
-                toolbar: [
-                    [{
-                        'header': [1, 2, false]
-                    }],
-                    ['bold', 'italic', 'underline'],
-                    [{
-                        'list': 'ordered'
-                    }, {
-                        'list': 'bullet'
-                    }],
-                    ['link', 'image'],
-                ]
+        // Initialize Quill editors
+        var quillEn = new Quill('#about_us_en_editor', { theme: 'snow' });
+        var quillAr = new Quill('#about_us_ar_editor', { theme: 'snow' });
+        var quillDescriptionEn = new Quill('#description_en_editor', { theme: 'snow' });
+        var quillDescriptionAr = new Quill('#description_ar_editor', { theme: 'snow' });
+
+        // Language toggle
+        $('#language-select').change(function () {
+            var lang = $(this).val();
+            $('#selectedLanguage').val(lang);
+            if (lang === 'ar') {
+                $('#description_ar, #about_us_ar').show();
+                $('#description_en, #about_us_en').hide();
+            } else {
+                $('#description_en, #about_us_en').show();
+                $('#description_ar, #about_us_ar').hide();
             }
         });
 
-        var quillAr = new Quill('#about_us_ar_editor', {
-            theme: 'snow',
-            modules: {
-                toolbar: [
-                    [{
-                        'header': [1, 2, false]
-                    }],
-                    ['bold', 'italic', 'underline'],
-                    [{
-                        'list': 'ordered'
-                    }, {
-                        'list': 'bullet'
-                    }],
-                    ['link', 'image'],
-                ]
-            }
+        $('form').on('submit', function () {
+            $('#hidden_about_us_en').val(quillEn.root.innerHTML);
+            $('#hidden_about_us_ar').val(quillAr.root.innerHTML);
+            $('#hidden_description_en').val(quillDescriptionEn.root.innerHTML);
+            $('#hidden_description_ar').val(quillDescriptionAr.root.innerHTML);
         });
-
-        // Language switching functionality
-        $(document).ready(function() {
-            $('#language-select').change(function() {
-                var lang = $(this).val();
-
-                // Update the hidden input value based on the selected language
-                $('#selectedLanguage').val(lang);
-
-                if (lang === 'ar') {
-                    // Switch to Arabic: show Arabic fields and hide English fields
-                    $('#about_us_ar').show();
-                    $('#about_us_en').hide();
-                } else {
-                    // Switch to English: show English fields and hide Arabic fields
-                    $('#about_us_en').show();
-                    $('#about_us_ar').hide();
-                }
-            });
-
-            // Initialize form with English about_us visible
-            $('#about_us_en').show();
-            $('#about_us_ar').hide();
-
-            // Handle form submission to include Quill content
-            $('form').on('submit', function() {
-                // Get the HTML content of the Quill editors
-                $('#hidden_about_us_en').val(quillEn.root.innerHTML);
-                $('#hidden_about_us_ar').val(quillAr.root.innerHTML);
-            });
-        });
-    </script>
-    <script>
-        function previewImage(event, bannerId = null) {
-            var reader = new FileReader();
-            reader.onload = function() {
-                // Determine which image preview element to update
-                var outputId = bannerId ? 'imagePreview' + bannerId : 'imagePreview';
-                var output = document.getElementById(outputId);
-                output.src = reader.result;
-                output.style.display = 'block'; // Show the image when file is selected
-            }
-            reader.readAsDataURL(event.target.files[0]);
-        }
     </script>
 @endpush

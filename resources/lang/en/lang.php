@@ -255,6 +255,8 @@ return [
         "Certificates"=>"Certificates",
         "Add Blog"=>"Add Blog",
         "Blogs"=>"Blogs",
+        "projects"=>"projects",
+        "Add Project"=>"Add Project",
         "Add Certificate"=>"Add Certificate",
         'City' => 'City',
         'Category' => 'Category',

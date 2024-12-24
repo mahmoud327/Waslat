@@ -25,6 +25,7 @@ use App\Http\Controllers\MapsController;
 use App\Http\Controllers\NotificationRealEstateController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PartnerController;
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\StateController;
@@ -69,6 +70,10 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('features', FeatureController::class);
     Route::resource('banners', BannerController::class);
     Route::resource('blogs', BlogController::class);
+    Route::resource('projects', ProjectController::class);
+    Route::post('/projects/upload-images', [ProjectController::class,'uploadImages'])
+    ->name('projects.uploadImages');
+
     Route::resource('about-us', AboutUsController::class);
     Route::resource('partners', PartnerController::class);
     Route::resource('certificates', CertificateController::class);
