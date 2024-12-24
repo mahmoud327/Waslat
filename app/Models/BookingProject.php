@@ -16,7 +16,6 @@ class BookingProject extends Model implements HasMedia
 {
 
 
-    use HasTranslations;
     use InteractsWithMedia;
     protected $guarded = ['id'];
     protected $table = "booking_project";
