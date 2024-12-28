@@ -17,7 +17,6 @@ return new class extends Migration
             $table->text('link_appstore')->nullable();
             $table->text('link_googleplay')->nullable();
             $table->text('link_appgallery')->nullable();
-
         });
     }
 

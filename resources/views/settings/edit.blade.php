@@ -89,6 +89,68 @@
                                         <input type="text" class="form-control" name="phone" id="phone"
                                                value="{{ $setting->phone }}" required>
                                     </div>
+
+                                                                            <!-- TikTok -->
+                                        <div class="form-group">
+                                            <label for="tiktok">{{ __('lang.TikTok') }}</label>
+                                            <input type="text" class="form-control" name="tiktok" id="tiktok" value="{{ $setting->tiktok }}">
+                                        </div>
+
+                                        <!-- Snapchat -->
+                                        <div class="form-group">
+                                            <label for="snapchat">{{ __('lang.Snapchat') }}</label>
+                                            <input type="text" class="form-control" name="snapchat" id="snapchat" value="{{ $setting->snapchat }}">
+                                        </div>
+
+                                        <!-- App Store Link -->
+                                        <div class="form-group">
+                                            <label for="link_appstore">{{ __('lang.App Store Link') }}</label>
+                                            <input type="text" class="form-control" name="link_appstore" id="link_appstore" value="{{ $setting->link_appstore }}">
+                                        </div>
+
+                                        <!-- Google Play Link -->
+                                        <div class="form-group">
+                                            <label for="link_googleplay">{{ __('lang.Google Play Link') }}</label>
+                                            <input type="text" class="form-control" name="link_googleplay" id="link_googleplay" value="{{ $setting->link_googleplay }}">
+                                        </div>
+
+                                        <!-- App Gallery Link -->
+                                        <div class="form-group">
+                                            <label for="link_appgallery">{{ __('lang.App Gallery Link') }}</label>
+                                            <input type="text" class="form-control" name="link_appgallery" id="link_appgallery" value="{{ $setting->link_appgallery }}">
+                                        </div>
+
+                                        <!-- Facebook Link -->
+                                        <div class="form-group">
+                                            <label for="fb_link">{{ __('lang.Facebook Link') }}</label>
+                                            <input type="text" class="form-control" name="fb_link" id="fb_link" value="{{ $setting->fb_link }}">
+                                        </div>
+
+                                        <!-- Twitter Link -->
+                                        <div class="form-group">
+                                            <label for="tw_link">{{ __('lang.Twitter Link') }}</label>
+                                            <input type="text" class="form-control" name="tw_link" id="tw_link" value="{{ $setting->tw_link }}">
+                                        </div>
+
+                                        <!-- LinkedIn Link -->
+                                        <div class="form-group">
+                                            <label for="linkedin_link">{{ __('lang.LinkedIn Link') }}</label>
+                                            <input type="text" class="form-control" name="linkedin_link" id="linkedin_link" value="{{ $setting->linkedin_link }}">
+                                        </div>
+
+                                        <!-- Instagram Link -->
+                                        <div class="form-group">
+                                            <label for="inst_link">{{ __('lang.Instagram Link') }}</label>
+                                            <input type="text" class="form-control" name="inst_link" id="inst_link" value="{{ $setting->inst_link }}">
+                                        </div>
+
+                                        <!-- WhatsApp -->
+                                        <div class="form-group">
+                                            <label for="whatsapp">{{ __('lang.WhatsApp') }}</label>
+                                            <input type="text" class="form-control" name="whatsapp" id="whatsapp" value="{{ $setting->whatsapp }}">
+                                        </div>
+
+
                                     <!-- Add other fields as necessary -->
 
                                     <!-- Submit Button -->

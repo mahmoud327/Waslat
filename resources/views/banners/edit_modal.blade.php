@@ -12,26 +12,26 @@
                     @csrf
                     <div class="mb-3">
                         <label for="bannerTitleEn" class="form-label">@lang('lang.Title (EN)')</label>
-                        <input type="text" class="form-control" id="bannerTitleEn" name="title_en" value="{{ $banner->getTranslation('title', 'en') }}" required>
+                        <input type="text" class="form-control" id="bannerTitleEn" name="title_en" value="{{ $banner->getTranslation('title', 'en') }}">
                     </div>
                     <div class="mb-3">
                         <label for="bannerTitleAr" class="form-label">@lang('lang.Title (AR)')</label>
-                        <input type="text" class="form-control" id="bannerTitleAr" name="title_ar" value="{{ $banner->getTranslation('title', 'ar') }}" required>
+                        <input type="text" class="form-control" id="bannerTitleAr" name="title_ar" value="{{ $banner->getTranslation('title', 'ar') }}">
                     </div>
                     <div class="mb-3">
                         <label for="bannerDescriptionEn" class="form-label">@lang('lang.Description (EN)')</label>
-                        <textarea class="form-control" id="bannerDescriptionEn" name="description_en" required>{{ $banner->getTranslation('description', 'en') }}</textarea>
+                        <textarea class="form-control" id="bannerDescriptionEn" name="description_en" >{{ $banner->getTranslation('description', 'en') }}</textarea>
                     </div>
                     <div class="mb-3">
                         <label for="bannerDescriptionAr" class="form-label">@lang('lang.Description (AR)')</label>
-                        <textarea class="form-control" id="bannerDescriptionAr" name="description_ar" required>{{ $banner->getTranslation('description', 'ar') }}</textarea>
+                        <textarea class="form-control" id="bannerDescriptionAr" name="description_ar" >{{ $banner->getTranslation('description', 'ar') }}</textarea>
                     </div>
                     <div class="mb-3">
                         <label for="bannerImage" class="form-label">@lang('lang.Image')</label>
                         <input type="file" class="form-control" id="bannerImage{{ $banner->id }}" name="image" onchange="previewImage(event, {{ $banner->id }})">
                         <img id="imagePreview{{ $banner->id }}" src="{{ $banner->image_url }}" alt="Banner Image" class="img-thumbnail mt-2" width="100">
                      </div>
-{{-- 
+{{--
                     <div class="mb-3">
                         <label for="bannerActive" class="form-label">@lang('lang.Active')</label>
                         <select class="form-control" id="bannerActive" name="active">

@@ -11,19 +11,19 @@
                     @csrf
                     <div class="mb-3">
                         <label for="bannerTitleEn" class="form-label">@lang('lang.Title (EN)')</label>
-                        <input type="text" class="form-control" id="bannerTitleEn" name="title_en" required>
+                        <input type="text" class="form-control" id="bannerTitleEn" name="title_en" >
                     </div>
                     <div class="mb-3">
                         <label for="bannerTitleAr" class="form-label">@lang('lang.Title (AR)')</label>
-                        <input type="text" class="form-control" id="bannerTitleAr" name="title_ar" required>
+                        <input type="text" class="form-control" id="bannerTitleAr" name="title_ar" >
                     </div>
                     <div class="mb-3">
                         <label for="bannerDescriptionEn" class="form-label">@lang('lang.Description (EN)')</label>
-                        <textarea class="form-control" id="bannerDescriptionEn" name="description_en" required></textarea>
+                        <textarea class="form-control" id="bannerDescriptionEn" name="description_en" ></textarea>
                     </div>
                     <div class="mb-3">
                         <label for="bannerDescriptionAr" class="form-label">@lang('lang.Description (AR)')</label>
-                        <textarea class="form-control" id="bannerDescriptionAr" name="description_ar" required></textarea>
+                        <textarea class="form-control" id="bannerDescriptionAr" name="description_ar" ></textarea>
                     </div>
                     <div class="mb-3">
                         <label for="bannerImage" class="form-label">@lang('lang.Image')</label>
