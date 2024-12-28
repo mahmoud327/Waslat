@@ -35,6 +35,7 @@ use App\Http\Controllers\UiElementsController;
 use App\Http\Controllers\UserController;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 /*
@@ -47,6 +48,12 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 | be assigned to the "web" middleware group. Make something great!
 |
  */
+
+ Route::get('email',function(){
+    Mail::to("mahmoudmohamed199885@gmail.com")->send(new \App\Mail\SendVerificationCode("1234"));
+
+});
+
 Route::get('/test', function () {
     User::create([
         'email'=>'admin@gmail.com',
